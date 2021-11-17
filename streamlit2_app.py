@@ -7,6 +7,8 @@ st.title('Uber pickups in NYC')
 DATE_COLUMN = 'date/time'
 DATA_URL = ('https://s3-us-west-2.amazonaws.com/'
                    'streamlit-demo-data/uber-raw-data-sep14.csv.gz')
+                
+#데이타를 가져오는것
 
 @st.cache
 def load_data(nrows):
@@ -16,20 +18,36 @@ def load_data(nrows):
   data[DATE_COLUMN] = pd.to_datetime(data[DATE_COLUMN])
   return data
 
+
+
+
+
 data_load_state = st.text('Loading data...')
-data = load_data(10000)
+data = load_data(1000000)
+# 로드데이터에 몇개의 데이터를 넣을래
+
 data_load_state.text("Done! (using st.cache)")
 
-if st.checkbox('Show raw data'):
-  st.subheader('Raw data')
-  st.write(data)
 
-st.subheader('Number of pickups by hour')
+
+if st.checkbox('Show raw data'):
+    # 체크박스를 넣어줌
+    st.subheader('Raw data')
+    st.write(data)
+
+
+
+
+st.subheader('이름을 바꿔줌111 맨위에 히스토그램')
 hist_values = np.histogram(data[DATE_COLUMN].dt.hour, bins=24, range=(0,24))[0]
 st.bar_chart(hist_values)
+# 히스토 그램 넣는 방법
 
+
+
+# 이 아래것이다. 
 # Some number in the range 0-23
-hour_to_filter = st.slider('hour', 0, 23, 17)
+hour_to_filter = st.slider('hour 시간바꿔줌', 0, 23, 17)
 filtered_data = data[data[DATE_COLUMN].dt.hour == hour_to_filter]
 
 st.subheader('Map of all pickups at %s:00' % hour_to_filter)
