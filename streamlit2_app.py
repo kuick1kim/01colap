@@ -23,7 +23,7 @@ def load_data(nrows):
 
 
 data_load_state = st.text('Loading data...로딩중이니까 기대리라')
-data = load_data(50000)
+data = load_data(10000)
 # 로드데이터에 몇개의 데이터를 넣을래
 
 data_load_state.text("Done 다했다! (using st.cache)")
