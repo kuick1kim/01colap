@@ -6,9 +6,9 @@ st.title('김민상이 만든 Streamlit')
 
 
 col1, col2, col3 = st.columns(3)
-col1.metric("Temperature", "70 °F", "1.2 °F")
-col2.metric("Wind", "9 mph", "-8%")
-col3.metric("Humidity", "86%", "4%")
+col1.metric("Temperature : 온도", "70 °F", "1.2 °F")
+col2.metric("Wind : 바람세기", "9 mph", "-8%")
+col3.metric("Humidity : 습도", "86%", "4%")
 
 
 
