@@ -41,7 +41,7 @@ if st.checkbox('Show raw data'):
 # Some number in the range 0-23
 
 hour_to_filter1 = st.slider('Select a range of values', 0, 23, (2, 17))
-st.write('Values:', hour_to_filter1)
+st.write('Values:', hour_to_filter1[0])
 
 
 # hour_to_filter1 = st.slider('hour 시간바꿔줌', 0, 23, 15)
@@ -55,7 +55,7 @@ filtered_data1 = data[data[DATE_COLUMN].dt.hour == hour_to_filter1]
 
 st.subheader('이름을 바꿔줌111 맨위에 히스토그램 %s 시에' % hour_to_filter1)
 # 제목
-hist_values = np.histogram(data[DATE_COLUMN].dt.hour == hour_to_filter1,bins=24, range=(0,24))[0]
+hist_values = np.histogram(data[DATE_COLUMN].dt.hour == hour_to_filter1)[0]
 # hist_values = np.histogram(data[DATE_COLUMN].dt.hour , bins=24, range=(0,24))[0]
 st.bar_chart(hist_values)
 # 히스토 그램 넣는 방법
