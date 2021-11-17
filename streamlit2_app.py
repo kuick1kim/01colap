@@ -53,7 +53,7 @@ filtered_data1 = data[data[DATE_COLUMN].dt.hour == hour_to_filter1]
 
 
 
-st.subheader('이름을 바꿔줌111 맨위에 히스토그램 %s 시부터 %s 에' %  hour_to_filter1[0],  hour_to_filter1[1])
+st.subheader('이름을 바꿔줌111 맨위에 히스토그램 {a} 시부터 {b} 에'.format(a=hour_to_filter1[0], b=hour_to_filter1[1])
 # 제목
 aaa= hour_to_filter1[1]-hour_to_filter1[0]
 hist_values = np.histogram(data[DATE_COLUMN].dt.hour ,bins=aaa, range=(hour_to_filter1[0],hour_to_filter1[1]))[0]
