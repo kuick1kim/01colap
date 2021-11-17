@@ -35,14 +35,15 @@ data_load_state = st.text('Loading data...로딩중이니까 기대리라')
 data = load_data(10000)
 # 로드데이터에 몇개의 데이터를 넣을래
 
-data_load_state.text("Done 다했다! (using st.cache)")
+data_load_state.text("Done 다했슈! ")
 
 
 
-if st.checkbox('Show raw data'):
+if st.checkbox('Show raw data 이거를 눌러라'):
     # 체크박스를 넣어줌
-    st.subheader('Raw data')
-    st.write(data)
+    st.subheader('짜잔..... 실제데이터Raw data') #글씨 쓰는데
+    st.write(data) #실제데이터
+
 
 
 
