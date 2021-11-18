@@ -59,7 +59,8 @@ st.write('''
 # https://finance.yahoo.com/quote/005930.KS?p=005930.KS
 dr = pdr.get_data_yahoo('005930.KS',start_date,end_date)
 # dr=pd.DataFrame(dr)
-st.line_chart(dr.Open)
+y= [dr.Open,dr.Close]
+st.line_chart(y)
 st.line_chart(dr.Volume)
 
 
