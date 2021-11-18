@@ -17,7 +17,7 @@ st.write('# 비트코인 데이터 Web app')
 # 메뉴바
 st.sidebar.header('Menu')
 
-name = st.sidebar.selectbox('Name', ['BTC', 'ETH', 'USDT','005930.KS'])
+name = st.sidebar.selectbox('Name', ['BTC', 'ETH', 'USDT'])
 
 sevendayago = datetime.today() - timedelta(90)
 
