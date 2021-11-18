@@ -68,7 +68,7 @@ dr = dr.reset_index()
 
 
 fig_close1 = px.line(dr, x='Date', y=['Open', 'High', 'Low', 'Close'], title='가격')
-# # fig_volume1 = px.line(dr, x='Date', y=['Volume'], title='Volume')
+fig_volume1 = px.line(dr, x='Date', y=['Volume'], title='거래량')
 
 st.plotly_chart(fig_close1)
-# st.plotly_chart(fig_volume1)
+st.plotly_chart(fig_volume1)
