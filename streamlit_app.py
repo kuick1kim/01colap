@@ -52,10 +52,10 @@ st.plotly_chart(fig_volume)
 name2 = st.sidebar.selectbox('Name', ['005930.KS 삼성전자', '005380.KS 현대차', '066570.KS LG전자'])
 
 
-st.write('''
-#  주식 데이터 
-009530: 삼성전자/ 005380: 현대차 / 066570:엘지전자!
-''' )
+# st.write('''
+# #  주식 데이터 
+# 009530: 삼성전자/ 005380: 현대차 / 066570:엘지전자!
+# ''' )
 st.write(' # {}'.format(name[10:]) )
 
 # https://finance.yahoo.com/quote/005930.KS?p=005930.KS
