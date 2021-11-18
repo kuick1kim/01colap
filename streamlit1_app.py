@@ -1,3 +1,8 @@
+
+$ pip install scikit-learn
+$ pip install matplotlib
+
+
 import streamlit as st 
 import numpy as np 
 
