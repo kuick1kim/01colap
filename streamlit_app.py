@@ -4,13 +4,22 @@ import pandas_datareader as pdr
 import plotly.express as px
 from datetime import datetime, timedelta
 
-st.write('# 비트코인 데이터 Web app')
 
+
+
+
+st.write('# 비트코인 데이터 Web app')
+#이름쓰기
+
+
+
+
+# 메뉴바
 st.sidebar.header('Menu')
 
 name = st.sidebar.selectbox('Name', ['BTC', 'ETH', 'USDT'])
 
-sevendayago = datetime.today() - timedelta(7)
+sevendayago = datetime.today() - timedelta(21)
 
 start_date = st.sidebar.date_input('Start date', sevendayago)
 end_date = st.sidebar.date_input('End date', datetime.today())
