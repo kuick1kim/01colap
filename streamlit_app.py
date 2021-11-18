@@ -1,42 +1,13 @@
-import cv2
-from tensorflow.keras.models import load_model
 import streamlit as st
-from streamlit_drawable_canvas import st_canvas
-import numpy as np
+import pandas_datareader as pdr
 
-@st.cache(allow_output_mutation=True)
-def load():
-    return load_model('model.h5')
-model = load()
+st.write('''
+# 삼성전자 주식 데이터
+마감 가격과 거래량을 차트로 보여줍니다!
+''')
 
-st.write('# MNIST Recognizer')
+# https://finance.yahoo.com/quote/005930.KS?p=005930.KS
+df = pdr.get_data_yahoo('005930.KS', '2020-01-01', '2020-09-30')
 
-CANVAS_SIZE = 192
-
-col1, col2 = st.beta_columns(2)
-
-with col1:
-    canvas = st_canvas(
-        fill_color='#000000',
-        stroke_width=20,
-        stroke_color='#FFFFFF',
-        background_color='#000000',
-        width=CANVAS_SIZE,
-        height=CANVAS_SIZE,
-        drawing_mode='freedraw',
-        key='canvas'
-    )
-
-if canvas.image_data is not None:
-    img = canvas.image_data.astype(np.uint8)
-    img = cv2.resize(img, dsize=(28, 28))
-    preview_img = cv2.resize(img, dsize=(CANVAS_SIZE, CANVAS_SIZE), interpolation=cv2.INTER_NEAREST)
-
-    col2.image(preview_img)
-
-    x = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    x = x.reshape((-1, 28, 28, 1))
-    y = model.predict(x).squeeze()
-
-    st.write('## Result: %d' % np.argmax(y))
-    st.bar_chart(y)
+st.line_chart(df.Close)
+st.line_chart(df.Volume)
