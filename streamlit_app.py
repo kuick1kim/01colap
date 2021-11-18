@@ -56,7 +56,7 @@ name2 = st.sidebar.selectbox('Name', ['005930.KS 삼성전자', '005380.KS 현�
 # #  주식 데이터 
 # 009530: 삼성전자/ 005380: 현대차 / 066570:엘지전자!
 # ''' )
-st.write(' # {}'.format(name[10:]) )
+st.write(' # {}'.format(name2[10:]) )
 
 # https://finance.yahoo.com/quote/005930.KS?p=005930.KS
 dr = pdr.get_data_yahoo(name2[:9],start_date,end_date)
