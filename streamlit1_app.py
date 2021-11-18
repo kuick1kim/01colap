@@ -164,8 +164,8 @@ plt.scatter(x1, x2,
         c=y, alpha=0.5,
         cmap='viridis')
 
-plt.xlabel('Principal Component(중요요소) 1')
-plt.ylabel('Principal Component(중요요소) 2')
+plt.xlabel('Principal Component 1')
+plt.ylabel('Principal Component 2')
 plt.colorbar()
 
 #plt.show()
