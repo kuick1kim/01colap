@@ -141,8 +141,18 @@ acc = accuracy_score(y_test, y_pred)
 st.write(f'## Classifier(모델명) = {classifier_name}')#여기다가 
 st.write(f'## Accuracy(정확도) =', acc)
 
+
+
+
+# 여기까지 끝나버림 
+# 이후부터는 그래프를 보는것
+
+
+
 #### PLOT DATASET ####
 # Project the data onto the 2 primary principal components
+
+
 pca = PCA(2)
 X_projected = pca.fit_transform(X)
 
@@ -151,11 +161,11 @@ x2 = X_projected[:, 1]
 
 fig = plt.figure()
 plt.scatter(x1, x2,
-        c=y, alpha=0.8,
+        c=y, alpha=0.5,
         cmap='viridis')
 
-plt.xlabel('Principal Component 1')
-plt.ylabel('Principal Component 2')
+plt.xlabel('Principal Component(중요요소) 1')
+plt.ylabel('Principal Component(중요요소) 2')
 plt.colorbar()
 
 #plt.show()
