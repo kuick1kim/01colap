@@ -49,7 +49,7 @@ st.plotly_chart(fig_volume)
 
 
 
-name2 = st.sidebar.selectbox('Name', ['005930.KS', '005930.KS', '067310.KS'])
+name2 = st.sidebar.selectbox('Name', ['005930.KS', '005380.KS', '066570.KS'])
 
 
 st.write('''
