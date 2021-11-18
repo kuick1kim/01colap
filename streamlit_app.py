@@ -35,8 +35,7 @@ end_date = st.sidebar.date_input('End date', datetime.today())
 st.write(' # {} 주식가격'.format(name2[10:]) )
 
 st.write('''
-#  주식 데이터 
-009530: 삼성전자/ 005380: 현대차 / 066570:엘지전자!
+시작가/군청, 고가/빨강 , 최저가/녹색, 종가/보라
 ''' )
 
 # https://finance.yahoo.com/quote/005930.KS?p=005930.KS
