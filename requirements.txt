@@ -10,3 +10,4 @@ scikit-learn>=0.18
 BeautifulSoup4
 wordcloud
 konlpy
+Okt
