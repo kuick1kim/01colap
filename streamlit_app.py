@@ -1,5 +1,5 @@
 import streamlit as st
-from cryptocmd import CmcScraper
+# from cryptocmd import CmcScraper
 import pandas_datareader as pdr
 import plotly.express as px
 from datetime import datetime, timedelta
@@ -34,6 +34,7 @@ end_date = st.sidebar.date_input('End date', datetime.today())
 
 # https://coinmarketcap.com
 scraper = CmcScraper(name, start_date.strftime('%d-%m-%Y'), end_date.strftime('%d-%m-%Y'))
+# 스크래퍼는 이것이다. 
 
 df = scraper.get_dataframe()
 
@@ -42,6 +43,11 @@ fig_volume = px.line(df, x='Date', y=['Volume'], title='Volume')
 
 st.plotly_chart(fig_close)
 st.plotly_chart(fig_volume)
+
+
+
+
+
 
 
 
