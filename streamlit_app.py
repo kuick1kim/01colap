@@ -1,5 +1,5 @@
 import streamlit as st
-# from cryptocmd import CmcScraper
+from cryptocmd import CmcScraper
 import pandas_datareader as pdr
 import plotly.express as px
 from datetime import datetime, timedelta
