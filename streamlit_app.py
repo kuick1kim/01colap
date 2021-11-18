@@ -49,6 +49,7 @@ st.plotly_chart(fig_volume)
 
 
 
+name2 = st.sidebar.selectbox('Name', ['005930.KS', '005930.KS', '067310.KS'])
 
 
 st.write('''
@@ -57,7 +58,7 @@ st.write('''
 ''')
 
 # https://finance.yahoo.com/quote/005930.KS?p=005930.KS
-dr = pdr.get_data_yahoo('005930.KS',start_date,end_date)
+dr = pdr.get_data_yahoo(name2,start_date,end_date)
 dr = dr.reset_index()
 # dr=pd.DataFrame(dr)
 # y= [dr.Open,dr.Close]
