@@ -3,7 +3,7 @@ from cryptocmd import CmcScraper
 import pandas_datareader as pdr
 import plotly.express as px
 from datetime import datetime, timedelta
-
+import pandas as pd
 
 
 
@@ -58,6 +58,6 @@ st.write('''
 
 # https://finance.yahoo.com/quote/005930.KS?p=005930.KS
 dr = pdr.get_data_yahoo('005930.KS',start_date,end_date)
-
+dr=pd.DataFrame(dr)
 # st.line_chart(dr.Close)
 # st.line_chart(dr.Volume)
