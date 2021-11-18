@@ -19,7 +19,7 @@ st.sidebar.header('Menu')
 
 name = st.sidebar.selectbox('Name', ['BTC', 'ETH', 'USDT'])
 
-sevendayago = datetime.today() - timedelta(21)
+sevendayago = datetime.today() - timedelta(90)
 
 start_date = st.sidebar.date_input('Start date', sevendayago)
 end_date = st.sidebar.date_input('End date', datetime.today())
