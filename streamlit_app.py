@@ -64,7 +64,7 @@ dr = pdr.get_data_yahoo('005930.KS',start_date,end_date)
 
 
 
-fig_close1 = px.line(dr, x='Date', y=['Open', 'High', 'Low', 'Close'], title='가격')
+fig_close1 = px.line(dr, x=index, y=['Open', 'High', 'Low', 'Close'], title='가격')
 # fig_volume1 = px.line(dr, x='Date', y=['Volume'], title='Volume')
 
 st.plotly_chart(fig_close1)
