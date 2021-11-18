@@ -21,8 +21,16 @@ name = st.sidebar.selectbox('Name', ['BTC', 'ETH', 'USDT'])
 
 sevendayago = datetime.today() - timedelta(90)
 
+
 start_date = st.sidebar.date_input('Start date', sevendayago)
 end_date = st.sidebar.date_input('End date', datetime.today())
+
+
+# 여기까지가 옆에 있는 바이다. //////////////////////
+
+
+
+name = st.sidebar.selectbox('Name', ['BTC', 'ETH', 'USDT','005930.KS'])
 
 # https://coinmarketcap.com
 scraper = CmcScraper(name, start_date.strftime('%d-%m-%Y'), end_date.strftime('%d-%m-%Y'))
