@@ -12,7 +12,7 @@ import pandas as pd
 
 
 # 메뉴바
-st.sidebar.header('Menu')
+# st.sidebar.header('한국 주가 알아보기Menu')
 
 
 
@@ -33,6 +33,11 @@ end_date = st.sidebar.date_input('End date', datetime.today())
 # 009530: 삼성전자/ 005380: 현대차 / 066570:엘지전자!
 # ''' )
 st.write(' # {} 주식가격'.format(name2[10:]) )
+
+st.write('''
+#  주식 데이터 
+009530: 삼성전자/ 005380: 현대차 / 066570:엘지전자!
+''' )
 
 # https://finance.yahoo.com/quote/005930.KS?p=005930.KS
 dr = pdr.get_data_yahoo(name2[:9],start_date,end_date)
