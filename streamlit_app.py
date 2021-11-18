@@ -17,7 +17,7 @@ st.write('# 비트코인 데이터 Web app')
 # 메뉴바
 st.sidebar.header('Menu')
 
-name = st.sidebar.selectbox('Name', ['BTC', 'ETH', 'USDT'])
+name = st.sidebar.selectbox('Name', ['BTC', 'ETH', 'USDT','005930.KS'])
 
 sevendayago = datetime.today() - timedelta(90)
 
@@ -30,7 +30,7 @@ end_date = st.sidebar.date_input('End date', datetime.today())
 
 
 
-name = st.sidebar.selectbox('Name', ['BTC', 'ETH', 'USDT','005930.KS'])
+# name = st.sidebar.selectbox('Name', ['BTC', 'ETH', 'USDT','005930.KS'])
 
 # https://coinmarketcap.com
 scraper = CmcScraper(name, start_date.strftime('%d-%m-%Y'), end_date.strftime('%d-%m-%Y'))
