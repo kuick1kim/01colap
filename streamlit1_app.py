@@ -138,8 +138,8 @@ y_pred = clf.predict(X_test)
 
 acc = accuracy_score(y_test, y_pred)
 
-st.write(f'# Classifier = {classifier_name}')#여기다가 
-st.write(f'# Accuracy =', acc)
+st.write(f'## Classifier(모델명) = {classifier_name}')#여기다가 
+st.write(f'## Accuracy(정확도) =', acc)
 
 #### PLOT DATASET ####
 # Project the data onto the 2 primary principal components
