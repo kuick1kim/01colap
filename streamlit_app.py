@@ -44,7 +44,7 @@ fig_volume = px.line(df, x='Date', y=['Volume'], title='Volume')
 st.plotly_chart(fig_close)
 st.plotly_chart(fig_volume)
 
-
+#############################################여기까지는 잘된다##############
 
 
 
@@ -59,5 +59,5 @@ st.write('''
 # https://finance.yahoo.com/quote/005930.KS?p=005930.KS
 dr = pdr.get_data_yahoo('005930.KS',start_date,end_date)
 
-st.line_chart(dr.Close)
-st.line_chart(dr.Volume)
+# st.line_chart(dr.Close)
+# st.line_chart(dr.Volume)
