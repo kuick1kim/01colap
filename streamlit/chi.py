@@ -34,7 +34,7 @@ matplotlib.rc('font', family=font_name)
 
 pd.set_option('display.max_row', 500)
 pd.set_option('display.max_columns', 100)
-st.set_option('deprecation.showPyplotGlobalUse', False)
+
 
 st.title('Dash Board')
 
