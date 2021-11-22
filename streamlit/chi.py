@@ -47,7 +47,11 @@ st.markdown("""
 st.sidebar.header('외식산업 경기전망지수')
 
 
-df = pd.read_excel('./ex.xlsx')
+df = pd.read_excel('ex.xlsx')
+
+
+
+
 df=df.set_index('외식업종별')
 df=df.transpose()
 
