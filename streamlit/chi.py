@@ -6,7 +6,7 @@ import io
 import matplotlib.pyplot as plt
 # import seaborn as sns
 import numpy as np
-import yfinance as yf
+
 import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
 import matplotlib.style
