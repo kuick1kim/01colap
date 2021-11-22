@@ -46,8 +46,18 @@ st.markdown("""
 
 st.sidebar.header('외식산업 경기전망지수')
 
+@st.cache
+def get_data_from_excel():
+    df = pd.read_excel(
+        io="ex.xlsx",
+        engine="openpyxl"        
+    )
+    # Add 'hour' column to dataframe    
+    return df
 
-df = pd.read_excel('./ex.xlsx')
+df = get_data_from_excel()
+
+# df = pd.read_excel('./ex.xlsx')
 
 
 
