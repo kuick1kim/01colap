@@ -122,7 +122,7 @@ st.write(str(selected_sector))
 dfs1=dfs[:]
 
 
-chart_data = pd.DataFrame(dfs1.Date, dfs1.loc[:,i] columns=selected_sector)
+chart_data = pd.DataFrame(dfs1.Date,  columns=selected_sector)
 st.line_chart(chart_data)
 
 
