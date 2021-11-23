@@ -149,7 +149,7 @@ st.write(chart_data)
 st.write(dfs1)
 
 
-chart_data = pd.DataFrame(dfs1)
+chart_data = pd.DataFrame(dfs1,columns=selected_sector)
 st.line_chart(chart_data)
 
 
