@@ -138,33 +138,23 @@ st.write(str(selected_sector))
 
 
 dfs1=dfs[:]
-##################################
-chart_data = pd.DataFrame(
-   np.random.randn(20, 3),
-    columns=['a', 'b', 'c'])
-
-st.line_chart(chart_data)
-##################################
-st.write(chart_data)
-st.write(dfs1)
-
-
+#################새로운 그래프##########################
 chart_data = pd.DataFrame(dfs1,columns=selected_sector)
 st.line_chart(chart_data)
 
-
-def plot(selected_sector):
+################### 과거에 사용한것 ##########################
+# def plot(selected_sector):
     
-    dfs1['Date'] = dfs1.index
+#     dfs1['Date'] = dfs1.index
     
-    for i in selected_sector:      
+#     for i in selected_sector:      
         
-        plt.plot(dfs1.Date, dfs1.loc[:,i], label=i,alpha=0.8)   
-        plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))       
-    plt.xticks(rotation=50)
+#         plt.plot(dfs1.Date, dfs1.loc[:,i], label=i,alpha=0.8)   
+#         plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))       
+#     plt.xticks(rotation=50)
     
-    return st.pyplot()
-
+#     return st.pyplot()
+#############################################################
 
 
 plot(selected_sector)
