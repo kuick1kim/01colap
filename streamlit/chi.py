@@ -112,7 +112,7 @@ st.sidebar.header('외식산업 경기전망지수')
 
 #############################################################
 
-df=df.set_index('외식업종별')
+df=df.set_index('col')
 df=df.transpose()
 
 
