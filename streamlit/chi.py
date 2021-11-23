@@ -5,7 +5,7 @@ import pandas as pd
 
 import pandas as pd
 import streamlit as st
-dataUploaded = st.file_uploader("ex.xlsx")
+dataUploaded = st.file_uploader("https://github.com/kuick1kim/01colap/blob/main/streamlit/ex.xlsx?raw=true")
 # 만약
 # upload_file이 None이 아니라면: #read csv
 
