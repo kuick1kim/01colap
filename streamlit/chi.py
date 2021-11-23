@@ -45,7 +45,7 @@ plt.rcParams['axes.unicode_minus'] = False
 #plt.gcf().canvas.renderer.dpi = 300.
 # Font loading 
 fm.get_fontconfig_fonts()
-font_location = 'https://github.com/kuick1kim/01colap/blob/main/streamlit/NanumBarunGothic.ttf?raw=true' 
+font_location = "C:/Windows/Fonts/NGULIM.TTF"
 font_name = fm.FontProperties(fname=font_location).get_name()
 matplotlib.rc('font', family=font_name)
 
@@ -130,7 +130,7 @@ def plot(selected_sector):
     dfs1['Date'] = dfs1.index
     # plt.legend(selected_sector,loc='center left', bbox_to_anchor=(1, 0.5))
     for i in selected_sector:      
-#         font_location = 'https://github.com/kuick1kim/01colap/blob/main/streamlit/NanumBarunGothic.ttf' 
+        font_location = "C:/Windows/Fonts/NGULIM.TTF"
         font_name = fm.FontProperties(fname=font_location).get_name()
         matplotlib.rc('font', family=font_name)
         plt.plot(dfs1.Date, dfs1.loc[:,i], label=i,alpha=0.8)   
