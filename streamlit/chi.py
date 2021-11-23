@@ -5,11 +5,17 @@ import pandas as pd
 
 import pandas as pd
 import streamlit as st
-upload_file = st.file_uploader("ex.xlsx")
+dataUploaded = st.file_uploader("ex.xlsx")
 # 만약
 # upload_file이 None이 아니라면: #read csv
-df1=pd.read_csv(uploaded_file)
-df1
+
+try:
+    df = pd.read_excel(dataUploaded)
+except:      
+    df=pd.read_csv(dataUploaded)
+
+
+df
 
 
 
