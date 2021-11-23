@@ -129,7 +129,8 @@ def plot(selected_sector):
     
     dfs1['Date'] = dfs1.index
     # plt.legend(selected_sector,loc='center left', bbox_to_anchor=(1, 0.5))
-    for i in selected_sector:        
+    for i in selected_sector:      
+        matplotlib.rc('font', family=font_name)
         plt.plot(dfs1.Date, dfs1.loc[:,i], label=i,alpha=0.8)   
         plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))       
     plt.xticks(rotation=50)
