@@ -65,6 +65,24 @@ st.markdown("""
 [통계청 외식산업 경기전망지수 바로가기](https://kosis.kr/statHtml/statHtml.do?orgId=114&tblId=DT_KRBI_2016_1&conn_path=I2).
 """)
 
+st.markdown("""
+col	외식업종별 ,0.all	전체소계 ,1.han_all	한식소계 ,1.1han_il	한식 일반 음식점업 ,
+1.2han_noo	한식 면요리 전문점 ,1.3han_meat	한식 육류요리 전문점 ,
+1.4han_sea	한식 해산물요리 전문점 ,2.for	외국 전체 소계 ,2.1chn	중식 음식점업 ,
+2.2jpn	일식 음식점업 ,2.3fff	서양식 음식점업 ,2.4odr	기타 외국식 음식점업 ,
+3.gu	구내식당업 소계 ,4.chul	출장음식 소계 ,5.gan_all	간이음식점 소계 ,
+5.1brd	제과점업 ,5.2pzz	피자 햄버거 샌드위치 및 유사 음식점업 ,5.3chi	치킨 전문점 
+5.4kimb	김밥 및 기타 간이 음식점업 ,5.5dlv	간이 음식 포장 판매 전문점 ,6.alc_all	주점 소계 ,
+6.1alc_il	일반 유흥 주점업 ,6.2alc_dn	무도 유흥 주점업 ,6.3alc_bee	생맥주 전문점 ,
+6.4alc_ord	기타 주점업 ,7.noal_all	비알콜 음료소계 ,7.1coffee	커피 전문점 ,
+7.2noncof	기타 비알콜 음료점업 
+""")
+
+
+
+
+
+
 st.sidebar.header('외식산업 경기전망지수')
 
 
