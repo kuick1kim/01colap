@@ -122,17 +122,16 @@ st.write(str(selected_sector))
 dfs1=dfs[:]
 
 
-
+chart_data = pd.DataFrame(dfs1.Date, dfs1.loc[:,i] columns=selected_sector)
+st.line_chart(chart_data)
 
 
 def plot(selected_sector):
     
     dfs1['Date'] = dfs1.index
-    # plt.legend(selected_sector,loc='center left', bbox_to_anchor=(1, 0.5))
+    
     for i in selected_sector:      
-        font_location = "C:/Windows/Fonts/NGULIM.TTF"
-        font_name = fm.FontProperties(fname=font_location).get_name()
-        matplotlib.rc('font', family=font_name)
+        
         plt.plot(dfs1.Date, dfs1.loc[:,i], label=i,alpha=0.8)   
         plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))       
     plt.xticks(rotation=50)
