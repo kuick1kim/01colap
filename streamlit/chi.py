@@ -154,10 +154,9 @@ st.line_chart(chart_data)
 #     plt.xticks(rotation=50)
     
 #     return st.pyplot()
+
+#plot(selected_sector)
 #############################################################
-
-
-plot(selected_sector)
 
 
 
