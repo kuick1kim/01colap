@@ -1,60 +1,78 @@
 import streamlit as st
 import pandas as pd
-import base64
 
-import io
-import matplotlib.pyplot as plt
-# import seaborn as sns
-import numpy as np
-import openpyxl
-import matplotlib.pyplot as plt
-import matplotlib.font_manager as fm
-import matplotlib.style
-import matplotlib as mpl
-
-
-# Assign plotting style 
-# mpl.style.use('seaborn-pastel')
-plt.rcParams['axes.unicode_minus'] = False
-# plt.rcParams['font.size'] = 10.
-# plt.rcParams['xtick.labelsize'] = 9.
-# plt.rcParams['ytick.labelsize'] = 9.
-# plt.rcParams['axes.labelsize'] = 12.
-# mpl.rcParams['figure.dpi'] = 300.
-#plt.gcf().canvas.renderer.dpi = 300.
-# Font loading 
-fm.get_fontconfig_fonts()
-font_location = './NanumBarunGothic.ttf' 
-font_name = fm.FontProperties(fname=font_location).get_name()
-matplotlib.rc('font', family=font_name)
-
-
-
-
-
-pd.set_option('display.max_row', 500)
-pd.set_option('display.max_columns', 100)
-
-
-st.title('Dash Board')
-
-st.markdown("""
-이 앱은 통계청 외식산업 경기전망지수 입니다. !!
-
-[통계청 외식산업 경기전망지수 바로가기](https://kosis.kr/statHtml/statHtml.do?orgId=114&tblId=DT_KRBI_2016_1&conn_path=I2).
-""")
-
-st.sidebar.header('외식산업 경기전망지수')
 
 
 import pandas as pd
 import streamlit as st
-upload_file = st.file_uploader("https://github.com/kuick1kim/01colap/blob/main/streamlit/ex.xlsx")
+upload_file = st.file_uploader("파일 선택")
+# 만약
+# upload_file이 None이 아니라면: #read csv
+df1=pd.read_csv(uploaded_file)
+df1
 
-# df1=pd.read_csv(uploaded_file)
-df = pd.read_excel(uploaded_file)
 
-df
+
+
+
+
+
+
+# import base64
+
+# import io
+# import matplotlib.pyplot as plt
+# # import seaborn as sns
+# import numpy as np
+# import openpyxl
+# import matplotlib.pyplot as plt
+# import matplotlib.font_manager as fm
+# import matplotlib.style
+# import matplotlib as mpl
+
+
+# # Assign plotting style 
+# # mpl.style.use('seaborn-pastel')
+# plt.rcParams['axes.unicode_minus'] = False
+# # plt.rcParams['font.size'] = 10.
+# # plt.rcParams['xtick.labelsize'] = 9.
+# # plt.rcParams['ytick.labelsize'] = 9.
+# # plt.rcParams['axes.labelsize'] = 12.
+# # mpl.rcParams['figure.dpi'] = 300.
+# #plt.gcf().canvas.renderer.dpi = 300.
+# # Font loading 
+# fm.get_fontconfig_fonts()
+# font_location = './NanumBarunGothic.ttf' 
+# font_name = fm.FontProperties(fname=font_location).get_name()
+# matplotlib.rc('font', family=font_name)
+
+
+
+
+
+# pd.set_option('display.max_row', 500)
+# pd.set_option('display.max_columns', 100)
+
+
+# st.title('Dash Board')
+
+# st.markdown("""
+# 이 앱은 통계청 외식산업 경기전망지수 입니다. !!
+
+# [통계청 외식산업 경기전망지수 바로가기](https://kosis.kr/statHtml/statHtml.do?orgId=114&tblId=DT_KRBI_2016_1&conn_path=I2).
+# """)
+
+# st.sidebar.header('외식산업 경기전망지수')
+
+
+# import pandas as pd
+# import streamlit as st
+# upload_file = st.file_uploader("https://github.com/kuick1kim/01colap/blob/main/streamlit/ex.xlsx")
+
+# # df1=pd.read_csv(uploaded_file)
+# df = pd.read_excel(uploaded_file)
+
+# df
 
 
 # @st.cache
