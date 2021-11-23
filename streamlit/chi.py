@@ -45,9 +45,9 @@ plt.rcParams['axes.unicode_minus'] = False
 #plt.gcf().canvas.renderer.dpi = 300.
 # Font loading 
 fm.get_fontconfig_fonts()
-font_location = "NGULIM.TTF"
-font_name = fm.FontProperties(fname=font_location).get_name()
-matplotlib.rc('font', family=font_name)
+# font_location = "NGULIM.TTF"
+# font_name = fm.FontProperties(fname=font_location).get_name()
+# matplotlib.rc('font', family=font_name)
 
 
 
