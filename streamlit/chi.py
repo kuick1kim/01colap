@@ -6,7 +6,7 @@ import pandas as pd
 import pandas as pd
 import streamlit as st
 ##########################성공#################################
-spectra = st.file_uploader("upload file", type={"csv", "txt", "xlsx"})
+spectra = st.file_uploader("ex.csv", type={"csv", "txt", "xlsx"})
 if spectra is not None:
     df = pd.read_csv(spectra)
 st.write(df)
