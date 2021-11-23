@@ -49,7 +49,7 @@ st.sidebar.header('외식산업 경기전망지수')
 
 import pandas as pd
 import streamlit as st
-upload_file = st.file_uploader("./ex.xlsx")
+upload_file = st.file_uploader("https://github.com/kuick1kim/01colap/blob/main/streamlit/ex.xlsx")
 
 # df1=pd.read_csv(uploaded_file)
 df = pd.read_excel(uploaded_file)
