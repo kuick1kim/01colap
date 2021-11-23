@@ -120,9 +120,15 @@ st.write(str(selected_sector))
 
 
 dfs1=dfs[:]
+##################################
+chart_data = pd.DataFrame(
+   np.random.randn(20, 3),
+    columns=['a', 'b', 'c'])
 
+st.line_chart(chart_data)
+##################################
 
-chart_data = pd.DataFrame(dfs)
+chart_data = pd.DataFrame(dfs1)
 st.line_chart(chart_data)
 
 
