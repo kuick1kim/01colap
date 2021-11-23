@@ -157,7 +157,7 @@ if st.checkbox('여기를 누르면 데이터를 볼 수 있습니다. '):
     linko= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="2021외식업.xlsx">위에 보이는 데이터를 엑셀로 다운로드받기</a>'
     st.markdown(linko, unsafe_allow_html=True)
     
-    csv = df.to_csv(index=False, encoding='utf-8', index=True, header=True)
+    csv = dfs2.to_csv(encoding='utf-8', index=True, header=True)
     b64 = base64.b64encode(csv.encode()).decode()
     st.markdown('### **⬇️ Download output CSV File **')
     href = f'<a href="data:file/csv;base64,{b64}" download="myfilename.csv">csv 파일 다운로드</a>'    
