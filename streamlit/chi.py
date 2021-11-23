@@ -127,6 +127,9 @@ chart_data = pd.DataFrame(
 
 st.line_chart(chart_data)
 ##################################
+st.write(chart_data)
+st.write(dfs1)
+
 
 chart_data = pd.DataFrame(dfs1)
 st.line_chart(chart_data)
