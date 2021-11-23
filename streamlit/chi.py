@@ -5,17 +5,20 @@ import pandas as pd
 
 import pandas as pd
 import streamlit as st
-dataUploaded = st.file_uploader("https://github.com/kuick1kim/01colap/blob/main/streamlit/ex.xlsx?raw=true")
-# 만약
-# upload_file이 None이 아니라면: #read csv
 
-try:
-    df = pd.read_excel(dataUploaded)
-except:      
-    df=pd.read_csv(dataUploaded)
+spectra = st.file_uploader("upload file", type={"csv", "txt"})
+if spectra is not None:
+    spectra_df = pd.read_csv(spectra)
+st.write(spectra_df)
 
 
-df
+# try:
+#     df = pd.read_excel(dataUploaded)
+# except:      
+#     df=pd.read_csv(dataUploaded)
+
+
+# df
 
 
 
