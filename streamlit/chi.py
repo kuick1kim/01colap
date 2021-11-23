@@ -6,10 +6,22 @@ import pandas as pd
 import pandas as pd
 import streamlit as st
 
-spectra = st.file_uploader("upload file", type={"csv", "txt"})
-if spectra is not None:
-    spectra_df = pd.read_csv(spectra)
-st.write(spectra_df)
+# spectra = st.file_uploader("upload file", type={"csv", "txt"})
+# if spectra is not None:
+#     spectra_df = pd.read_csv(spectra)
+# st.write(spectra_df)
+
+
+
+DATA_URL = ('ex.xlsx')
+@st.cache
+def load_data():
+    data = pd.read_excel(DATA_URL)    
+    return data
+df = load_data()
+
+# show data on streamlit
+ st.write(df)
 
 
 # try:
