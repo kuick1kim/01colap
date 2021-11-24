@@ -1,6 +1,9 @@
 
 import pandas as pd
 import streamlit as st
+pd.set_option('display.max_columns', None) 
+pd.set_option('display.max_rows', None)
+
 
 
 DATA_URL = ('https://raw.githubusercontent.com/kuick1kim/01colap/main/bible.csv')
