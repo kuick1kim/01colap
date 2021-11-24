@@ -24,6 +24,6 @@ st.write(df5)
 
 for kk , ll ,pp,oo in zip(df5['말씀'], df5['성경'], df5['장'], df5['절']):
     aa= str(ll) +" "+str(pp)+'-'+str(oo)
-    st.caption(aa)
+#     st.caption(aa)
     st.caption(kk)
     
