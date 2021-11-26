@@ -121,12 +121,12 @@ if st.checkbox('맨뒤에 데이터까지 보시려면 여기를 눌러주세요
     dft
   
 df1= df.sort_values(by='사진주소',ascending=1)
-df1=df1['사진주소'][:10]
+df1=df1['사진주소','댓글'][:10]
 
 st.title("고객이 올려준 이미지 확인하기")
 count =1
-for i in df1:
-    original_title = '<p style="color:#FF4000; font-size: 14px;">손님이 올려준 {c}번째 사진</p>'.format(c=count)        
+for i,j in df1:
+    original_title = '<p style="color:#FF4000; font-size: 14px;">손님이 올려준 {c}번째 사진{j}</p>'.format(c=count,j=j)        
     st.markdown(original_title, unsafe_allow_html=True)
     count +=1
     st.image(i, width=600)
@@ -136,34 +136,4 @@ for i in df1:
 
 
 
-
-
-
-# values = st.sidebar.slider(
-#    'Select a range of values',
-#    0, 5, (0, 5))
-# st.write('Values:', values[0])
-
-
-
-# # st.sidebar.header('당신이 입력한 Parameters')
-
-# # def user_input_features():
-#     mat = st.sidebar.slider(    'Select a range of values',    0, 5, (0, 5))
-# #     yang = st.sidebar.slider(    'Select a range of values',    0, 5, (0, 5))
-
-#     data = {'맛': mat}#, '양': yang}
-
-# #     features = df[df['맛']    ]pd.DataFrame(data, index=[0])
-# #     # 데이터는 이것이다. 
-
-
-# #     return features
-
-
-
-# # df = user_input_features()
-
-# # st.caption('당신이 입력한 parameters')
-# # st.write(df)
 
