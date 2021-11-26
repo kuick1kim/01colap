@@ -121,15 +121,15 @@ if st.checkbox('맨뒤에 데이터까지 보시려면 여기를 눌러주세요
     dft
   
 df1= df.sort_values(by='사진주소',ascending=1)
-df1=df1[['사진주소','댓글']][:10]
-
+df1=df1['사진주소'][:10]
+df2=df1['댓글'][:10]
 st.title("고객이 올려준 이미지 확인하기")
 count =1
-for i in df1:
-    original_title = '<p style="color:#FF4000; font-size: 14px;">손님이 올려준 {c}번째 사진{j}</p>'.format(c=count,j=i[1])        
+for i,j in zip(df1,df2):
+    original_title = '<p style="color:#FF4000; font-size: 14px;">손님이 올려준 {c}번째 사진{j}</p>'.format(c=count,j=j)        
     st.markdown(original_title, unsafe_allow_html=True)
     count +=1
-    st.image(i[0], width=600)
+    st.image(i, width=600)
 
 #################################################################
 
