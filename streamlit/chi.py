@@ -187,14 +187,14 @@ st.markdown("""
 st.sidebar.header('임차현황입니다.')
 
 ##############잘됨####################
-DATA_URL = ('https://raw.githubusercontent.com/kuick1kim/01colap/main/streamlit/ex1.xlsx')
+DATA_URL = ('https://raw.githubusercontent.com/kuick1kim/01colap/main/streamlit/ex2.csv')
 
 @st.cache
 def load_data():
     try:
         data = pd.read_csv(DATA_URL)    
     except:
-        data = pd.read_excel(DATA_URL, sheet_name='a')
+        data = pd.read_excel(DATA_URL)
     return data
 df = load_data()
 
