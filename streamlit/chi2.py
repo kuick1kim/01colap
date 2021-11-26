@@ -121,7 +121,7 @@ if st.checkbox('맨뒤에 데이터까지 보시려면 여기를 눌러주세요
     dft
   
 df1= df.sort_values(by='사진주소',ascending=1)
-df1=df1['사진주소','댓글'][:10]
+df1=df1[['사진주소','댓글']][:10]
 
 st.title("고객이 올려준 이미지 확인하기")
 count =1
