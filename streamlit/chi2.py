@@ -5,12 +5,6 @@ import io
 import numpy as np
 
 
-
-
-
-
-
-
 # 여기는 단순하게 이름이다
 dataset_name = st.sidebar.selectbox(
     'Select Dataset',
@@ -44,8 +38,8 @@ df['주문내용']=df['주문내용'].fillna('주문내용없음')
 ##############잘됨####################
 if st.checkbox('여기를 누르면 로딩된 데이터를 볼 수 있습니다. '):
     # 체크박스를 넣어줌
-    df1=pd.DataFrame(df)
-    st.table(df1) #실제데이터
+    
+    df
 
 
 def get_pos(x):  
