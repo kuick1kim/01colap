@@ -39,12 +39,13 @@ def load_data(name):
     data = pd.read_csv(DATA_URL)    
     return data
 df = load_data(dataset_name)
+
 df['주문내용']=df['주문내용'].fillna('주문내용없음')
 ##############잘됨####################
 if st.checkbox('여기를 누르면 로딩된 데이터를 볼 수 있습니다. '):
     # 체크박스를 넣어줌
-    
-    st.table(df) #실제데이터
+    df1=pd.DataFrame(df)
+    st.table(df1) #실제데이터
 
 
 def get_pos(x):  
