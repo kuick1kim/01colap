@@ -14,15 +14,7 @@ import streamlit as st
 
 
 
-##############잘됨####################
-DATA_URL = ('https://raw.githubusercontent.com/kuick1kim/01colap/main/eeee.csv')
-@st.cache
-def load_data():
-    data = pd.read_csv(DATA_URL)    
-    return data
-df = load_data()
 
-##############잘됨####################
 
 
 
@@ -93,7 +85,8 @@ st.sidebar.header('외식산업 경기전망지수')
 
 
 ##############잘됨####################
-DATA_URL = ('https://raw.githubusercontent.com/kuick1kim/01colap/main/eeee.csv')
+DATA_URL = ('https://github.com/kuick1kim/01colap/blob/main/streamlit/eeee.csv')
+
 @st.cache
 def load_data():
     data = pd.read_csv(DATA_URL)    
