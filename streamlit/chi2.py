@@ -106,7 +106,7 @@ dft1= dft.iloc[0:30,:]
 
 
 
-st.title(f" {dataset_name} 에서 제일 많이 시킨 메뉴 보기")
+st.title(f" 위의 조건으로 {dataset_name} 에서 시킨 메뉴 보기")
 
 st.write(alt.Chart(dft1).mark_bar().encode(
 #     x=alt.X('frequency', sort=None),
