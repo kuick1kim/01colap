@@ -65,10 +65,16 @@ df_freq_T["c_menu"] = df_freq_T["menu"].str.replace("/1", "")
 
 dft=df_freq_T.sort_values(["frequency"], ascending=False)
 dft= dft[['c_menu','frequency']].reset_index(drop=True)
+dft1= dft.iloc[0:30,:]
 
 
-
-st.write(alt.Chart(dft).mark_bar().encode(
+st.write(alt.Chart(dft1).mark_bar().encode(
     x=alt.X('c_menu', sort=None),
     y='frequency',
 ))
+
+
+if st.checkbox('모든데이터를 보시려면 여기를 눌러주세요 '):
+    # 체크박스를 넣어줌
+    
+    dft
