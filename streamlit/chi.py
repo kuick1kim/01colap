@@ -14,9 +14,15 @@ st.write(df)
 
 
 
+##############잘됨####################
+DATA_URL = ('https://raw.githubusercontent.com/kuick1kim/01colap/main/eeee.csv')
+@st.cache
+def load_data():
+    data = pd.read_csv(DATA_URL)    
+    return data
+df = load_data()
 
-
-
+##############잘됨####################
 
 
 
@@ -86,28 +92,15 @@ col	외식업종별 ,0.all	전체소계 ,1.han_all	한식소계 ,1.1han_il	한�
 st.sidebar.header('외식산업 경기전망지수')
 
 
-# import pandas as pd
-# import streamlit as st
-# upload_file = st.file_uploader("https://github.com/kuick1kim/01colap/blob/main/streamlit/ex.xlsx")
+##############잘됨####################
+DATA_URL = ('https://raw.githubusercontent.com/kuick1kim/01colap/main/eeee.csv')
+@st.cache
+def load_data():
+    data = pd.read_csv(DATA_URL)    
+    return data
+df = load_data()
 
-# # df1=pd.read_csv(uploaded_file)
-# df = pd.read_excel(uploaded_file)
-
-# df
-
-
-# @st.cache
-# def get_data_from_excel():
-#     df = pd.read_excel(
-#         io="./ex.xlsx",
-#         engine="openpyxl"        
-#     )
-#     # Add 'hour' column to dataframe    
-#     return df
-
-# df = get_data_from_excel()
-
-# df = pd.read_excel('./ex.xlsx')
+##############잘됨####################
 
 
 #############################################################
