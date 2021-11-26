@@ -58,7 +58,7 @@ df2 = df1.loc[mask2, :]
 mask3 = (df2['배달'] >= bae[0]) & (df2['배달'] <= bae[1])
 df3 = df2.loc[mask3, :]
 
-df3
+df=df3
 
 
 
