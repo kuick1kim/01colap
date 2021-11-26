@@ -62,6 +62,6 @@ df_freq_T["c_menu"] = df_freq_T["menu"].str.replace("/1", "")
 
 dft=df_freq_T.sort_values(["frequency"], ascending=False)
 dft= dft[['c_menu','frequency']].reset_index(drop=True)
-dft
 
+st.area_chart(dft)
 
