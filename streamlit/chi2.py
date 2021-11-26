@@ -4,6 +4,7 @@ import base64
 import io
 import numpy as np
 import altair as alt
+from PIL import Image
 
 
 # 여기는 단순하게 이름이다
@@ -77,9 +78,14 @@ st.write(alt.Chart(dft1).mark_bar().encode(
 if st.checkbox('맨뒤에 데이터까지 보시려면 여기를 눌러주세요 '):
     # 체크박스를 넣어줌  
     dft
-    
-   
-from PIL import Image
-# image = Image.open('https://www.codingfactory.net/wp-content/uploads/abc.jpg')
+  
+df1= df.sort_values(by='사진주소',ascending=1)
+df1=df1['사진주소'][:10]
+df1
+for i in df1:
+    st.image(i)
 
-st.image('https://www.codingfactory.net/wp-content/uploads/abc.jpg')
+# from PIL import Image
+# # image = Image.open('https://www.codingfactory.net/wp-content/uploads/abc.jpg')
+
+# st.image('https://www.codingfactory.net/wp-content/uploads/abc.jpg')
