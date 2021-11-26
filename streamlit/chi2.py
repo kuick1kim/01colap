@@ -130,8 +130,11 @@ for i,j in zip(df1['사진주소'],df2['댓글']):
     original_title = '<p style="color:#FF4000; font-size: 14px;">손님이 올려준 {c}번째 사진{j}</p>'.format(c=count,j=j)        
     st.markdown(original_title, unsafe_allow_html=True)
     count +=1
-    st.image(i, width=600)
-
+    try:
+        st.image(i, width=600)
+    except:
+        pass
+        #st.image(i, width=600)
 #################################################################
 
 
