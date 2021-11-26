@@ -65,9 +65,6 @@ dft= dft[['c_menu','frequency']].reset_index(drop=True)
 
 
 
-state_total_graph = px.bar(dft, 
-        x='c_menu',
-        y='frequency',        
-        color='Status')
+state_total_graph = px.bar(dft, x='c_menu', y='frequency', color='Status')
 
 st.plotly_chart(state_total_graph)
