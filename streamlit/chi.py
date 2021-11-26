@@ -70,7 +70,7 @@ st.sidebar.header('외식산업 경기전망지수')
 
 
 ##############잘됨####################
-DATA_URL = ('https://raw.githubusercontent.com/kuick1kim/01colap/main/streamlit/e.csv')
+DATA_URL = ('https://raw.githubusercontent.com/kuick1kim/01colap/main/streamlit/ex.csv')
 
 @st.cache
 def load_data():
