@@ -5,6 +5,9 @@ import io
 import numpy as np
 
 
+import altair as alt
+
+
 # 여기는 단순하게 이름이다
 dataset_name = st.sidebar.selectbox(
     'Select Dataset',
