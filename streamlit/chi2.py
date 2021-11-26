@@ -106,7 +106,7 @@ for i in df1:
 
 values = st.sidebar.slider(
    'Select a range of values',
-   0.0, 100.0, (25.0, 75.0))
+   0, 5, (0, 5))
 st.write('Values:', values)
 
 
