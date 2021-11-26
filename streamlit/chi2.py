@@ -36,7 +36,43 @@ def load_data(name):
 
     data = pd.read_csv(DATA_URL)    
     return data
+
+
+
+
+
 df = load_data(dataset_name)
+
+
+
+
+
+
+
+# # st.sidebar.header('당신이 입력한 Parameters')
+
+# # def user_input_features():
+#     mat = st.sidebar.slider(    'Select a range of values',    0, 5, (0, 5))
+# #     yang = st.sidebar.slider(    'Select a range of values',    0, 5, (0, 5))
+
+#     data = {'맛': mat}#, '양': yang}
+
+# #     features = df[df['맛']    ]pd.DataFrame(data, index=[0])
+# #     # 데이터는 이것이다. 
+
+
+# #     return features
+
+
+
+# # df = user_input_features()
+
+
+
+
+
+
+
 
 df['주문내용']=df['주문내용'].fillna('주문내용없음')
 ##############잘됨####################
@@ -107,33 +143,28 @@ for i in df1:
 values = st.sidebar.slider(
    'Select a range of values',
    0, 5, (0, 5))
-st.write('Values:', values)
+st.write('Values:', values[0])
 
 
 
-# st.sidebar.header('당신이 입력한 Parameters')
+# # st.sidebar.header('당신이 입력한 Parameters')
 
-# def user_input_features():
-#     sepal_length = st.sidebar.slider('꽃받침길이', slmin, slmax, 5.4)
-#     sepal_width = st.sidebar.slider('꽃받침넓이', swmin, swmax, 3.4)
-#     petal_length = st.sidebar.slider('꽃잎 길이', plmin,plmax, 3.9)
-#     petal_width = st.sidebar.slider('꽃입 넓이', pwmin,pwmax, 1.2)
+# # def user_input_features():
+#     mat = st.sidebar.slider(    'Select a range of values',    0, 5, (0, 5))
+# #     yang = st.sidebar.slider(    'Select a range of values',    0, 5, (0, 5))
 
-#     data = {'꽃받침길이': sepal_length,
-#             '꽃받침넓이': sepal_width,
-#             '꽃잎 길이': petal_length,
-#             '꽃입 넓이': petal_width}
+#     data = {'맛': mat}#, '양': yang}
 
-#     features = pd.DataFrame(data, index=[0])
-#     # 데이터는 이것이다. 
+# #     features = df[df['맛']    ]pd.DataFrame(data, index=[0])
+# #     # 데이터는 이것이다. 
 
 
-#     return features
+# #     return features
 
 
 
-# df = user_input_features()
+# # df = user_input_features()
 
-# st.caption('당신이 입력한 parameters')
-# st.write(df)
+# # st.caption('당신이 입력한 parameters')
+# # st.write(df)
 
