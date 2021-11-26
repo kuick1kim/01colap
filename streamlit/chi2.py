@@ -76,7 +76,7 @@ st.write(alt.Chart(dft1).mark_bar().encode(
 ))
 
 
-if st.checkbox('모든데이터를 보시려면 여기를 눌러주세요 '):
+if st.checkbox('맨뒤에 데이터까지 보시려면 여기를 눌러주세요 '):
     # 체크박스를 넣어줌
     
     dft
