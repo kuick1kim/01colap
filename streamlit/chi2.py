@@ -63,5 +63,11 @@ df_freq_T["c_menu"] = df_freq_T["menu"].str.replace("/1", "")
 dft=df_freq_T.sort_values(["frequency"], ascending=False)
 dft= dft[['c_menu','frequency']].reset_index(drop=True)
 
-st.area_chart(dft)
 
+
+state_total_graph = px.bar(dft, 
+        x='c_menu',
+        y='frequency',        
+        color='Status')
+
+st.plotly_chart(state_total_graph)
