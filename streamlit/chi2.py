@@ -45,27 +45,17 @@ df = load_data(dataset_name)
 
 
 
+mat = st.sidebar.slider(    '맛',    0, 5, (0, 5))
+
+mask3 = (df['맛'] >= mat[0]) | (df['맛'] <= mat[1])
+df1 = df.loc[mask3, :]
+df1
 
 
 
 
-# # st.sidebar.header('당신이 입력한 Parameters')
-
-# # def user_input_features():
-#     mat = st.sidebar.slider(    'Select a range of values',    0, 5, (0, 5))
-# #     yang = st.sidebar.slider(    'Select a range of values',    0, 5, (0, 5))
-
-#     data = {'맛': mat}#, '양': yang}
-
-# #     features = df[df['맛']    ]pd.DataFrame(data, index=[0])
-# #     # 데이터는 이것이다. 
 
 
-# #     return features
-
-
-
-# # df = user_input_features()
 
 
 
