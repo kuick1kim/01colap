@@ -69,8 +69,8 @@ dft1= dft.iloc[0:30,:]
 
 
 st.write(alt.Chart(dft1).mark_bar().encode(
-    x=alt.X('c_menu', sort=None),
-    y='frequency',
+    x=alt.X('frequency', sort=None),
+    y='c_menu',
 ))
 
 
