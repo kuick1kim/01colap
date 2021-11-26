@@ -70,7 +70,7 @@ st.sidebar.header('외식산업 경기전망지수')
 
 
 ##############잘됨####################
-DATA_URL = ('https://raw.githubusercontent.com/kuick1kim/01colap/main/streamlit/eeee.csv')
+DATA_URL = ('https://raw.githubusercontent.com/kuick1kim/01colap/main/streamlit/e.csv')
 
 @st.cache
 def load_data():
@@ -249,7 +249,7 @@ st.line_chart(chart_data)
 # plot(selected_sector1)
 #######################################
 
-if st.checkbox('여기를 누르면 데이터를 볼 수 있습니다.1 '):
+if st.checkbox('여기를 누르면 데이터를 볼 수 있어요 '):
     # 체크박스를 넣어줌
     st.subheader('짜잔..... 당신이 선택한 데이터입니다. ') #글씨 쓰는데
     dfs2=pd.DataFrame(dffs2)    
