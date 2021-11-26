@@ -96,7 +96,44 @@ for i in df1:
     count +=1
     st.image(i, width=600)
 
-# from PIL import Image
-# # image = Image.open('https://www.codingfactory.net/wp-content/uploads/abc.jpg')
+#################################################################
 
-# st.image('https://www.codingfactory.net/wp-content/uploads/abc.jpg')
+
+
+
+
+
+
+values = st.slider(
+   'Select a range of values',
+   0.0, 100.0, (25.0, 75.0))
+st.write('Values:', values)
+
+
+
+# st.sidebar.header('당신이 입력한 Parameters')
+
+# def user_input_features():
+#     sepal_length = st.sidebar.slider('꽃받침길이', slmin, slmax, 5.4)
+#     sepal_width = st.sidebar.slider('꽃받침넓이', swmin, swmax, 3.4)
+#     petal_length = st.sidebar.slider('꽃잎 길이', plmin,plmax, 3.9)
+#     petal_width = st.sidebar.slider('꽃입 넓이', pwmin,pwmax, 1.2)
+
+#     data = {'꽃받침길이': sepal_length,
+#             '꽃받침넓이': sepal_width,
+#             '꽃잎 길이': petal_length,
+#             '꽃입 넓이': petal_width}
+
+#     features = pd.DataFrame(data, index=[0])
+#     # 데이터는 이것이다. 
+
+
+#     return features
+
+
+
+# df = user_input_features()
+
+# st.caption('당신이 입력한 parameters')
+# st.write(df)
+
