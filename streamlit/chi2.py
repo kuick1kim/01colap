@@ -47,8 +47,9 @@ df = load_data(dataset_name)
 
 mat = st.sidebar.slider(    '맛',    0, 5, (0, 5))
 
-mask3 = (df['맛'] >= mat[0]) | (df['맛'] <= mat[1])
+mask3 = (df['맛'] >= mat[0]) & (df['맛'] <= mat[1])
 df1 = df.loc[mask3, :]
+# df1=df[df['맛']>=]
 df1
 
 
@@ -130,10 +131,10 @@ for i in df1:
 
 
 
-values = st.sidebar.slider(
-   'Select a range of values',
-   0, 5, (0, 5))
-st.write('Values:', values[0])
+# values = st.sidebar.slider(
+#    'Select a range of values',
+#    0, 5, (0, 5))
+# st.write('Values:', values[0])
 
 
 
