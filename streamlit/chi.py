@@ -86,7 +86,7 @@ st.sidebar.header('외식산업 경기전망지수')
 
 ##############잘됨####################
 DATA_URL = ('https://raw.githubusercontent.com/kuick1kim/01colap/main/streamlit/eeee.csv')
-# DATA_URL = ('https://raw.githubusercontent.com/kuick1kim/01colap/main/bible.csv')
+
 @st.cache
 def load_data():
     data = pd.read_csv(DATA_URL)    
@@ -95,12 +95,6 @@ df = load_data()
 
 ##############잘됨####################
 
-##########################성공#여기는 추가넣는부분################################
-# spectra = st.file_uploader("ex.csv", type={"csv", "txt", "xlsx"})
-
-# if spectra is not None:
-#     df = pd.read_csv(spectra)
-# st.write(df)
 #########################성공#########################################
 
 
