@@ -127,7 +127,7 @@ df1=df1[:10]
 st.title("고객이 올려준 이미지 확인하기")
 count =1
 for i,j in zip(df1['사진주소'],df2['댓글']):
-    original_title = '<p style="color:#FF4000; font-size: 14px;">손님이 올려준 {c}번째 사진{j}</p>'.format(c=count,j=j)        
+    original_title = '<p style="color:#FF4000; font-size: 14px;">손님이 올려준 {c}번째 사진 // {j}</p>'.format(c=count,j=j)        
     st.markdown(original_title, unsafe_allow_html=True)
     count +=1
     try:
