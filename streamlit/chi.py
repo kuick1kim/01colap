@@ -194,7 +194,7 @@ def load_data():
     try:
         data = pd.read_csv(DATA_URL)    
     except:
-        data = pd.read_excel(DATA_URL)
+        data = pd.read_excel(DATA_URL, sheet_name='a')
     return data
 df = load_data()
 
