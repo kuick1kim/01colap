@@ -44,26 +44,26 @@ df = load_data(dataset_name)
 df
 
 
-# def get_pos(x):  
-#     r1 = x.split(',')    
-#     pos = ['{}'.format(jumun) for jumun in r1 ]    
-#     return r1
+def get_pos(x):  
+    r1 = x.split(',')    
+    pos = ['{}'.format(jumun) for jumun in r1 ]    
+    return r1
 
-# from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import CountVectorizer
 
-# # 형태소를 벡터 형태의 학습 데이터셋(X 데이터)으로 변환합니다.
-# index_vectorizer = CountVectorizer(tokenizer = lambda x: get_pos(x))
-# X = index_vectorizer.fit_transform(df['주문내용'].tolist())
-# box=index_vectorizer.get_feature_names()
-# dist = np.sum(X, axis=0)
-# df_freq = pd.DataFrame(dist, columns=box)
-# df_freq_T = df_freq.T.reset_index()
-# df_freq_T.columns = ["menu", "frequency"]
+# 형태소를 벡터 형태의 학습 데이터셋(X 데이터)으로 변환합니다.
+index_vectorizer = CountVectorizer(tokenizer = lambda x: get_pos(x))
+X = index_vectorizer.fit_transform(df['주문내용'].tolist())
+box=index_vectorizer.get_feature_names()
+dist = np.sum(X, axis=0)
+df_freq = pd.DataFrame(dist, columns=box)
+df_freq_T = df_freq.T.reset_index()
+df_freq_T.columns = ["menu", "frequency"]
 
-# df_freq_T["c_menu"] = df_freq_T["menu"].str.replace("/1", "")
+df_freq_T["c_menu"] = df_freq_T["menu"].str.replace("/1", "")
 
-# dft=df_freq_T.sort_values(["frequency"], ascending=False)
-# dft= dft[['c_menu','frequency']].reset_index(drop=True)
-# dft
+dft=df_freq_T.sort_values(["frequency"], ascending=False)
+dft= dft[['c_menu','frequency']].reset_index(drop=True)
+dft
 
 
