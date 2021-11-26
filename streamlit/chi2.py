@@ -62,7 +62,7 @@ df=df3
 df
 
 
-
+st.bar_chart(df['time'])
 
 
 
