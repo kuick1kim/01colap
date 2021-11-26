@@ -32,24 +32,9 @@ import matplotlib.style
 import matplotlib as mpl
 
 
-# Assign plotting style 
-# mpl.style.use('seaborn-pastel')
 plt.rcParams['axes.unicode_minus'] = False
-# plt.rcParams['font.size'] = 10.
-# plt.rcParams['xtick.labelsize'] = 9.
-# plt.rcParams['ytick.labelsize'] = 9.
-# plt.rcParams['axes.labelsize'] = 12.
-# mpl.rcParams['figure.dpi'] = 300.
-#plt.gcf().canvas.renderer.dpi = 300.
-# Font loading 
+
 fm.get_fontconfig_fonts()
-# font_location = "NGULIM.TTF"
-# font_name = fm.FontProperties(fname=font_location).get_name()
-# matplotlib.rc('font', family=font_name)
-
-
-
-
 
 pd.set_option('display.max_row', 500)
 pd.set_option('display.max_columns', 100)
@@ -95,7 +80,7 @@ df = load_data()
 
 ##############잘됨####################
 
-#########################성공#########################################
+
 
 
 df=df.set_index('col')
@@ -232,18 +217,28 @@ st.write(str(selected_sector1))
 dffs2= dffs1.astype(float)
 
 
-def plot(selected_sector1):
+#################새로운 그래프##########################
+chart_data = pd.DataFrame(dffs2,columns=selected_sector)
+st.line_chart(chart_data)
+
+################### 과거에 사용한것 ##########################
+
+
+
+
+################지워버림######################
+# def plot(selected_sector1):
         
-    # plt.legend(selected_sector,loc='center left', bbox_to_anchor=(1, 0.5))
-    for i in selected_sector1:        
-        plt.plot(dffs2.index, dffs2.loc[:,i], label=i,alpha=0.8)   
-        plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))       
-    plt.xticks(rotation=50)
+#     # plt.legend(selected_sector,loc='center left', bbox_to_anchor=(1, 0.5))
+#     for i in selected_sector1:        
+#         plt.plot(dffs2.index, dffs2.loc[:,i], label=i,alpha=0.8)   
+#         plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))       
+#     plt.xticks(rotation=50)
     
-    return st.pyplot()
+#     return st.pyplot()
 
-plot(selected_sector1)
-
+# plot(selected_sector1)
+#######################################
 
 if st.checkbox('여기를 누르면 데이터를 볼 수 있습니다.1 '):
     # 체크박스를 넣어줌
