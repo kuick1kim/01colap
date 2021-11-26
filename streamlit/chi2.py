@@ -62,9 +62,14 @@ df=df3
 df
 
 
-st.bar_chart(df['time'])
+# st.bar_chart(df['time'])
 
-
+st.write(alt.Chart(df['time']).mark_bar().encode(
+# #     x=alt.X('frequency', sort=None),
+# #     y='c_menu',
+#     y=alt.X('c_menu', sort=None),
+#     x='frequency',
+))
 
 
 
