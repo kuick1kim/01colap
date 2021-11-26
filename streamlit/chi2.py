@@ -46,16 +46,16 @@ df = load_data(dataset_name)
 
 
 mat = st.sidebar.slider(    '맛',    0, 5, (0, 5))
-mat = st.sidebar.slider(    '양',    0, 5, (0, 5))
-mat = st.sidebar.slider(    '배달',    0, 5, (0, 5))
+yang = st.sidebar.slider(    '양',    0, 5, (0, 5))
+bae = st.sidebar.slider(    '배달',    0, 5, (0, 5))
 
 mask1 = (df['맛'] >= mat[0]) & (df['맛'] <= mat[1])
 df1 = df.loc[mask1, :]
 
-mask2 = (df1['양'] >= mat[0]) & (df1['양'] <= mat[1])
+mask2 = (df1['양'] >= yang[0]) & (df1['양'] <= yang[1])
 df2 = df1.loc[mask2, :]
 
-mask3 = (df2['배달'] >= mat[0]) & (df2['배달'] <= mat[1])
+mask3 = (df2['배달'] >= bae[0]) & (df2['배달'] <= bae[1])
 df3 = df1.loc[mask3, :]
 
 df3
