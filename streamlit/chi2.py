@@ -10,7 +10,7 @@ from PIL import Image
 # 여기는 단순하게 이름이다
 dataset_name = st.sidebar.selectbox(
     'Select Dataset',
-    ('BBQ', '교촌','페리카나','컬투치킨', '코리엔탈치킨')
+    ('BBQ', '처가집','후라이드참잘하는집', '네네치킨','교촌', '코리엔탈치킨')
 )
 
 st.write(f"## {dataset_name} Dataset")
@@ -22,12 +22,14 @@ def load_data(name):
     data = None
     if name == 'BBQ':
         DATA_URL =  'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/bbq.csv'
+    elif name == '처가집':
+        DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/cheogajip.csv'
+    elif name == '후라이드참잘하는집':
+        DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/friedgood.csv'
+    elif name == '네네치킨':
+        DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/nene.csv'
     elif name == '교촌':
-        DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/kyochon.csv'
-    elif name == '페리카나':
-        DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/pericana.csv'
-    elif name == '컬투치킨':
-        DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/cultwu.csv'
+        DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/kyochon.csv'       
     else:
         DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/korental.csv'
 
