@@ -125,11 +125,11 @@ df1=df1[['사진주소','댓글']][:10]
 
 st.title("고객이 올려준 이미지 확인하기")
 count =1
-for i,j in df1:
-    original_title = '<p style="color:#FF4000; font-size: 14px;">손님이 올려준 {c}번째 사진{j}</p>'.format(c=count,j=j)        
+for i in df1:
+    original_title = '<p style="color:#FF4000; font-size: 14px;">손님이 올려준 {c}번째 사진{j}</p>'.format(c=count,j=i[1])        
     st.markdown(original_title, unsafe_allow_html=True)
     count +=1
-    st.image(i, width=600)
+    st.image(i[0], width=600)
 
 #################################################################
 
