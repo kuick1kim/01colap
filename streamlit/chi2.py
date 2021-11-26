@@ -3,8 +3,6 @@ import pandas as pd
 import base64
 import io
 import numpy as np
-
-
 import altair as alt
 
 
@@ -82,6 +80,6 @@ if st.checkbox('맨뒤에 데이터까지 보시려면 여기를 눌러주세요
     
    
 from PIL import Image
-image = Image.open('https://www.codingfactory.net/wp-content/uploads/abc.jpg')
+# image = Image.open('https://www.codingfactory.net/wp-content/uploads/abc.jpg')
 
-st.image(image, caption='Sunrise by the mountains')
+st.image('https://www.codingfactory.net/wp-content/uploads/abc.jpg')
