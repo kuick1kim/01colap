@@ -90,7 +90,7 @@ df1=df1['사진주소'][:10]
 
 st.title("고객이 올려준 이미지 확인하기")
 for i in df1:
-    st.image(i)
+    st.image(i, width=800)
 
 # from PIL import Image
 # # image = Image.open('https://www.codingfactory.net/wp-content/uploads/abc.jpg')
