@@ -199,9 +199,19 @@ if st.checkbox('추가 형태소 빈도 보기'):
     linko= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="형태소보기.xlsx">형태소 내용을 엑셀로 다운로드받기</a>'
     st.markdown(linko, unsafe_allow_html=True)
     
+    st.title("댓글을 알아봅니다. ")
+    
     for com in dfj['댓글']:
         original_title = '<p style="color:#0431B4; font-size: 14px;">{c}</p>'.format(c=com)        
         st.markdown(original_title, unsafe_allow_html=True)
+    st.title("댓글을 엑셀로 다운받아보기 ")
+    
+    towrite = io.BytesIO()
+    downloaded_file = dfj['댓글'].to_excel(towrite, encoding='utf-8', index=True, header=True)
+    towrite.seek(0)  # reset pointer
+    b64 = base64.b64encode(towrite.read()).decode()  # some strings
+    linko= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="고객댓글다운.xlsx">댓글 내용을 컴퓨터로 다운 받아봅니다.</a>'
+    st.markdown(linko, unsafe_allow_html=True)
     #===============================인코딩이 안되서 csv를 안씀================================
 
 
