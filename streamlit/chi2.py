@@ -75,7 +75,7 @@ st.write(alt.Chart(freq).mark_bar().encode(
 ))
 
 
-chart_data = pd.DataFrame(freq, width=700)
+chart_data = pd.DataFrame(freq)
     
 #    columns=["a", "b", "c"])
 
