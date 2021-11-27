@@ -164,10 +164,9 @@ st.write(alt.Chart(dftn1).mark_bar().encode(
     y=alt.X('c_Noun', sort=None),
     x='갯수',
 ))
-
-# if st.checkbox('맨뒤에 데이터까지 보시려면 여기를 눌러주세요 '):
-#     # 체크박스를 넣어줌  
-#     dftn
+################
+if st.checkbox('추가 형태소 빈도 보기'):
+    dftn
 # ==============
 
 
