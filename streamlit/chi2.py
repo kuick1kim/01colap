@@ -179,7 +179,7 @@ df_freq_T.columns = ["동사1", "갯수"]
 df_freq_T["동사"] = df_freq_T["동사1"].str.replace("]", "").str.replace("[", "").str.replace("'", "")
 dftv=df_freq_T.sort_values(["갯수"], ascending=False)
 dftv= dftv[['동사','갯수']].reset_index(drop=True)
-dftv
+# dftv
 
 
 
@@ -192,7 +192,8 @@ dftv
 
 ################
 if st.checkbox('추가 형태소 빈도 보기'):
-    dftn
+    dftt= pd.concat([dftn,dftv], axis=1)
+    dftt
 # ==============
 
 
