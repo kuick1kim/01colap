@@ -165,9 +165,9 @@ st.write(alt.Chart(dftn1).mark_bar().encode(
     x='갯수',
 ))
 
-if st.checkbox('맨뒤에 데이터까지 보시려면 여기를 눌러주세요 '):
-    # 체크박스를 넣어줌  
-    dftn
+# if st.checkbox('맨뒤에 데이터까지 보시려면 여기를 눌러주세요 '):
+#     # 체크박스를 넣어줌  
+#     dftn
 # ==============
 
 
