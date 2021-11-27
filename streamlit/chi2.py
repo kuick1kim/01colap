@@ -137,7 +137,7 @@ for i,j in zip(dfi['사진주소'],dfi['댓글']):
     st.markdown(original_title, unsafe_allow_html=True)
     count +=1
     try:
-        st.image(i, width=600)
+        st.image(i, width=500)
     except:
         pass
         
