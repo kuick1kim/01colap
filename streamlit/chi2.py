@@ -61,9 +61,16 @@ df3 = df2.loc[mask3, :]
 df=df3
 df
 
-dfk=df.sort_values(by='time', ascending=1)
-dfk= dfk['time'].T
-st.bar_chart(dfk)
+
+
+freq = df.groupby(['time']).count()
+freq = freq.reset_index()
+freq = freq[['time','지역']].sort_values(by='time',ascending=0)
+st.bar_chart(freq)
+
+# dfk=df.sort_values(by='time', ascending=1)
+# dfk= dfk['time'].T
+# st.bar_chart(dfk)
 
 
 
