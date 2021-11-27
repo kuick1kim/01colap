@@ -59,28 +59,19 @@ mask3 = (df2['배달'] >= bae[0]) & (df2['배달'] <= bae[1])
 df3 = df2.loc[mask3, :]
 
 df=df3
-df
 
 
 
+#############################################################
 freq = df.groupby(['time']).count()
 freq = freq.reset_index(inplace=False)
 freq = freq[['time','지역']].sort_values(by='time',ascending=0)
-
-
 st.write(alt.Chart(freq).mark_bar().encode(
     x=alt.X('time', sort=None),
     y='지역'
-
 ))
-
-
-chart_data = pd.DataFrame(freq['time'])
-    
-#    columns=["a", "b", "c"])
-
-st.bar_chart(chart_data)
-
+##############################################################
+df
 
 
 
