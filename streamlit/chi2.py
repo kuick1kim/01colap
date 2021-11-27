@@ -192,7 +192,7 @@ if st.checkbox('추가 형태소 빈도 보기'):
     dftt= pd.concat([dftt,dfta], axis=1)
     
     for com in dfi['댓글']:
-        original_title = '<p style="color:#FF4000; font-size: 14px;">{c}</p>'.format(c=com)        
+        original_title = '<p style="color:#0431B4; font-size: 14px;">{c}</p>'.format(c=com)        
         st.markdown(original_title, unsafe_allow_html=True)
         
     
@@ -211,7 +211,7 @@ if st.checkbox('추가 형태소 빈도 보기'):
 st.title("고객이 올려준 이미지 확인하기")
 count =1
 for i,j in zip(dfi['사진주소'],dfi['댓글']):
-    original_title = '<p style="color:#FF4000; font-size: 14px;">손님이 올려준 {c}번째 사진 // {j}</p>'.format(c=count,j=j)        
+    original_title = '<p style="color:#0431B4; font-size: 14px;">손님이 올려준 {c}번째 사진 // {j}</p>'.format(c=count,j=j)        
     st.markdown(original_title, unsafe_allow_html=True)
     count +=1
     try:
