@@ -135,17 +135,11 @@ def get_pos(x):
     pos = ['{}'.format(jumun) for jumun in r1 ]    
     return r1
 index_vectorizer = CountVectorizer(tokenizer = lambda x: get_pos(x))
-
 XN = index_vectorizer.fit_transform(df['Noun'].tolist())
-
 box=index_vectorizer.get_feature_names()
 dist = np.sum(XN, axis=0)
-
-
 df_freq = pd.DataFrame(dist, columns=box)
 df_freq_T = df_freq.T.reset_index()
-
-
 df_freq_T.columns =["명사1", "갯수"]
 df_freq_T["명사"] = df_freq_T["명사1"].str.replace("]", "").str.replace("[", "").str.replace("'", "")
 dftn=df_freq_T.sort_values(["갯수"], ascending=False)
@@ -162,6 +156,30 @@ st.write(alt.Chart(dftn1).mark_bar().encode(
     y=alt.X('명사', sort=None),
     x='갯수',
 ))
+
+#######################동사/ 형용사############################
+
+def get_pos(x):  
+    r1 = x.split(',')    
+    pos = ['{}'.format(jumun) for jumun in r1 ]    
+    return r1
+index_vectorizer = CountVectorizer(tokenizer = lambda x: get_pos(x))
+XN = index_vectorizer.fit_transform(df['Verb'].tolist())
+box=index_vectorizer.get_feature_names()
+dist = np.sum(XN, axis=0)
+df_freq = pd.DataFrame(dist, columns=box)
+df_freq_T = df_freq.T.reset_index()
+df_freq_T.columns = ["동사1", "갯수"]
+df_freq_T["동사"] = df_freq_T["동사1"].str.replace("]", "").str.replace("[", "").str.replace("'", "")
+dftv=df_freq_T.sort_values(["갯수"], ascending=False)
+dftv= dftv[['동사','갯수']].reset_index(drop=True)
+#####################################################
+dftv
+
+
+
+
+
 ################
 if st.checkbox('추가 형태소 빈도 보기'):
     dftn
