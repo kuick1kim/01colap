@@ -61,7 +61,7 @@ df3 = df2.loc[mask3, :]
 df=df3
 df
 
-dfk=df.sort_values(by='time', ascending=0)
+dfk=df.sort_values(by='time', ascending=1)
 dfk= dfk['time'].T
 st.bar_chart(dfk)
 
