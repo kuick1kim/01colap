@@ -13,39 +13,33 @@ dataset_name = st.sidebar.selectbox(
     ('BBQ', '처가집','후라이드참잘하는집', '네네치킨','교촌', '코리엔탈치킨')
 )
 
-try:
-    #########################성공#여기는 추가넣는부분################################
-    spectra = st.file_uploader("ex.csv", type={"csv", "txt", "xlsx"})
-    if spectra is not None:
-        df = pd.read_csv(spectra)
-    ########################성공#########################################
-except:
-    @st.cache
-    def load_data(name):
-        data = None
-        if name == 'BBQ':
-            DATA_URL =  'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/bbq.csv'
-        elif name == '처가집':
-            DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/cheogajip.csv'
-        elif name == '후라이드참잘하는집':
-            DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/friedgood.csv'
-        elif name == '네네치킨':
-            DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/nene.csv'
-        elif name == '교촌':
-            DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/kyochon.csv'       
-        else:
-            DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/korental.csv'
+
+@st.cache
+def load_data(name):
+    data = None
+    if name == 'BBQ':
+        DATA_URL =  'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/bbq.csv'
+    elif name == '처가집':
+        DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/cheogajip.csv'
+    elif name == '후라이드참잘하는집':
+        DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/friedgood.csv'
+    elif name == '네네치킨':
+        DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/nene.csv'
+    elif name == '교촌':
+        DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/kyochon.csv'       
+    else:
+        DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/korental.csv'
 
 
-        data = pd.read_csv(DATA_URL)    
-        return data
-    df = load_data(dataset_name)
+    data = pd.read_csv(DATA_URL)    
+    return data
+df = load_data(dataset_name)
 
 
 
-mat = st.sidebar.slider(    '맛',    0, 5, (0, 5))
-yang = st.sidebar.slider(    '양',    0, 5, (0, 5))
-bae = st.sidebar.slider(    '배달',    0, 5, (0, 5))
+mat = st.sidebar.slider('맛',  0, 5, (0, 5))
+yang = st.sidebar.slider('양', 0, 5, (0, 5))
+bae = st.sidebar.slider( '배달', 0, 5, (0, 5))
 
 mask1 = (df['맛'] >= mat[0]) & (df['맛'] <= mat[1])
 df1 = df.loc[mask1, :]
