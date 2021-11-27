@@ -107,7 +107,7 @@ df_freq_T["c_menu"] = df_freq_T["menu"].str.replace("/1", "")
 
 dft=df_freq_T.sort_values(["frequency"], ascending=False)
 dft= dft[['c_menu','frequency']].reset_index(drop=True)
-dft1= dft.iloc[0:30,:]
+dft1= dft.iloc[0:15,:]
 
 
 # ======
@@ -152,7 +152,7 @@ df_freq_T["c_Noun"] = df_freq_T["Noun"].str.replace("/1", "")
 
 dftn=df_freq_T.sort_values(["갯수"], ascending=False)
 dftn= dftn[['c_Noun','갯수']].reset_index(drop=True)
-dftn1= dftn.iloc[0:30,:]
+dftn1= dftn.iloc[0:15,:]
 
 
 # ==============
