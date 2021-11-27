@@ -159,7 +159,7 @@ st.title(f" 위의 조건으로 제일 많이 나온 형태소 빈도")
 st.write(alt.Chart(dftn1).mark_bar().encode(
 #     x=alt.X('갯수', sort=None),
 #     y='c_menu',
-    y=alt.X('c_Noun', sort=None),
+    y=alt.X('명사', sort=None),
     x='갯수',
 ))
 ################
