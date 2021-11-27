@@ -62,8 +62,8 @@ df=df3
 df
 
 dfk=df.sort_values(by='time', ascending=0)
-dfk['time']
-# st.bar_chart(dfk['time'])
+dfk= dfk['time'].T
+st.bar_chart(dfk)
 
 
 
@@ -73,69 +73,69 @@ dfk['time']
 
 
 
-# df['주문내용']=df['주문내용'].fillna('주문내용없음')
-# ##############잘됨####################
-# if st.checkbox('여기를 누르면 로딩된 데이터를 볼 수 있습니다. '):
-#     # 체크박스를 넣어줌
+df['주문내용']=df['주문내용'].fillna('주문내용없음')
+##############잘됨####################
+if st.checkbox('여기를 누르면 로딩된 데이터를 볼 수 있습니다. '):
+    # 체크박스를 넣어줌
     
-#     df
+    df
 
 
-# def get_pos(x):  
-#     r1 = x.split(',')    
-#     pos = ['{}'.format(jumun) for jumun in r1 ]    
-#     return r1
+def get_pos(x):  
+    r1 = x.split(',')    
+    pos = ['{}'.format(jumun) for jumun in r1 ]    
+    return r1
 
-# from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import CountVectorizer
 
-# # 형태소를 벡터 형태의 학습 데이터셋(X 데이터)으로 변환합니다.
-# index_vectorizer = CountVectorizer(tokenizer = lambda x: get_pos(x))
-# X = index_vectorizer.fit_transform(df['주문내용'].tolist())
-# box=index_vectorizer.get_feature_names()
-# dist = np.sum(X, axis=0)
-# df_freq = pd.DataFrame(dist, columns=box)
-# df_freq_T = df_freq.T.reset_index()
-# df_freq_T.columns = ["menu", "frequency"]
+# 형태소를 벡터 형태의 학습 데이터셋(X 데이터)으로 변환합니다.
+index_vectorizer = CountVectorizer(tokenizer = lambda x: get_pos(x))
+X = index_vectorizer.fit_transform(df['주문내용'].tolist())
+box=index_vectorizer.get_feature_names()
+dist = np.sum(X, axis=0)
+df_freq = pd.DataFrame(dist, columns=box)
+df_freq_T = df_freq.T.reset_index()
+df_freq_T.columns = ["menu", "frequency"]
 
-# df_freq_T["c_menu"] = df_freq_T["menu"].str.replace("/1", "")
+df_freq_T["c_menu"] = df_freq_T["menu"].str.replace("/1", "")
 
-# dft=df_freq_T.sort_values(["frequency"], ascending=False)
-# dft= dft[['c_menu','frequency']].reset_index(drop=True)
-# dft1= dft.iloc[0:30,:]
-
-
+dft=df_freq_T.sort_values(["frequency"], ascending=False)
+dft= dft[['c_menu','frequency']].reset_index(drop=True)
+dft1= dft.iloc[0:30,:]
 
 
-# st.title(f" 위의 조건으로 {dataset_name} 에서 시킨 메뉴 보기")
-
-# st.write(alt.Chart(dft1).mark_bar().encode(
-# #     x=alt.X('frequency', sort=None),
-# #     y='c_menu',
-#     y=alt.X('c_menu', sort=None),
-#     x='frequency',
-# ))
 
 
-# if st.checkbox('맨뒤에 데이터까지 보시려면 여기를 눌러주세요 '):
-#     # 체크박스를 넣어줌  
-#     dft
+st.title(f" 위의 조건으로 {dataset_name} 에서 시킨 메뉴 보기")
 
-# df1= df.sort_values(by='사진주소',ascending=1)
-# df1
-# df1=df1[:10]
-# # df2=df1['댓글'][:10]
-# st.title("고객이 올려준 이미지 확인하기")
-# count =1
-# for i,j in zip(df1['사진주소'],df2['댓글']):
-#     original_title = '<p style="color:#FF4000; font-size: 14px;">손님이 올려준 {c}번째 사진 // {j}</p>'.format(c=count,j=j)        
-#     st.markdown(original_title, unsafe_allow_html=True)
-#     count +=1
-#     try:
-#         st.image(i, width=600)
-#     except:
-#         pass
-#         #st.image(i, width=600)
-# #################################################################
+st.write(alt.Chart(dft1).mark_bar().encode(
+#     x=alt.X('frequency', sort=None),
+#     y='c_menu',
+    y=alt.X('c_menu', sort=None),
+    x='frequency',
+))
+
+
+if st.checkbox('맨뒤에 데이터까지 보시려면 여기를 눌러주세요 '):
+    # 체크박스를 넣어줌  
+    dft
+
+df1= df.sort_values(by='사진주소',ascending=1)
+df1
+df1=df1[:10]
+# df2=df1['댓글'][:10]
+st.title("고객이 올려준 이미지 확인하기")
+count =1
+for i,j in zip(df1['사진주소'],df2['댓글']):
+    original_title = '<p style="color:#FF4000; font-size: 14px;">손님이 올려준 {c}번째 사진 // {j}</p>'.format(c=count,j=j)        
+    st.markdown(original_title, unsafe_allow_html=True)
+    count +=1
+    try:
+        st.image(i, width=600)
+    except:
+        pass
+        #st.image(i, width=600)
+#################################################################
 
 
 
