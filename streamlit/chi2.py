@@ -68,9 +68,12 @@ freq = freq.reset_index()
 freq = freq[['time','지역']].sort_values(by='time',ascending=0)
 st.bar_chart(freq)
 
-# dfk=df.sort_values(by='time', ascending=1)
-# dfk= dfk['time'].T
-# st.bar_chart(dfk)
+st.write(alt.Chart(freq).mark_bar().encode(
+    x=alt.X('time', sort=None),
+    y='지역',
+#     y=alt.X('time', sort=None),
+#     x='지역',
+))
 
 
 
