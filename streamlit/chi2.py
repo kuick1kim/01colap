@@ -144,12 +144,8 @@ dist = np.sum(XN, axis=0)
 
 df_freq = pd.DataFrame(dist, columns=box)
 df_freq_T = df_freq.T.reset_index()
-
-
 df_freq_T.columns = ["Noun", "갯수"]
-
-df_freq_T["c_Noun"] = df_freq_T["Noun"].str.replace("/1", "")
-
+df_freq_T["c_Noun"] = df_freq_T["Noun"].str.replace("]", "").str.replace("[", "").str.replace("'", "")
 dftn=df_freq_T.sort_values(["갯수"], ascending=False)
 dftn= dftn[['c_Noun','갯수']].reset_index(drop=True)
 dftn1= dftn.iloc[0:15,:]
