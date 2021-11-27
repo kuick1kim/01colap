@@ -126,7 +126,7 @@ if st.checkbox('맨뒤에 데이터까지 보시려면 여기를 눌러주세요
     # 체크박스를 넣어줌  
     dft
 
-dfi= df.sort_values(by='사진주소',ascending=1)
+dfi= df.sort_values(by='사진주소',ascending=0)
 dfi
 dfi=dfi[:10]
 
