@@ -156,7 +156,7 @@ dftn1= dftn.iloc[0:30,:]
 
 
 # ==============
-st.title(f" 위의 조건으로 {dataset_name} 에서 시킨 메뉴 보기")
+st.title(f" 위의 조건으로 제일 많이 나온 형태소 빈도")
 
 st.write(alt.Chart(dftn1).mark_bar().encode(
 #     x=alt.X('갯수', sort=None),
