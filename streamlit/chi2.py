@@ -89,8 +89,8 @@ dft=df_freq_T.sort_values(["frequency"], ascending=False)
 dft= dft[['c_menu','frequency']].reset_index(drop=True)
 dft1= dft.iloc[0:15,:]
 
-dfi= df.sort_values(by='사진주소',ascending=0)
-dfi=dfi[:10]
+dfj= df.sort_values(by='사진주소',ascending=0)
+dfi=dfj[:10]
 # ======
 st.title(f" 위의 조건으로 {dataset_name} 에서 시킨 메뉴 보기")
 st.write(alt.Chart(dft1).mark_bar().encode(
@@ -189,13 +189,7 @@ dfta= dfta[['형용사','갯수']].reset_index(drop=True)
 
 ################
 if st.checkbox('추가 형태소 빈도 보기'):
-    dftt= pd.concat([dftt,dfta], axis=1)
-    
-    for com in dfi['댓글']:
-        original_title = '<p style="color:#0431B4; font-size: 14px;">{c}</p>'.format(c=com)        
-        st.markdown(original_title, unsafe_allow_html=True)
-        
-    
+    dftt= pd.concat([dftt,dfta], axis=1)   
     dftt
     
     towrite = io.BytesIO()
@@ -204,6 +198,10 @@ if st.checkbox('추가 형태소 빈도 보기'):
     b64 = base64.b64encode(towrite.read()).decode()  # some strings
     linko= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="형태소보기.xlsx">형태소 내용을 엑셀로 다운로드받기</a>'
     st.markdown(linko, unsafe_allow_html=True)
+    
+    for com in dfj['댓글']:
+        original_title = '<p style="color:#0431B4; font-size: 14px;">{c}</p>'.format(c=com)        
+        st.markdown(original_title, unsafe_allow_html=True)
     #===============================인코딩이 안되서 csv를 안씀================================
 
 
