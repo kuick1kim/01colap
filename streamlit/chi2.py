@@ -101,6 +101,15 @@ st.write(alt.Chart(dft1).mark_bar().encode(
 if st.checkbox('맨뒤에 데이터까지 보시려면 여기를 눌러주세요 '):
     # 체크박스를 넣어줌  
     dft
+    towrite = io.BytesIO()
+    downloaded_file = dft.to_excel(towrite, encoding='utf-8', index=True, header=True)
+    towrite.seek(0)  # reset pointer
+    b64 = base64.b64encode(towrite.read()).decode()  # some strings
+    linko= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="고객선호메뉴보기.xlsx">고객이 선호하는 메뉴 다운로드받기</a>'
+    st.markdown(linko, unsafe_allow_html=True)
+    #===============================인코딩이 안되서 csv를 안씀================================
+    
+    
 
 ##################################################################################
 
@@ -180,6 +189,14 @@ dfta= dfta[['형용사','갯수']].reset_index(drop=True)
 if st.checkbox('추가 형태소 빈도 보기'):
     dftt= pd.concat([dftt,dfta], axis=1)
     dftt
+    
+    towrite = io.BytesIO()
+    downloaded_file = dftt.to_excel(towrite, encoding='utf-8', index=True, header=True)
+    towrite.seek(0)  # reset pointer
+    b64 = base64.b64encode(towrite.read()).decode()  # some strings
+    linko= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="형태소보기.xlsx">형태소 내용을 엑셀로 다운로드받기</a>'
+    st.markdown(linko, unsafe_allow_html=True)
+    #===============================인코딩이 안되서 csv를 안씀================================
 # ==============
 
 
