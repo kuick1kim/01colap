@@ -35,6 +35,14 @@ def load_data(name):
     return data
 df = load_data(dataset_name)
 
+##########################성공#여기는 추가넣는부분################################
+spectra = st.file_uploader("ex.csv", type={"csv", "txt", "xlsx"})
+if spectra is not None:
+    df = pd.read_csv(spectra)
+    dataset_name='외부데이터' 
+
+#########################성공#########################################
+
 
 
 mat = st.sidebar.slider('맛',  0, 5, (0, 5))
