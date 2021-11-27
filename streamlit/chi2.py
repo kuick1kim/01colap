@@ -51,6 +51,8 @@ mask3 = (df2['배달'] >= bae[0]) & (df2['배달'] <= bae[1])
 df3 = df2.loc[mask3, :]
 
 df=df3
+
+st.title(f" {dataset_name} 탐색")
 #############################################################
 freq = df.groupby(['time']).count()
 freq = freq.reset_index(inplace=False)
