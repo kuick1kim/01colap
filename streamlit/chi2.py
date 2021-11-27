@@ -18,7 +18,7 @@ st.write(f"## {dataset_name} Dataset")
 @st.cache
 def load_data(name):
     ##########################성공#여기는 추가넣는부분################################
-    spectra = st.file_uploader("", type={"csv", "txt", "xlsx"})
+    DATA_URL = st.file_uploader("", type={"csv", "txt", "xlsx"})
     # if spectra is not None:
     #     df = pd.read_csv(spectra)
     # st.write(df)
