@@ -158,21 +158,23 @@ st.write(alt.Chart(dftn1).mark_bar().encode(
 ))
 
 #######################동사/ 형용사############################
+a=[]
+df2=df['Verb'].fillna("")
+for k in df2:
+    try:
+        k=k.astype(str)
+    except:
+        pass
+    b=k.split(',')    
+    for c in b:
+        if c != '':
+            a.append(c)
+a  = pd.DataFrame(a)
+a
 
-def get_pos(x):  
-    r1 = x.split(',')    
-    pos = ['{}'.format(jumun) for jumun in r1 ]    
-    return r1
-index_vectorizer = CountVectorizer(tokenizer = lambda x: get_pos(x))
-XV = index_vectorizer.fit_transform(df['Verb'].tolist())
-box=index_vectorizer.get_feature_names()
-dist = np.sum(XV, axis=0)
-df_freq = pd.DataFrame(dist, columns=box)
-df_freq_T = df_freq.T.reset_index()
-df_freq_T.columns = ["동사1", "갯수"]
-df_freq_T["동사"] = df_freq_T["동사1"].str.replace("]", "").str.replace("[", "").str.replace("'", "")
-dftv=df_freq_T.sort_values(["갯수"], ascending=False)
-dftv= dftv[['동사','갯수']].reset_index(drop=True)
+
+
+
 #####################################################
 dftv
 
