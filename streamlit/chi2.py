@@ -70,7 +70,7 @@ freq = freq[['time','지역']].sort_values(by='time',ascending=0)
 
 st.write(alt.Chart(freq).mark_bar().encode(
     x=alt.X('time', sort=None),
-    y='지역', width=700
+    y='지역'
 
 ))
 
