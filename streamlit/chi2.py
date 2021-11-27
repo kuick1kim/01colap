@@ -15,8 +15,6 @@ dataset_name = st.sidebar.selectbox(
 
 st.write(f"## {dataset_name} Dataset")
 
-
-
 @st.cache
 def load_data(name):
     data = None
@@ -38,12 +36,7 @@ def load_data(name):
     return data
 
 
-
-
-
 df = load_data(dataset_name)
-
-
 
 mat = st.sidebar.slider(    '맛',    0, 5, (0, 5))
 yang = st.sidebar.slider(    '양',    0, 5, (0, 5))
@@ -59,9 +52,6 @@ mask3 = (df2['배달'] >= bae[0]) & (df2['배달'] <= bae[1])
 df3 = df2.loc[mask3, :]
 
 df=df3
-
-
-
 #############################################################
 freq = df.groupby(['time']).count()
 freq = freq.reset_index(inplace=False)
@@ -73,19 +63,10 @@ st.write(alt.Chart(freq).mark_bar().encode(
 ##############################################################
 df
 
-
-
-
-
-
-
 df['주문내용']=df['주문내용'].fillna('주문내용없음')
 ##############잘됨####################
-if st.checkbox('여기를 누르면 로딩된 데이터를 볼 수 있습니다. '):
-    # 체크박스를 넣어줌
-    
+if st.checkbox('여기를 누르면 로딩된 데이터를 볼 수 있습니다. '):    
     df
-
 
 def get_pos(x):  
     r1 = x.split(',')    
@@ -109,7 +90,6 @@ dft=df_freq_T.sort_values(["frequency"], ascending=False)
 dft= dft[['c_menu','frequency']].reset_index(drop=True)
 dft1= dft.iloc[0:15,:]
 
-
 # ======
 st.title(f" 위의 조건으로 {dataset_name} 에서 시킨 메뉴 보기")
 st.write(alt.Chart(dft1).mark_bar().encode(
@@ -124,11 +104,6 @@ if st.checkbox('맨뒤에 데이터까지 보시려면 여기를 눌러주세요
     dft
 
 ##################################################################################
-
-
-
-
-
 
 def get_pos(x):  
     r1 = x.split(',')    
@@ -145,7 +120,6 @@ df_freq_T["명사"] = df_freq_T["명사1"].str.replace("]", "").str.replace("[",
 dftn=df_freq_T.sort_values(["갯수"], ascending=False)
 dftn= dftn[['명사','갯수']].reset_index(drop=True)
 dftn1= dftn.iloc[0:15,:]
-
 
 # ==============
 st.title(f" 위의 조건으로 제일 많이 나온 형태소 빈도")
@@ -202,12 +176,6 @@ df_freq_T.columns = ["형용사1", "갯수"]
 df_freq_T["형용사"] = df_freq_T["형용사1"].str.replace("]", "").str.replace("[", "").str.replace("'", "")
 dfta=df_freq_T.sort_values(["갯수"], ascending=False)
 dfta= dfta[['형용사','갯수']].reset_index(drop=True)
-dfta
-
-
-
-
-
 
 ################
 if st.checkbox('추가 형태소 빈도 보기'):
@@ -230,8 +198,7 @@ for i,j in zip(dfi['사진주소'],dfi['댓글']):
     try:
         st.image(i, width=500)
     except:
-        pass
-        
+        pass        
 #################################################################
 
 
