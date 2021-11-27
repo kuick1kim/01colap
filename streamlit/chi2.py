@@ -12,6 +12,25 @@ dataset_name = st.sidebar.selectbox(
     'Select Dataset',
     ('BBQ', '처가집','후라이드참잘하는집', '네네치킨','교촌', '코리엔탈치킨')
 )
+@st.cache
+def load_data(name):
+    data = None
+    if name == 'BBQ':
+        DATA_URL =  'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/bbq.csv'
+    elif name == '처가집':
+        DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/cheogajip.csv'
+    elif name == '후라이드참잘하는집':
+        DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/friedgood.csv'
+    elif name == '네네치킨':
+        DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/nene.csv'
+    elif name == '교촌':
+        DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/kyochon.csv'       
+    else:
+        DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/korental.csv'
+
+
+    data = pd.read_csv(DATA_URL)    
+    return data
 
 
 
@@ -23,30 +42,6 @@ try:
         df = pd.read_csv(spectra)
     ########################성공#########################################
 except:
-    
-
-    st.write(f"## {dataset_name} Dataset")
-
-    @st.cache
-    def load_data(name):
-        data = None
-        if name == 'BBQ':
-            DATA_URL =  'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/bbq.csv'
-        elif name == '처가집':
-            DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/cheogajip.csv'
-        elif name == '후라이드참잘하는집':
-            DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/friedgood.csv'
-        elif name == '네네치킨':
-            DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/nene.csv'
-        elif name == '교촌':
-            DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/kyochon.csv'       
-        else:
-            DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/korental.csv'
-
-
-        data = pd.read_csv(DATA_URL)    
-        return data
-
     df = load_data(dataset_name)
 
 
