@@ -164,9 +164,9 @@ def get_pos(x):
     pos = ['{}'.format(jumun) for jumun in r1 ]    
     return r1
 index_vectorizer = CountVectorizer(tokenizer = lambda x: get_pos(x))
-XN = index_vectorizer.fit_transform(df['Verb'].tolist())
+XV = index_vectorizer.fit_transform(df['Verb'].tolist())
 box=index_vectorizer.get_feature_names()
-dist = np.sum(XN, axis=0)
+dist = np.sum(XV, axis=0)
 df_freq = pd.DataFrame(dist, columns=box)
 df_freq_T = df_freq.T.reset_index()
 df_freq_T.columns = ["동사1", "갯수"]
