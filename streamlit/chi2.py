@@ -93,7 +93,7 @@ def get_pos(x):
     return r1
 
 from sklearn.feature_extraction.text import CountVectorizer
-
+##################################################################################
 # 형태소를 벡터 형태의 학습 데이터셋(X 데이터)으로 변환합니다.
 index_vectorizer = CountVectorizer(tokenizer = lambda x: get_pos(x))
 X = index_vectorizer.fit_transform(df['주문내용'].tolist())
@@ -110,21 +110,67 @@ dft= dft[['c_menu','frequency']].reset_index(drop=True)
 dft1= dft.iloc[0:30,:]
 
 
-
-
+# ======
 st.title(f" 위의 조건으로 {dataset_name} 에서 시킨 메뉴 보기")
-
 st.write(alt.Chart(dft1).mark_bar().encode(
 #     x=alt.X('frequency', sort=None),
 #     y='c_menu',
     y=alt.X('c_menu', sort=None),
     x='frequency',
 ))
-
-
+# ========
 if st.checkbox('맨뒤에 데이터까지 보시려면 여기를 눌러주세요 '):
     # 체크박스를 넣어줌  
     dft
+
+##################################################################################
+
+
+
+
+
+
+def get_pos(x):  
+    r1 = x.split(',')    
+    pos = ['{}'.format(jumun) for jumun in r1 ]    
+    return r1
+index_vectorizer = CountVectorizer(tokenizer = lambda x: get_pos(x))
+
+XN = index_vectorizer.fit_transform(df['Noun'].tolist())
+
+box=index_vectorizer.get_feature_names()
+dist = np.sum(XN, axis=0)
+
+
+df_freq = pd.DataFrame(dist, columns=box)
+df_freq_T = df_freq.T.reset_index()
+
+
+df_freq_T.columns = ["Noun", "갯수"]
+
+df_freq_T["c_Noun"] = df_freq_T["Noun"].str.replace("/1", "")
+
+dftn=df_freq_T.sort_values(["갯수"], ascending=False)
+dftn= dftn[['c_Noun','갯수']].reset_index(drop=True)
+dftn1= dftn.iloc[0:30,:]
+
+
+# ==============
+st.title(f" 위의 조건으로 {dataset_name} 에서 시킨 메뉴 보기")
+
+st.write(alt.Chart(dftn1).mark_bar().encode(
+#     x=alt.X('갯수', sort=None),
+#     y='c_menu',
+    y=alt.X('c_Noun', sort=None),
+    x='갯수',
+))
+
+if st.checkbox('맨뒤에 데이터까지 보시려면 여기를 눌러주세요 '):
+    # 체크박스를 넣어줌  
+    dftn
+# ==============
+
+
 
 dfi= df.sort_values(by='사진주소',ascending=0)
 
