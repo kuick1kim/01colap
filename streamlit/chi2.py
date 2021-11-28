@@ -111,7 +111,7 @@ st.title(f"")
 st.title(f"")
 st.title(f"")
 st.title(f" {dataset_name} 에서 시킨 메뉴 보기")
-st.write(alt.Chart(dft1).mark_bar(color="yellow").encode(
+st.write(alt.Chart(dft1).mark_bar(color="prple").encode(
     y=alt.X('c_menu', sort=None),
     x='frequency',
 ))
