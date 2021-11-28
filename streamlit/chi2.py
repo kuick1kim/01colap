@@ -104,6 +104,8 @@ dfi=dfj[:10]
 # ======
 st.title(f"")
 st.title(f"")
+st.title(f"")
+st.title(f"")
 st.title(f" {dataset_name} 에서 시킨 메뉴 보기")
 st.write(alt.Chart(dft1).mark_bar().encode(
 #     x=alt.X('frequency', sort=None),
@@ -144,6 +146,8 @@ dftn= dftn[['명사','갯수']].reset_index(drop=True)
 dftn1= dftn.iloc[0:15,:]
 
 # ==============
+st.title(f"")
+st.title(f"")
 st.title(f"")
 st.title(f"")
 st.title(f"많이 나온 형태소 빈도")
