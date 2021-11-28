@@ -65,7 +65,10 @@ st.title(f" {dataset_name} 날짜별 구매 횟수")
 freq = df.groupby(['time']).count()
 freq = freq.reset_index(inplace=False)
 freq = freq[['time','지역']].sort_values(by='time',ascending=1)
-st.write(alt.Chart(freq).mark_bar().encode(
+st.write(alt.Chart(freq).mark_bar().mark_area(
+    color='goldenrod',
+    opacity=0.3
+).encode(
     x=alt.X('time', sort='-x'),
     y='지역' 
 ) )
