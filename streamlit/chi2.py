@@ -66,8 +66,7 @@ freq = df.groupby(['time']).count()
 freq = freq.reset_index(inplace=False)
 freq = freq[['time','지역']].sort_values(by='time',ascending=1)
 st.write(alt.Chart(freq).mark_bar().mark_area(
-    color='goldenrod',
-    opacity=0.3
+    color='goldenrod'
 ).encode(
     x=alt.X('time', sort='-x'),
     y='지역' 
