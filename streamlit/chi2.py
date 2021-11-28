@@ -60,7 +60,7 @@ df3 = df2.loc[mask3, :]
 
 df=df3
 
-st.title(f" {dataset_name} 탐색")
+st.title(f" {dataset_name} 날짜별 구매 횟수")
 #############################################################
 freq = df.groupby(['time']).count()
 freq = freq.reset_index(inplace=False)
@@ -74,7 +74,7 @@ st.write(alt.Chart(freq).mark_bar().encode(
 
 df['주문내용']=df['주문내용'].fillna('주문내용없음')
 ##############잘됨####################
-if st.checkbox('여기를 누르면 선택된 데이터를 볼 수 있습니다. '):    
+if st.checkbox('여기를 누르면 전체 데이터를 볼 수 있습니다. '):    
     df
 
 def get_pos(x):  
@@ -102,7 +102,7 @@ dft1= dft.iloc[0:15,:]
 dfj= df.sort_values(by='사진주소',ascending=0)
 dfi=dfj[:10]
 # ======
-st.title(f" 위의 조건으로 {dataset_name} 에서 시킨 메뉴 보기")
+st.title(f" {dataset_name} 에서 시킨 메뉴 보기")
 st.write(alt.Chart(dft1).mark_bar().encode(
 #     x=alt.X('frequency', sort=None),
 #     y='c_menu',
@@ -110,7 +110,7 @@ st.write(alt.Chart(dft1).mark_bar().encode(
     x='frequency',
 ))
 # ========
-if st.checkbox('맨뒤에 데이터까지 보시려면 여기를 눌러주세요 '):
+if st.checkbox('나머지 데이터 보시려면 여기를 눌러주세요 '):
     # 체크박스를 넣어줌  
     dft
     towrite = io.BytesIO()
@@ -142,7 +142,7 @@ dftn= dftn[['명사','갯수']].reset_index(drop=True)
 dftn1= dftn.iloc[0:15,:]
 
 # ==============
-st.title(f" 위의 조건으로 제일 많이 나온 형태소 빈도")
+st.title(f"많이 나온 형태소 빈도")
 
 st.write(alt.Chart(dftn1).mark_bar().encode(
 #     x=alt.X('갯수', sort=None),
