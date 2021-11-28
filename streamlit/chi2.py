@@ -154,7 +154,7 @@ st.title(f"")
 st.title(f"")
 st.title(f"많이 나온 형태소 빈도")
 
-st.write(alt.Chart(dftn1).mark_bar().encode(
+st.write(alt.Chart(dftn1).mark_bar(color='orange').encode(
 #     x=alt.X('갯수', sort=None),
 #     y='c_menu',
     y=alt.X('명사', sort=None),
