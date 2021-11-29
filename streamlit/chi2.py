@@ -7,7 +7,7 @@ import altair as alt
 from PIL import Image
 
 manykk = st.sidebar.markdown("""
-[AWS로 돌아가기](http://18.118.243.103:8080/)
+[AWS로 돌아가기](http://18.118.243.103:8080/){:target="_blank"}
 """)
 
 # 여기는 단순하게 이름이다
