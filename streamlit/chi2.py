@@ -6,10 +6,6 @@ import numpy as np
 import altair as alt
 from PIL import Image
 
-manykk = st.sidebar.markdown("""
-[AWS로 돌아가기](http://18.118.243.103:8080/)
-""")
-#[AWS로 돌아가기](http://18.118.243.103:8080/)
 
 
 # 여기는 단순하게 이름이다
@@ -274,7 +270,15 @@ for i,j in zip(dfi['사진주소'],dfi['댓글']):
     try:
         st.image(i, width=500)
     except:
-        pass        
+        pass      
+    
+    
+st.sidebar.title('')
+st.sidebar.title('')
+st.sidebar.markdown("""
+[AWS로 돌아가기](http://18.118.243.103:8080/)
+""")
+
 #################################################################
 
 
