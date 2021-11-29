@@ -43,7 +43,14 @@ if spectra is not None:
 
 #########################성공#########################################
 
-st.title(len(df)-1)
+
+akim0=0
+akiml= len(df)-1
+
+many = st.sidebar.slider('기간',  akim0, akiml, (0, akiml))
+
+df = df.iloc[many[0]:many[1],:]
+df
 
 # mat = st.sidebar.slider('맛',  0, 5, (0, 5))
 # yang = st.sidebar.slider('양', 0, 5, (0, 5))
