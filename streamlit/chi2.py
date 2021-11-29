@@ -52,7 +52,7 @@ many = st.sidebar.slider('기간',  akim0, akiml, (0, akiml))
 df = df.iloc[many[0]:many[1],:]
 
 
-many = st.sidebar.writh(' ')
+many = st.sidebar.title(' ')
 
 
 mat = st.sidebar.slider('맛',  0, 5, (0, 5))
