@@ -52,6 +52,9 @@ many = st.sidebar.slider('기간',  akim0, akiml, (0, akiml))
 df = df.iloc[many[0]:many[1],:]
 
 
+st.sidebar.slider()
+st.sidebar.slider()
+
 mat = st.sidebar.slider('맛',  0, 5, (0, 5))
 yang = st.sidebar.slider('양', 0, 5, (0, 5))
 bae = st.sidebar.slider( '배달', 0, 5, (0, 5))
