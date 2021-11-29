@@ -241,7 +241,7 @@ count =1
 for i,j,K in zip(dfi['사진주소'],dfi['댓글'],dfi['주문내용']):
     original_title1 = '<p style="color:#0431B4; font-size: 14px;">손님이 올려준 {c}번째 사진 // {j}</p>'.format(c=count,j=j)        
     st.markdown(original_title1, unsafe_allow_html=True)
-    original_title2 = '<p style="color:#0431B4; font-size: 14px;">주문내용 : {k}</p>'.format(K=K)        
+    original_title2 = '<p style="color:#0431B4; font-size: 14px;">주문내용 : {K}</p>'.format(K=K)        
     st.markdown(original_title2, unsafe_allow_html=True)
     count +=1
     try:
