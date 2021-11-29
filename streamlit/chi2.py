@@ -37,7 +37,7 @@ def load_data(name):
 df = load_data(dataset_name)
 
 ##########################성공#여기는 추가넣는부분################################
-spectra = st.file_uploader("ex.csv", type={"csv", "txt", "xlsx"})
+spectra = st.file_uploader(" ", type={"csv", "txt", "xlsx"})
 if spectra is not None:
     df = pd.read_csv(spectra)
     dataset_name='외부데이터' 
