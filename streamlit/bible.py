@@ -4,7 +4,9 @@ import streamlit as st
 pd.set_option('display.max_columns', None) 
 pd.set_option('display.max_rows', None)
 
-
+st.markdown("""
+[AWS로 돌아가기](http://18.118.243.103:8080/)
+""")
 
 DATA_URL = ('https://raw.githubusercontent.com/kuick1kim/01colap/main/bible.csv')
 @st.cache
@@ -30,6 +32,3 @@ for kk , ll ,pp,oo in zip(df4['말씀'], df4['성경'], df4['장'], df4['절']):
     
     
 
-st.markdown("""
-[AWS로 돌아가기](http://18.118.243.103:8080/)
-""")
