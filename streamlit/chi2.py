@@ -43,7 +43,7 @@ if spectra is not None:
 
 #########################성공#########################################
 
-st.title(len(df))
+st.title(len(df)-1)
 
 # mat = st.sidebar.slider('맛',  0, 5, (0, 5))
 # yang = st.sidebar.slider('양', 0, 5, (0, 5))
