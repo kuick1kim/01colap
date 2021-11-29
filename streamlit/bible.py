@@ -28,3 +28,9 @@ for kk , ll ,pp,oo in zip(df4['말씀'], df4['성경'], df4['장'], df4['절']):
     st.write(aa)
     st.write(kk)
     
+    
+st.sidebar.title('')
+st.sidebar.title('')
+st.sidebar.markdown("""
+[AWS로 돌아가기](http://18.118.243.103:8080/)
+""")
