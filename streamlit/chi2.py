@@ -27,11 +27,9 @@ def load_data(name):
     else:
         DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/korental.csv'
 
-
     data = pd.read_csv(DATA_URL)    
     return data
 df = load_data(dataset_name)
-
 ########################여기는 추가넣는부분##############
 spectra = st.file_uploader(" ", type={"csv", "txt", "xlsx"})
 if spectra is not None:
@@ -39,12 +37,11 @@ if spectra is not None:
     dataset_name='외부데이터' 
 #########################성공###########################
 
-akiml= len(df)#-1
+akiml= len(df)
 many = st.sidebar.slider('기간',  0, akiml, (0, akiml))
 df = df.iloc[many[0]:many[1],:]
 
 manykk = st.sidebar.title(' ')
-
 
 mat = st.sidebar.slider('맛',  0, 5, (0, 5))
 yang = st.sidebar.slider('양', 0, 5, (0, 5))
@@ -58,7 +55,6 @@ df2 = df1.loc[mask2, :]
 
 mask3 = (df2['배달'] >= bae[0]) & (df2['배달'] <= bae[1])
 df3 = df2.loc[mask3, :]
-
 df=df3
 
 st.title(f" {dataset_name} 날짜별 구매 횟수")
@@ -76,7 +72,6 @@ st.write(alt.Chart(freq).mark_bar().mark_area(
 ) )
 ##############################################################
 
-
 df['주문내용']=df['주문내용'].fillna('주문내용없음')
 ##############잘됨####################
 if st.checkbox('여기를 누르면 전체 데이터를 볼 수 있습니다. '):    
@@ -89,11 +84,6 @@ if st.checkbox('여기를 누르면 전체 데이터를 볼 수 있습니다. ')
     st.markdown(linko, unsafe_allow_html=True)
     #===============================인코딩이 안되서 csv를 안씀================================
     
-    
-    
-    
-    
-
 def get_pos(x):  
     r1 = x.split(',')    
     pos = ['{}'.format(jumun) for jumun in r1 ]    
@@ -139,8 +129,6 @@ if st.checkbox('나머지 데이터 보시려면 여기를 눌러주세요 '):
     linko= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="고객선호메뉴보기.xlsx">고객이 선호하는 메뉴 다운로드받기</a>'
     st.markdown(linko, unsafe_allow_html=True)
     #===============================인코딩이 안되서 csv를 안씀================================
-    
-    
 
 ##################################################################################
 
@@ -159,7 +147,6 @@ df_freq_T["명사"] = df_freq_T["명사1"].str.replace("]", "").str.replace("[",
 dftn=df_freq_T.sort_values(["갯수"], ascending=False)
 dftn= dftn[['명사','갯수']].reset_index(drop=True)
 dftn1= dftn.iloc[0:15,:]
-
 # ==============
 st.title(f"")
 st.title(f"")
@@ -173,7 +160,6 @@ st.write(alt.Chart(dftn1).mark_bar(color='orange').encode(
     y=alt.X('명사', sort=None),
     x='갯수',
 ))
-
 #######################동사/ 형용사############################
 a=[]
 df2=df['Verb'].fillna("")
@@ -246,8 +232,7 @@ if st.checkbox('추가 형태소 빈도 보기'):
     linko= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="고객댓글다운.xlsx">댓글 내용을 컴퓨터로 다운 받아봅니다.</a>'
     st.markdown(linko, unsafe_allow_html=True)
     #===============================인코딩이 안되서 csv를 안씀================================
-
-
+    
 st.title(f"")
 st.title(f"")
 st.title(f"")
@@ -260,8 +245,7 @@ for i,j in zip(dfi['사진주소'],dfi['댓글']):
     try:
         st.image(i, width=500)
     except:
-        pass      
-    
+        pass          
     
 st.sidebar.title('')
 st.sidebar.title('')
@@ -269,7 +253,6 @@ st.sidebar.markdown("""
 [AWS로 돌아가기](http://18.118.243.103:8080/)
 """)
 
-#################################################################
 
 
 
