@@ -6,7 +6,8 @@ import numpy as np
 import altair as alt
 from PIL import Image
 
-manykk = st.sidebar.markdown("""
+manykk = st.sidebar.markdown(f"""
+
 <a href="http://18.118.243.103:8080/" target="_parent" >AWS로 돌아가기</a>
 """)
 #[AWS로 돌아가기](http://18.118.243.103:8080/)
