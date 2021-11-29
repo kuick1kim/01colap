@@ -6,6 +6,9 @@ import numpy as np
 import altair as alt
 from PIL import Image
 
+manykk = st.sidebar.markdown("""
+* ** [김민상 홈페이지로 돌아가기](https://http://18.118.243.103:8080/).
+""")
 
 # 여기는 단순하게 이름이다
 dataset_name = st.sidebar.selectbox(
@@ -52,7 +55,7 @@ many = st.sidebar.slider('기간',  akim0, akiml, (0, akiml))
 df = df.iloc[many[0]:many[1],:]
 
 
-many = st.sidebar.title(' ')
+manykk = st.sidebar.title(' ')
 
 
 mat = st.sidebar.slider('맛',  0, 5, (0, 5))
