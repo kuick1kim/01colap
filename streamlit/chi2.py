@@ -39,10 +39,7 @@ if spectra is not None:
     dataset_name='외부데이터' 
 #########################성공###########################
 
-
-#akim0=0
-akiml= len(df)-1
-
+akiml= len(df)#-1
 many = st.sidebar.slider('기간',  0, akiml, (0, akiml))
 df = df.iloc[many[0]:many[1],:]
 
