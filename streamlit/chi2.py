@@ -6,14 +6,10 @@ import numpy as np
 import altair as alt
 from PIL import Image
 
-
-
-# 여기는 단순하게 이름이다
 dataset_name = st.sidebar.selectbox(
     'Select Dataset',
     ('BBQ', '처가집','후라이드참잘하는집', '네네치킨','교촌', '코리엔탈치킨')
 )
-
 
 @st.cache
 def load_data(name):
@@ -36,22 +32,19 @@ def load_data(name):
     return data
 df = load_data(dataset_name)
 
-##########################성공#여기는 추가넣는부분################################
+########################여기는 추가넣는부분##############
 spectra = st.file_uploader(" ", type={"csv", "txt", "xlsx"})
 if spectra is not None:
     df = pd.read_csv(spectra)
     dataset_name='외부데이터' 
+#########################성공###########################
 
-#########################성공#########################################
 
-
-akim0=0
+#akim0=0
 akiml= len(df)-1
 
-many = st.sidebar.slider('기간',  akim0, akiml, (0, akiml))
-
+many = st.sidebar.slider('기간',  0, akiml, (0, akiml))
 df = df.iloc[many[0]:many[1],:]
-
 
 manykk = st.sidebar.title(' ')
 
