@@ -24,7 +24,7 @@ bible = st.text_input("성경을 넣어주세요/(백스페이스 아래 '|' 마
 df4 = df5[df5["성경"].str.contains(bible)].copy()
 
 bible1 = st.text_input("장수를 넣어주세요")
-df6 = df5[df5["장"].str.contains(bible1)].copy()
+df6 = df5[df5["장"]=='bible1'].copy()
 st.write(df6) 
 
 for kk , ll ,pp,oo in zip(df6['말씀'], df6['성경'], df6['장'], df6['절']):
