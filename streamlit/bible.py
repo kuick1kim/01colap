@@ -23,9 +23,11 @@ df5 = df[df["말씀"].str.contains(word)].copy()
 bible = st.text_input("성경을 넣어주세요/(백스페이스 아래 '|' 마크를 넣으시면 중복 검색됩니다. ) ",'열왕기')
 df4 = df5[df5["성경"].str.contains(bible)].copy()
 
-st.write(df4) 
+bible1 = st.text_input("장수를 넣어주세요")
+df6 = df5[df5["장"].str.contains(bible1)].copy()
+st.write(df6) 
 
-for kk , ll ,pp,oo in zip(df4['말씀'], df4['성경'], df4['장'], df4['절']):
+for kk , ll ,pp,oo in zip(df6['말씀'], df6['성경'], df6['장'], df6['절']):
     aa= str(ll) +" "+str(pp)+'-'+str(oo)
     st.write(aa)
     st.write(kk)
