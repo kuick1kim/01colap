@@ -25,6 +25,8 @@ df2 = df1[df1["성경"].str.contains(bible)].copy()
 
 bible1 = st.text_input("장수를 넣어주세요")
 df3 = df2[df2["장"]=='bible1'].copy()
+st.write(df1) 
+st.write(df2) 
 st.write(df3) 
 
 for kk , ll ,pp,oo in zip(df3['말씀'], df3['성경'], df3['장'], df3['절']):
