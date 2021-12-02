@@ -28,9 +28,9 @@ bible1 = st.text_input("장수를 넣어주세요")
 if bible1 != "":    
     bible1 = int(bible1)
     df2 = df2[df2["장"]==bible1].copy()
-    # st.write(df1) 
-    # st.write(df2) 
-    st.write(df2) 
+
+    
+st.write(df2) 
 
 for kk , ll ,pp,oo in zip(df2['말씀'], df2['성경'], df2['장'], df2['절']):
     aa= str(ll) +" "+str(pp)+'-'+str(oo)
