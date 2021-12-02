@@ -24,7 +24,8 @@ bible = st.text_input("성경을 넣어주세요/(백스페이스 아래 '|' 마
 df2 = df1[df1["성경"].str.contains(bible)].copy()
 
 bible1 = st.text_input("장수를 넣어주세요")
-df3 = df2[df2["장"]==int(bible1)].copy()
+bible1 = int(bible1)
+df3 = df2[df2["장"]==bible1].copy()
 st.write(df1) 
 st.write(df2) 
 st.write(df3) 
