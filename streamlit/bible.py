@@ -24,13 +24,15 @@ bible = st.text_input("성경을 넣어주세요/(백스페이스 아래 '|' 마
 df2 = df1[df1["성경"].str.contains(bible)].copy()
 
 bible1 = st.text_input("장수를 넣어주세요")
-bible1 = int(bible1)
-df3 = df2[df2["장"]==bible1].copy()
-st.write(df1) 
-st.write(df2) 
-st.write(df3) 
 
-for kk , ll ,pp,oo in zip(df3['말씀'], df3['성경'], df3['장'], df3['절']):
+bible1 = int(bible1)
+if bible1 != "":    
+    df2 = df2[df2["장"]==bible1].copy()
+    # st.write(df1) 
+    # st.write(df2) 
+    st.write(df2) 
+
+for kk , ll ,pp,oo in zip(df2['말씀'], df2['성경'], df2['장'], df2['절']):
     aa= str(ll) +" "+str(pp)+'-'+str(oo)
     st.write(aa)
     st.write(kk)
