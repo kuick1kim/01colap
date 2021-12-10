@@ -81,8 +81,8 @@ df=df.transpose()
 sorted_sector_unique = list(df.columns)
 
 
-
-selected_sector = st.sidebar.multiselect('선택', sorted_sector_unique, sorted_sector_unique)
+llist=['전체소계', '한식 일반 음식점업', '치킨 전문점']
+selected_sector = st.sidebar.multiselect('선택', sorted_sector_unique, llist)
 
 
 dfs = df.loc[:,selected_sector]
