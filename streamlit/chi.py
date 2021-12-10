@@ -252,3 +252,11 @@ if st.checkbox('여기를 누르면 데이터를 볼 수 있어요 '):
     linko= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="2021외식업 임대비율.xlsx">위에 보이는 데이터를 엑셀로 다운로드 받아봅니다. </a>'
     st.markdown(linko, unsafe_allow_html=True)
 
+
+    
+    
+st.sidebar.markdown("""
+
+[요기요 데이터 가기](https://share.streamlit.io/kuick1kim/01colap/main/streamlit/chi2.py/).
+""")
+
