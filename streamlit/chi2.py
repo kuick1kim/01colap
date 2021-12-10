@@ -252,7 +252,7 @@ for i,j,K in zip(dfi['사진주소'],dfi['댓글'],dfi['주문내용']):
 st.sidebar.title('')
 st.sidebar.title('')
 st.sidebar.markdown("""
-[AWS로 돌아가기](http://18.118.243.103:8080/)
+[외식산업 경기전망지수](https://share.streamlit.io/kuick1kim/01colap/main/streamlit/chi.py/)
 """)
 
 
