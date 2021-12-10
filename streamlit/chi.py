@@ -81,7 +81,7 @@ df=df.transpose()
 sorted_sector_unique = list(df.columns)
 
 
-llist=['전체소계', '한식 일반 음식점업', '치킨 전문점']
+llist=['전체소계',  '치킨 전문점']
 selected_sector = st.sidebar.multiselect('선택', sorted_sector_unique, llist)
 
 
@@ -192,7 +192,9 @@ dff1=dff1.transpose()
 # st.dataframe(dff1)
 #선택하기....
 sorted_sector_unique1 = list(dff1.columns)
-selected_sector1 = st.sidebar.multiselect('선택', sorted_sector_unique1, sorted_sector_unique1)
+
+lllist = ['전체소계',  '치킨 전문점']
+selected_sector1 = st.sidebar.multiselect('선택', sorted_sector_unique1, lllist)
 
 
 
