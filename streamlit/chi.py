@@ -193,8 +193,8 @@ dff1=dff1.transpose()
 #선택하기....
 sorted_sector_unique1 = list(dff1.columns)
 
-lllist = ['전체소계',  '치킨 전문점']
-selected_sector1 = st.sidebar.multiselect('선택', sorted_sector_unique1, lllist)
+# lllist = ['전체소계',  '치킨 전문점']
+selected_sector1 = st.sidebar.multiselect('선택', sorted_sector_unique1, sorted_sector_unique1)
 
 
 
