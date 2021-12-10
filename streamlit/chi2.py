@@ -249,8 +249,7 @@ for i,j,K in zip(dfi['사진주소'],dfi['댓글'],dfi['주문내용']):
     except:
         pass          
     
-st.sidebar.title('')
-st.sidebar.title('')
+
 st.sidebar.markdown("""
 [외식산업 경기전망지수](https://share.streamlit.io/kuick1kim/01colap/main/streamlit/chi.py/)
 """)
