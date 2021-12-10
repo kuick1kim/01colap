@@ -254,8 +254,8 @@ if st.checkbox('여기를 누르면 데이터를 볼 수 있어요 '):
 
 
     
-st.title('')
-st.title('')    
+st.sidebar.header('')
+st.sidebar.header('') 
 st.sidebar.markdown("""
 
 [요기요 데이터 가기](https://share.streamlit.io/kuick1kim/01colap/main/streamlit/chi2.py/).
