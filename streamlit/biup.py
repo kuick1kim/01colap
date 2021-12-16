@@ -10,7 +10,8 @@ def load_data():
     data = pd.read_csv(DATA_URL)    
     return data
 df = load_data()
-i="https://raw.githubusercontent.com/kuick1kim/01colap/main/streamlit/UiPath.png"
+# i="https://raw.githubusercontent.com/kuick1kim/01colap/main/streamlit/UiPath.png"
+i='https://www.uipath.com/hubfs/resources/logos/UiPath-logo-orange-og-image.png'
 try:
     st.image(i)
 except:
