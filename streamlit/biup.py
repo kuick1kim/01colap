@@ -12,7 +12,7 @@ def load_data():
 df = load_data()
 st.write(df) 
 akiml= len(df)
-many = st.sidebar.slider('회사',  0, akiml, 0)
+many = st.sidebar.slider('몇번째 회사인지 선택해 주세요',  0, akiml, 0)
 
 many=int(many)
 
@@ -24,6 +24,8 @@ df1= df.iloc[many, :]
 st.write(df1) 
 
 st.title(df1['client']) 
+st.write("지역",' : ',df1['지역'])
+
 
 df2= df1['경험담k.1']
 df2= df2.split("#####")
