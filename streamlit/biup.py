@@ -25,12 +25,10 @@ st.write(df1)
 
 # try:
 a= df1['img']
-# st.write(a)
+st.write(a)
 
-st.image(a)
+# st.image(a)
    
-
-
 
 st.title(df1['client']) 
 st.write("지역",'　:　',df1['지역'],'　　　', '산업','　:　',df1['산업'])
