@@ -25,6 +25,7 @@ st.write(df1)
 
 st.title(df1['client']) 
 st.write("지역",'　:　',df1['지역'],'　　　', '산업','　:　',df1['산업'])
+st.header(df1['Headline'])
 
 
 df2= df1['경험담k.1']
