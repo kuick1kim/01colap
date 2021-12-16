@@ -23,6 +23,16 @@ df1= df.iloc[many, :]
 
 st.write(df1) 
 
+# try:
+a= dfi['img']
+
+try:
+    st.image(a, width=300)
+except:
+    pass      
+
+
+
 st.title(df1['client']) 
 st.write("지역",'　:　',df1['지역'],'　　　', '산업','　:　',df1['산업'])
 st.header(df1['Headline'])
