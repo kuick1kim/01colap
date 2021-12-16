@@ -25,11 +25,10 @@ st.write(df1)
 
 # try:
 a= df1['img']
-st.write(a)
-try:
-    st.image(a, width=300)
-except:
-    pass      
+# st.write(a)
+
+st.image(a)
+   
 
 
 
