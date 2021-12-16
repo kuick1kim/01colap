@@ -19,7 +19,7 @@ st.write(df)
 akiml= len(df)
 many = st.sidebar.slider('회사',  0, akiml, 0)
 
-df= df[many[1]]
+df= df[many]
 
 
 st.write(df) 
