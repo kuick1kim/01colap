@@ -1,6 +1,8 @@
 
 import pandas as pd
 import streamlit as st
+from PIL import Image
+from classify import predict
 
 
 DATA_URL = ('https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/up.csv')
