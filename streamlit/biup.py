@@ -30,19 +30,5 @@ df2= df2.split("#####")
 for a in df2:
   st.write(a)
   st.write()
-
-
-# jang = st.text_input("특정 성경을 넣어주세요/ 안넣으시면 전체 검색 입니다. ",'누가')
-
-
-# df4 = df[df["성경"].str.contains(jang)].copy()
-
-# word = st.text_input("검색하고 싶은 말씀을 넣어주세요",'사랑')
-# df5 = df4[df4["말씀"].str.contains(word)].copy()
-# st.write(df5) 
-
-# for kk , ll ,pp,oo in zip(df5['말씀'], df5['성경'], df5['장'], df5['절']):
-#     aa= str(ll) +" "+str(pp)+'-'+str(oo)
-#     st.caption(aa)
-#     st.caption(kk)
-    
+  
+st.write(df1['story_k.1'])
