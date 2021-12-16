@@ -10,7 +10,7 @@ def load_data():
     data = pd.read_csv(DATA_URL)    
     return data
 df = load_data()
-
+st.write(df) 
 akiml= len(df)
 many = st.sidebar.slider('회사',  0, akiml, 0)
 
@@ -25,6 +25,7 @@ st.write(df1)
 
 st.write(df1['client']) 
 
+st.write(df1['경험담k.1'])
 
 
 # jang = st.text_input("특정 성경을 넣어주세요/ 안넣으시면 전체 검색 입니다. ",'누가')
