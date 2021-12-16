@@ -23,13 +23,13 @@ df1= df.iloc[many, :]
 
 st.write(df1) 
 
-st.write(df1['client']) 
+st.title(df1['client']) 
 
 df2= df1['경험담k.1']
 df2= df2.split("#####")
 for a in df2:
-  st.write(a)
-  st.write()
+  st.header(a)
+  st.title()
   
   
   
@@ -37,6 +37,6 @@ df3= df1['story_k.1']
 df3= df3.split("#####")
 for b in df3:
   st.write(b)
-  st.write()
-  st.write()
+  st.title()
+  st.title()
 
