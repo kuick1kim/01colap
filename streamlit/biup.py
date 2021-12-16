@@ -31,4 +31,12 @@ for a in df2:
   st.write(a)
   st.write()
   
-st.write(df1['story_k.1'])
+  
+  
+df3= df1['story_k.1']
+df3= df3.split("#####")
+for b in df3:
+  st.write(b)
+  st.write()
+  st.write()
+
