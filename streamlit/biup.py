@@ -13,9 +13,8 @@ def load_data():
     return data
 df = load_data()
 
-st.markdown("![A cute kitten](http://placekitten.com/200/300?style=centerme)")
 
-st.markdown("![Foo](https://www.epicloud.com.tw/wp-content/uploads/2020/09/%E6%9C%AA%E5%91%BD%E5%90%8D%E8%A8%AD%E8%A8%88-14.png)")
+st.markdown("![Foo](https://lh3.googleusercontent.com/proxy/arX8KAzc-yfz5Pw67IQ6o86FkebTfFh-PVALs2N9ZwYCYp0BHe3kowCRhtIz_VuxMtp9nBdwP5bk3U7gxIrVw7rMs1XOjk3_1LpDhwEmIIjoE8SXLDbpvHE)")
 
 
 st.write(df) 
