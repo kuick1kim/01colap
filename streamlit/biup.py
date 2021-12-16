@@ -25,7 +25,11 @@ st.write(df1)
 
 st.write(df1['client']) 
 
-st.write(df1['경험담k.1'])
+df2= df1['경험담k.1']
+df2= df2.split("#####")
+for a in df2:
+  st.write(a)
+  st.write()
 
 
 # jang = st.text_input("특정 성경을 넣어주세요/ 안넣으시면 전체 검색 입니다. ",'누가')
