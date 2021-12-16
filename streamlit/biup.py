@@ -29,7 +29,7 @@ df2= df1['경험담k.1']
 df2= df2.split("#####")
 for a in df2:
   st.header(a)
-  st.title()
+  st.header()
   
   
   
@@ -37,6 +37,6 @@ df3= df1['story_k.1']
 df3= df3.split("#####")
 for b in df3:
   st.write(b)
-  st.title()
-  st.title()
+  st.header()
+  st.header()
 
