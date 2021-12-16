@@ -1,7 +1,6 @@
 
 import pandas as pd
 import streamlit as st
-from PIL import Image
 
 
 
@@ -14,7 +13,7 @@ def load_data():
 df = load_data()
 
 
-st.markdown("![Foo](https://lh3.googleusercontent.com/proxy/arX8KAzc-yfz5Pw67IQ6o86FkebTfFh-PVALs2N9ZwYCYp0BHe3kowCRhtIz_VuxMtp9nBdwP5bk3U7gxIrVw7rMs1XOjk3_1LpDhwEmIIjoE8SXLDbpvHE)")
+#st.markdown("![Foo](https://lh3.googleusercontent.com/proxy/arX8KAzc-yfz5Pw67IQ6o86FkebTfFh-PVALs2N9ZwYCYp0BHe3kowCRhtIz_VuxMtp9nBdwP5bk3U7gxIrVw7rMs1XOjk3_1LpDhwEmIIjoE8SXLDbpvHE)")
 
 
 st.write(df) 
