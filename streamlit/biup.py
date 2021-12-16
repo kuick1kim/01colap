@@ -23,11 +23,7 @@ df1= df.iloc[many, :]
 
 st.write(df1) 
 
-# try:
-a= df1['img']
-st.write(a)
 
-# st.image(a)
    
 
 st.title(df1['client']) 
