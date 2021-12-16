@@ -12,7 +12,7 @@ def load_data():
 df = load_data()
 i="https://raw.githubusercontent.com/kuick1kim/01colap/main/streamlit/UiPath.png"
 try:
-    st.image(i, width=500)
+    st.image(i)
 except:
     pass      
 st.write(df) 
