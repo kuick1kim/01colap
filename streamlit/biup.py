@@ -14,11 +14,11 @@ df = load_data()
 akiml= len(df)
 many = st.sidebar.slider('회사',  0, akiml, 0)
 
-# many=int(many)
+many=int(many)
 
 st.write(many) 
 
-df1= df[akiml]
+df1= df.iloc[many, :]
 
 
 st.write(df1) 
