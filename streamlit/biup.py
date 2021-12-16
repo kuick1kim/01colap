@@ -11,7 +11,7 @@ def load_data():
     return data
 df = load_data()
 # i="https://raw.githubusercontent.com/kuick1kim/01colap/main/streamlit/UiPath.png"
-i='https://www.uipath.com/hubfs/resources/logos/UiPath-logo-orange-og-image.png'
+st.image('https://www.uipath.com/hubfs/resources/logos/UiPath-logo-orange-og-image.png')
 try:
     st.image(i)
 except:
