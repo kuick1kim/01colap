@@ -14,7 +14,7 @@ def load_data():
 df = load_data()
 # i="https://raw.githubusercontent.com/kuick1kim/01colap/main/streamlit/UiPath.png"
 
-st.markdown("![Foo](http://www.google.com.au/images/nav_logo7.png)(http://google.com.au/)")
+st.markdown("![Foo](https://www.uipath.com/hubfs/resources/logos/UiPath-logo-orange-og-image.png)")
 
 # st.image('https://www.uipath.com/hubfs/resources/logos/UiPath-logo-orange-og-image.png')
 try:
