@@ -10,6 +10,11 @@ def load_data():
     data = pd.read_csv(DATA_URL)    
     return data
 df = load_data()
+i="https://raw.githubusercontent.com/kuick1kim/01colap/main/streamlit/UiPath.png"
+try:
+    st.image(i, width=500)
+except:
+    pass      
 st.write(df) 
 akiml= len(df)
 many = st.sidebar.slider('몇번째 회사인지 선택해 주세요',  0, akiml-1, 0)
@@ -20,7 +25,6 @@ st.write(many)
 
 df1= df.iloc[many, :]
 
-# st.image('https://raw.githubusercontent.com/kuick1kim/01colap/main/streamlit/UiPath.png')
 st.write(df1) 
 
 
