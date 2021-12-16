@@ -24,7 +24,7 @@ df1= df.iloc[many, :]
 st.write(df1) 
 
 # try:
-a= dfi['img']
+a= df1['img']
 
 try:
     st.image(a, width=300)
