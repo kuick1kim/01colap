@@ -23,7 +23,7 @@ df1= df.iloc[many, :]
 
 st.write(df1) 
 
-st.write(client) 
+st.write(df1['client']) 
 
 
 
