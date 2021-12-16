@@ -8,7 +8,7 @@ from PIL import Image
 
 dataset_name = st.sidebar.selectbox(
     'Select Dataset',
-    ('BBQ', '처가집','후라이드참잘하는집', '네네치킨','교촌', '코리엔탈치킨')
+    ('BBQ', '처가집','후라이드참잘하는집', 'BHC','교촌', '코리엔탈치킨')
 )
 
 @st.cache
@@ -20,7 +20,7 @@ def load_data(name):
         DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/cheogajip.csv'
     elif name == '후라이드참잘하는집':
         DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/friedgood.csv'
-    elif name == '네네치킨':
+    elif name == 'BHC':
         DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/nene.csv'
     elif name == '교촌':
         DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/kyochon.csv'       
