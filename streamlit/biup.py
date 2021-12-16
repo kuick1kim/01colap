@@ -20,7 +20,7 @@ st.write(many)
 
 df1= df.iloc[many, :]
 
-
+st.image('https://github.com/kuick1kim/01colap/raw/main/streamlit/UiPath.png')
 st.write(df1) 
 
 
