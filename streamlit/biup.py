@@ -11,15 +11,14 @@ def load_data():
     return data
 df = load_data()
 
-
-
-
 akiml= len(df)
 many = st.sidebar.slider('회사',  0, akiml, 0)
 
+many=int(many)
+
 st.write(many) 
 
-df1= df[int(many)]
+df1= df[many]
 
 
 st.write(df1) 
