@@ -42,6 +42,9 @@ for a in df2:
   st.header(a)
   st.write()
   
+st.write()
+st.write()
+st.header("효과")
 st.write(df1['key Benefits']) 
 
 df3= df1['story_k.1']
