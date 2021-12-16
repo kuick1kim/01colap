@@ -34,8 +34,8 @@ for a in df2:
   st.header(a)
   st.write()
   
-  
-  
+st.write(df1['key Benefits']) 
+
 df3= df1['story_k.1']
 df3= df3.split("#####")
 for b in df3:
