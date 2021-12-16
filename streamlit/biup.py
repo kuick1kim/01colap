@@ -11,21 +11,22 @@ def load_data():
     return data
 df = load_data()
 
+
+st.write(df) 
+
+
+
+akiml= len(df)
+many = st.sidebar.slider('회사',  0, akiml, 0)
+
+df= df[many[1]]
+
+
 st.write(df) 
 
 
 
 
-
-
-
-
-
-
-
-
-
-# # df= pd.read_csv('c:/123kms/성경전체.csv')
 
 # jang = st.text_input("특정 성경을 넣어주세요/ 안넣으시면 전체 검색 입니다. ",'누가')
 
