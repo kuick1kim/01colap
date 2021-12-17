@@ -13,7 +13,7 @@ def load_data():
 df = load_data()
 
 
-st.markdown("![Foo](https://raw.githubusercontent.com/kuick1kim/01colap/main/streamlit/uipath.png)")
+st.markdown("![Foo](https://raw.githubusercontent.com/kuick1kim/01colap/main/streamlit/UiPath.png)")
 
 
 st.write(df) 
