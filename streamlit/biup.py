@@ -3,7 +3,7 @@ import io
 import pandas as pd
 import streamlit as st
 
-
+i
 
 DATA_URL = ('https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/up.csv')
              
@@ -14,7 +14,7 @@ def load_data():
 df = load_data()
 
 
-st.markdown("![Foo](https://lh3.googleusercontent.com/proxy/arX8KAzc-yfz5Pw67IQ6o86FkebTfFh-PVALs2N9ZwYCYp0BHe3kowCRhtIz_VuxMtp9nBdwP5bk3U7gxIrVw7rMs1XOjk3_1LpDhwEmIIjoE8SXLDbpvHE)")
+st.markdown("![Foo](https://raw.githubusercontent.com/kuick1kim/01colap/main/streamlit/uipath.png)")
 
 
 st.write(df) 
