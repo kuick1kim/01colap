@@ -29,7 +29,7 @@ df = load_data()
 
 
 
-word = st.text_input("검색하고 싶은 말씀을 넣어주세요",'주 예수를 믿으라 그리하면 너와 네 집이 구원을 받으리라 ')
+word = st.text_input("검색하고 싶은 성경 말씀을 넣어주세요",'주 예수를 믿으라 그리하면 너와 네 집이 구원을 받으리라 ')
 df1 = df[df["말씀"].str.contains(word)].copy()
 
 bible = st.text_input("성경을 넣어주세요/(백스페이스 아래 '|' 마크를 넣으시면 중복 검색됩니다. ) ",'')
