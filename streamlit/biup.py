@@ -13,7 +13,10 @@ def load_data():
 df = load_data()
 
 st.title("사이트가 변경되었습니다. 감사합니다.") 
-
+st.write()
+st.write()
+st.write()
+st.write()
 # st.write(df) 
 
 
