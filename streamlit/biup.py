@@ -3,7 +3,6 @@ import io
 import pandas as pd
 import streamlit as st
 
-i
 
 DATA_URL = ('https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/up.csv')
              
