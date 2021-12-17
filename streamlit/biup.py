@@ -14,18 +14,18 @@ def load_data():
 df = load_data()
 
 
-#st.markdown("![Foo](https://lh3.googleusercontent.com/proxy/arX8KAzc-yfz5Pw67IQ6o86FkebTfFh-PVALs2N9ZwYCYp0BHe3kowCRhtIz_VuxMtp9nBdwP5bk3U7gxIrVw7rMs1XOjk3_1LpDhwEmIIjoE8SXLDbpvHE)")
+st.markdown("![Foo](https://lh3.googleusercontent.com/proxy/arX8KAzc-yfz5Pw67IQ6o86FkebTfFh-PVALs2N9ZwYCYp0BHe3kowCRhtIz_VuxMtp9nBdwP5bk3U7gxIrVw7rMs1XOjk3_1LpDhwEmIIjoE8SXLDbpvHE)")
 
 
 st.write(df) 
 
 ##########################################################################
-towrite = io.BytesIO()
-downloaded_file = df.to_excel(towrite, encoding='utf-8')
-towrite.seek(0)  # reset pointer
-b64 = base64.b64encode(towrite.read()).decode()  # some strings
-linko= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="전체보기.xlsx">자료 다운받기</a>'
-st.markdown(linko, unsafe_allow_html=True)
+# towrite = io.BytesIO()
+# downloaded_file = df.to_excel(towrite, encoding='utf-8')
+# towrite.seek(0)  # reset pointer
+# b64 = base64.b64encode(towrite.read()).decode()  # some strings
+# linko= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="전체보기.xlsx">자료 다운받기</a>'
+# st.markdown(linko, unsafe_allow_html=True)
 #===============================인코딩이 안되서 csv를 안씀================================
 
 
