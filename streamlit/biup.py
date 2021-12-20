@@ -13,6 +13,7 @@ df = load_data()
 
 # st.title("주 예수를 믿으라 그리하면 너와 네 집이 구원을 받으리라.") 
 st.title("Uipath 성공사례.")
+st.write('Uipath 성공사례를 website에서 번역하여 수집하였습니다. ') 
 st.write(df) 
 
 n= len(df)
