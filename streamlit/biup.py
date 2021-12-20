@@ -23,10 +23,10 @@ n= len(df)-1
 st.write(n) 
 
 
-age = st.slider('How old are you?', 0, 130, 25)
-st.write("I'm ", age, 'years old')
+num = st.slider('몇번째 회사를 볼까요?', 0, n, 0)
 
-dfa= df.iloc[3,:]
+
+dfa= df.iloc[num,:]
 
 
 st.write(dfa) 
