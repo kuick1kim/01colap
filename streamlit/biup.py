@@ -33,7 +33,7 @@ dfa= df.iloc[num,:]
 st.write(dfa) 
 
 
-st.header('성공경험담')
+st.header('성공경험담',' ',dfa['client'])
 
 a=dfa['경험담k.1']
 a= a.split("#####")
