@@ -37,7 +37,7 @@ a=dfa['경험담k.1']
 a= a.split("#####")
 for b in a:
   c= b.replace("@@",'\n-----').replace("/////",'-----')
-  st.caption(c)
+  st.header(c)
   st.write('')
 
 
