@@ -20,13 +20,13 @@ st.write()
 st.write(df) 
 
 n= len(df)
-st.write(n) 
+
 
 
 num = st.slider('몇번째 회사를 볼까요?', 0, n-1, 0)
+st.write(num) 
 
-
-dfa= df.iloc[num,:]
+dfa= df.iloc[3,:]
 
 
 st.write(dfa) 
