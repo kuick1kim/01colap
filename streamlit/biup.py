@@ -47,7 +47,7 @@ for b in a:
 a1=dfa['story_k.1']
 a1= a1.split("#####")
 for b1 in a1:
-  st.header(b1)
+  st.write(b1)
   st.write('')
 
 
