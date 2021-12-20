@@ -20,7 +20,7 @@ n= len(df)
 
 
 num = st.slider('몇번째 회사를 볼까요?', 0, n-1, 2)
-st.write(num) 
+
 
 
 
@@ -30,6 +30,19 @@ dfa= df.iloc[num,:]
 
 
 st.write(dfa) 
+
+
+
+a=dfa['경험담k.1']
+a= a.split("#####")
+for b in a:
+    st.write(b)
+    st.write('')
+
+
+# ['client', '지역', '산업', 'Headline', 'Client Overview', 'process type',
+#        'key Benefits', '경험담', 'story', '경험담k', 'story_k', 'img', '경험담k.1',
+#        'story_k.1']
 
 
 ##################################################################################
