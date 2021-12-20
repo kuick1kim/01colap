@@ -11,8 +11,8 @@ def load_data():
     return data
 df = load_data()
 
-st.title("주 예수를 믿으라 그리하면 너와 네 집이 구원을 받으리라.") 
-
+# st.title("주 예수를 믿으라 그리하면 너와 네 집이 구원을 받으리라.") 
+st.title("Uipath 성공사례.")
 st.write(df) 
 
 n= len(df)
