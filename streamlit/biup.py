@@ -33,11 +33,21 @@ st.write(dfa)
 
 
 
+
+
+
 a=dfa['경험담k.1']
 a= a.split("#####")
 for b in a:
   c= b.replace("@@",'\n-----').replace("/////",'-----')
   st.header(c)
+  st.write('')
+  
+  
+a1=dfa['story_k.1']
+a1= a1.split("#####")
+for b1 in a:
+  st.header(b1)
   st.write('')
 
 
