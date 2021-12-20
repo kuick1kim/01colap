@@ -34,6 +34,8 @@ st.write(dfa)
 
 d= dfa['client']
 st.header(d)
+
+st.write('{aa}'.format(aa=dfa['Headline']))
 st.header('성공경험담')
 
 a=dfa['경험담k.1']
