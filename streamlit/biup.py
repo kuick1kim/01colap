@@ -33,9 +33,7 @@ dfa= df.iloc[num,:]
 st.write(dfa) 
 
 
-
-
-
+st.header('성공경험담')
 
 a=dfa['경험담k.1']
 a= a.split("#####")
@@ -44,6 +42,9 @@ for b in a:
   st.write(c)
   st.write('')
   
+  
+  
+st.header('전체 스토리')
   
 a1=dfa['story_k.1']
 a1= a1.split("#####")
