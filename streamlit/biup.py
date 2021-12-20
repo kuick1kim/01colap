@@ -36,8 +36,9 @@ st.write(dfa)
 a=dfa['경험담k.1']
 a= a.split("#####")
 for b in a:
-    st.write(b)
-    st.write('')
+  b=b.str.replace("@@","\n")
+  st.write(b)
+  st.write('')
 
 
 # ['client', '지역', '산업', 'Headline', 'Client Overview', 'process type',
