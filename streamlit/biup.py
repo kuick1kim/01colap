@@ -20,6 +20,14 @@ st.write()
 st.write(df) 
 
 
+dfa= df.iloc[3,:]
+
+
+st.write(dfa) 
+
+
+##################################################################################
+
 # DATA_URL = ('https://raw.githubusercontent.com/kuick1kim/01colap/main/bible.csv')
 # @st.cache
 # def load_data():
