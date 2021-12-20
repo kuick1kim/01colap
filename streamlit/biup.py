@@ -19,8 +19,8 @@ st.write(df)
 
 
 
-# num = st.slider('몇번째 회사를 볼까요?', 0, n, 2)
-# st.write(num) 
+num = st.slider('몇번째 회사를 볼까요?', 0, 30, 2)
+st.write(num) 
 
 
 # values = st.slider(
