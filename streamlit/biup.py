@@ -19,7 +19,7 @@ st.write()
 st.write()
 st.write(df) 
 
-n= len(df)
+n= len(df)-1
 st.write(n) 
 
 
