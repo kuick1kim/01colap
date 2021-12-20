@@ -15,21 +15,18 @@ st.title("주 예수를 믿으라 그리하면 너와 네 집이 구원을 받�
 
 st.write(df) 
 
-# n= len(df)
+n= len(df)
 
 
 
-num = st.slider('몇번째 회사를 볼까요?', 0, 30, 2)
+num = st.slider('몇번째 회사를 볼까요?', 0, n-1, 2)
 st.write(num) 
 
 
-# values = st.slider(
-#      'Select a range of values',
-#      0.0, 100.0, (25.0, 75.0))
-# st.write('Values:', values)
 
 
-dfa= df.iloc[3,:]
+
+dfa= df.iloc[num,:]
 
 
 st.write(dfa) 
