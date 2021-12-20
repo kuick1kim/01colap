@@ -12,10 +12,7 @@ def load_data():
 df = load_data()
 
 st.title("주 예수를 믿으라 그리하면 너와 네 집이 구원을 받으리라.") 
-st.write()
-st.write()
-st.write()
-st.write()
+
 st.write(df) 
 
 # n= len(df)
@@ -26,10 +23,10 @@ st.write(df)
 # st.write(num) 
 
 
-values = st.slider(
-     'Select a range of values',
-     0.0, 100.0, (25.0, 75.0))
-st.write('Values:', values)
+# values = st.slider(
+#      'Select a range of values',
+#      0.0, 100.0, (25.0, 75.0))
+# st.write('Values:', values)
 
 
 dfa= df.iloc[3,:]
