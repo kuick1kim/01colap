@@ -19,6 +19,12 @@ st.write()
 st.write()
 st.write(df) 
 
+n= len(df)
+st.write(n) 
+
+
+age = st.slider('How old are you?', 0, 130, 25)
+st.write("I'm ", age, 'years old')
 
 dfa= df.iloc[3,:]
 
