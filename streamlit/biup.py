@@ -1,5 +1,4 @@
-import base64
-import io
+
 import pandas as pd
 import streamlit as st
 
@@ -23,8 +22,13 @@ n= len(df)
 
 
 
-num = st.slider('몇번째 회사를 볼까요?', 0, n, 2)
-st.write(num) 
+# num = st.slider('몇번째 회사를 볼까요?', 0, n, 2)
+# st.write(num) 
+
+
+age = st.slider('How old are you?', 0, 130, 25)
+st.write("I'm ", age, 'years old')
+
 
 dfa= df.iloc[3,:]
 
