@@ -36,7 +36,7 @@ d= dfa['client']
 st.header(d)
 
 st.write('{aa}'.format(aa=dfa['Headline']))
-st.header('성공경험담')
+st.header('Success story')
 
 a=dfa['경험담k.1']
 a= a.split("#####")
@@ -47,7 +47,7 @@ for b in a:
   
   
   
-st.header('전체 스토리')
+st.header('Full story')
   
 a1=dfa['story_k.1']
 a1= a1.split("#####")
