@@ -5,8 +5,8 @@ import streamlit as st
 
 
 def main():
-    st.header('최대 7일 이내의 뉴스 키워드를 찾을 수 있습니다')
-    date = st.text_input('키워드를 보고싶은 일자를 입력해주세요. ex)20210324')
+    st.header('언론사별 주요뉴스 ')
+    date = st.text_input('날짜를 넣어주세요.. 자료가 없을수도 있어요. ex)20210324')
     news_url = 'https://news.naver.com/main/ranking/popularDay.nhn?date={}'.format(date)
 
     headers = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36'}
