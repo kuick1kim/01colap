@@ -90,7 +90,7 @@ def run_selenium():
             except:
                 pass
       
-        df            
+               
     return df
 
 
