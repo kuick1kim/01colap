@@ -64,7 +64,7 @@ def run_selenium():
         for i in range(len(lili)):
             
             if i%leee5 == 0:
-                st.write(kkk*20,"% 끝냈어요 / 전체는",leee)
+                st.write(kkk*20,"% 끝냈어요 / 전체는",leee,query)
                 kkk=kkk+1
             try:
                 li = soup.find_all('li', 'keyword_bx')[i]
