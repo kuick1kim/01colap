@@ -59,30 +59,33 @@ def run_selenium():
         leee= len(lili)
         leee5=leee/5
         kkk=1
-        
+        driver.quit()
         for i in range(len(lili)):
+            
             if i%leee5 == 0:
                 st.write(kkk*20,"% 끝냈어요 / 전체는",leee)
                 kkk=kkk+1
-            li = soup.find_all('li', 'keyword_bx')[i]
-            date = li.find('span','date').text    
-            name = li.find('span','txt').text    
-            cate1 = li.find('span','etc highlight').text
-            cate2 = li.find('span','etc').text
-            title1 = li.find('div','dsc_area')
-            title = title1.find('a','name_link').text
-
-            story = title1.find('p','dsc').text
-            link = title1.find('a').get('href')
-            img1 = li.find('div','thumb_area type_solo')
             try:
-                img = img1.find('img').get('src')
-            except: 
-                img ='이미지 없어요'
+                li = soup.find_all('li', 'keyword_bx')[i]
+                date = li.find('span','date').text    
+                name = li.find('span','txt').text    
+                cate1 = li.find('span','etc highlight').text
+                cate2 = li.find('span','etc').text
+                title1 = li.find('div','dsc_area')
+                title = title1.find('a','name_link').text
 
-            df=df.append({'날짜':date,'블로거':name,'분야1':cate1,'분야2':cate2, 
-                                                   '제목':title, '내용':story,'링크':link,'이미지':img}, ignore_index=True)
-            driver.quit()
+                story = title1.find('p','dsc').text
+                link = title1.find('a').get('href')
+                img1 = li.find('div','thumb_area type_solo')
+                try:
+                    img = img1.find('img').get('src')
+                except: 
+                    img ='이미지 없어요'
+
+                df=df.append({'날짜':date,'블로거':name,'분야1':cate1,'분야2':cate2, 
+                                                       '제목':title, '내용':story,'링크':link,'이미지':img}, ignore_index=True)
+            except:
+                pass
       
     df        
     return df
