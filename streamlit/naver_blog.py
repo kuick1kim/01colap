@@ -44,7 +44,7 @@ def run_selenium():
     with webdriver.Chrome(options=options, service_log_path='selenium.log') as driver:
         
         
-        url = 'https://search.naver.com/search.naver?where=influencer&sm=tab_jum&query={}'.format(query='딸기')
+        url = 'https://search.naver.com/search.naver?where=influencer&sm=tab_jum&query=딸기'#.format(딸기)
 
         
         df = pd.DataFrame(columns=['날짜','블로거','분야1','분야2', 
