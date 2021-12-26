@@ -17,7 +17,6 @@ options.add_argument("--no-sandbox")
 options.add_argument("--disable-dev-shm-usage")
 options.add_argument("--disable-gpu")
 options.add_argument("--disable-features=NetworkService")
-# options.add_argument("--window-size=1920x1080")
 options.add_argument("--disable-features=VizDisplayCompositor")
 
 #############지우기################
@@ -36,10 +35,7 @@ def run_selenium():
     
     query = st.text_input('검색어를 넣어주세요. ex)검색어 ','')
 
-    with webdriver.Chrome(options=options, service_log_path='selenium.log') as driver:
-        
-        
-        
+    with webdriver.Chrome(options=options, service_log_path='selenium.log') as driver:     
         
         url = 'https://search.naver.com/search.naver?where=influencer&sm=tab_jum&query={}'.format(query)
 
@@ -88,7 +84,7 @@ def run_selenium():
                                                    '제목':title, '내용':story,'링크':link,'이미지':img}, ignore_index=True)
             driver.quit()
       
-        
+    df        
     return df
 
 
