@@ -21,9 +21,9 @@ options.add_argument("lang=ko_KR")
 query = st.text_input('검색어를 넣어주세요. ex)검색어 ','')
 
 
-path='https://raw.githubusercontent.com/kuick1kim/01colap/main/streamlit/chromedriver.exe'
+# path='https://raw.githubusercontent.com/kuick1kim/01colap/main/streamlit/chromedriver.exe'
 
-# path = "chromedriver.exe" 
+path = "/chromedriver.exe" 
 driver = webdriver.Chrome(path, options=options)
 
 
