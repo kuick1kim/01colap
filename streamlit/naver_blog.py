@@ -94,7 +94,7 @@ def run_selenium():
             df=df.append({'날짜':date,'블로거':name,'분야1':cate1,'분야2':cate2, 
                                                    '제목':title, '내용':story,'링크':link,'이미지':img}, ignore_index=True)
             driver.quit()
-        df        
+#         df        
         
     return df
 
@@ -113,7 +113,7 @@ if __name__ == "__main__":
         st.write(result)
 #         st.info(f'Result -> {result}')
         
-        st.info('Successful finished. Selenium log file is shown below...')
+#         st.info('Successful finished. Selenium log file is shown below...')
 #         show_selenium_log()
 
 
