@@ -58,12 +58,14 @@ def gather1():
     linko= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="[검색어]{qu}.xlsx">내가 검색한 자료 다운받기</a>'
     st.markdown(linko, unsafe_allow_html=True)
     
-    
-    for h, i,j,k,kk in zip(df['언론사'], df['날짜'],df['제목'],df['링크'],df['내용']):
-        st.write(i," = = ",h)
-        st.write(j)
-        st.write(k)
-        st.write(kk)
+    try:
+        for h, i,j,k,kk in zip(df['언론사'], df['날짜'],df['제목'],df['링크'],df['내용']):
+            st.write(i," = = ",h)
+            st.write(j)
+            st.write(k)
+            st.write(kk)
+    except:
+        st.write('검색어를 넣어야 검색이 되요')
         
     return df,query
 
