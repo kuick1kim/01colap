@@ -8,6 +8,29 @@ import io
 
 
 
+
+
+dataset_name = st.sidebar.selectbox(
+    'Select Dataset',
+    ('news', 'blog', 'ranking')
+)
+
+def get_dataset(name):
+    data = None
+    if name == 'news':
+        gather1()    
+    elif name == 'blog':
+        gather1()    
+    else:
+        gather1()
+
+
+
+
+
+
+
+
 def gather1():
     st.header('검색된 뉴스서비스')
     query = st.text_input('검색어를 넣어주세요. ex)검색어 ','')
@@ -71,8 +94,29 @@ def gather1():
 
 
 
-if __name__ == '__main__':
-    gather1()
+
+
+
+dataset_name = st.sidebar.selectbox(
+    'Select Dataset',
+    ('news', 'blog', 'ranking')
+)
+
+def get_dataset(name):
+    data = None
+    if name == 'news':
+        gather1()    
+    elif name == 'blog':
+        gather1()    
+    else:
+        gather1()
+
+
+
+
+
+# if __name__ == '__main__':
+#     gather1()
 
 
 
