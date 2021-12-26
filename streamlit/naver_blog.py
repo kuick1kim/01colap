@@ -1,20 +1,7 @@
 
-
-
-
-
-# import requests
 from bs4 import BeautifulSoup
 import pandas as pd
-
-
 import time
-
-
-
-
-
-
 
 import glob
 import os
@@ -30,7 +17,7 @@ options.add_argument("--no-sandbox")
 options.add_argument("--disable-dev-shm-usage")
 options.add_argument("--disable-gpu")
 options.add_argument("--disable-features=NetworkService")
-options.add_argument("--window-size=1920x1080")
+# options.add_argument("--window-size=1920x1080")
 options.add_argument("--disable-features=VizDisplayCompositor")
 
 
@@ -118,20 +105,15 @@ if __name__ == "__main__":
     delete_selenium_log()
     
     st.title('🔨 Selenium Test for Streamlit Sharing')
-    
-    
-    
     executable_path = "notset"
     
-    
     st.balloons()
-    if st.button('Start Selenium run'):
-        
+    if st.button('Start Selenium run'):        
         st.info('Selenium is running, please wait...')
         
         result = run_selenium()
-        
-        st.info(f'Result -> {result}')
+        st.write(result)
+#         st.info(f'Result -> {result}')
         
         st.info('Successful finished. Selenium log file is shown below...')
         show_selenium_log()
