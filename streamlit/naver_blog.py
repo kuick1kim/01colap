@@ -76,7 +76,7 @@ def run_selenium():
                 cate2 = li.find('span','etc').text
                 title1 = li.find('div','dsc_area')
                 title = title1.find('a','name_link').text
-
+                st.write(title)
                 story = title1.find('p','dsc').text
                 link = title1.find('a').get('href')
                 img1 = li.find('div','thumb_area type_solo')
@@ -87,7 +87,7 @@ def run_selenium():
 
                 df=df.append({'날짜':date,'블로거':name,'분야1':cate1,'분야2':cate2, 
                                                        '제목':title, '내용':story,'링크':link,'이미지':img}, ignore_index=True)
-                df
+                
             except:
                 pass
               
