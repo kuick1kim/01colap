@@ -1,3 +1,7 @@
+from bs4 import BeautifulSoup
+import pandas as pd
+import time
+
 import glob
 import os
 
@@ -5,6 +9,7 @@ import streamlit as st
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.wait import WebDriverWait
+
 
 options = Options()
 options.add_argument("--headless")
@@ -106,10 +111,16 @@ if __name__ == "__main__":
     executable_path = "notset"
     # st.info(f'Chromedriver Path: {str(executable_path)}')
     st.balloons()
-    if st.button('Start Selenium run'):
-        st.info('Selenium is running, please wait...')
-        result = run_selenium()
-        st.write(result)
-        st.info(f'Result -> {result}')
-        st.info('Successful finished. Selenium log file is shown below...')
-        show_selenium_log()
+    st.info('Selenium is running, please wait...')
+    result = run_selenium()
+    st.write(result)
+    st.info(f'Result -> {result}')
+    st.info('Successful finished. Selenium log file is shown below...')
+    show_selenium_log()
+#     if st.button('Start Selenium run'):
+#         st.info('Selenium is running, please wait...')
+#         result = run_selenium()
+#         st.write(result)
+#         st.info(f'Result -> {result}')
+#         st.info('Successful finished. Selenium log file is shown below...')
+#         show_selenium_log()
