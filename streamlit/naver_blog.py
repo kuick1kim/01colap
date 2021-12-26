@@ -81,7 +81,7 @@ def run_selenium():
                     cate2 = li.find('span','etc').text
                     title1 = li.find('div','dsc_area')
                     title = title1.find('a','name_link').text
-                    st.write(title)
+#                     st.write(title)
                     story = title1.find('p','dsc').text
                     link = title1.find('a').get('href')
                     img1 = li.find('div','thumb_area type_solo')
@@ -96,9 +96,8 @@ def run_selenium():
                 except:
                     pass
         
-        
-        
-        
+                
+    df        
     return df
 
 
