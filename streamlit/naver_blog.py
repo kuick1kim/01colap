@@ -102,7 +102,7 @@ if __name__ == "__main__":
     st.balloons()
     result = run_selenium()
     st.info('Selenium is running, please wait...')  
-    st.write(result)     
+#     st.write(result)     
 
 #     if st.button('Start Selenium run'):
 #         st.info('Selenium is running, please wait...')        
