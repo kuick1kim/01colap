@@ -31,7 +31,7 @@ def get_chromedriver_path():
 
 
 def run_selenium():
-    name = str()
+    df = ""
     st.title('🔨 Selenium Test for Streamlit Sharing')
     
     query = st.text_input('검색어를 넣어주세요. ex)검색어 ','')
@@ -51,7 +51,7 @@ def run_selenium():
             if i%2==0:
                 st.write(i,"  10번까지", query)
 
-        st.header("여기서 부터 2분정도 걸려요")
+        st.header("여기서 부터 2분정도 걸려요", query)
 
         html = driver.page_source
         soup = BeautifulSoup(html, 'html.parser') 
@@ -60,6 +60,7 @@ def run_selenium():
         leee= len(lili)
         leee5=leee/5
         kkk=1
+        st.write(leee)
         driver.quit()
         for i in range(len(lili)):
             
