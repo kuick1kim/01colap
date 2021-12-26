@@ -87,7 +87,7 @@ def run_selenium():
             except:
                 pass
       
-        df        
+            
     return df
 
 
@@ -98,7 +98,7 @@ if __name__ == "__main__":
     if st.button('Start Selenium run'):
         st.info('Selenium is running, please wait...')        
         result = run_selenium()
-#         st.write(result)
+        st.write(result)
 
 
 
