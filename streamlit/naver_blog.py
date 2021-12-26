@@ -31,6 +31,7 @@ def get_chromedriver_path():
 
 
 def run_selenium():
+    name = str()
     st.title('🔨 Selenium Test for Streamlit Sharing')
     
     query = st.text_input('검색어를 넣어주세요. ex)검색어 ','')
