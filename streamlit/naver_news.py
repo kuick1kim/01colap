@@ -2,6 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 import streamlit as st
+import base64
+import io
 
 
 def main():
@@ -51,6 +53,18 @@ def main():
 #     df2 = df1[df1.언론사.isin(selected)]
 
     st.write(df2) 
+    
+    if st.checkbox('여기를 누르면 전체 데이터를 볼 수 있습니다. '):            
+        towrite = io.BytesIO()
+        downloaded_file = df2.to_excel(towrite, encoding='utf-8', index=True, header=True)
+        towrite.seek(0)  # reset pointer
+        b64 = base64.b64encode(towrite.read()).decode()  # some strings
+        linko= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="뉴스다운.xlsx">선택하신 자료 다운받기</a>'
+        st.markdown(linko, unsafe_allow_html=True)
+        #===============================인코딩이 안되서 csv를 안씀================================
+    
+    
+    
 
     for h, i,j,k in zip(df2['언론사'], df2['날짜'],df2['기사'],df2['링크']):
         st.write(h," = = ",i,"=====",j,"<br>",k)
