@@ -97,20 +97,17 @@ def run_selenium():
                     pass
         
                 
-    df        
+#     df        
     return df
 
 
 if __name__ == "__main__":
-    delete_selenium_log()
-    
-    st.title('🔨 Selenium Test for Streamlit Sharing')
-    
-    # executable_path = get_chromedriver_path()
+    delete_selenium_log()    
+    st.title('셀레니움')       
     executable_path = "notset"
-    # st.info(f'Chromedriver Path: {str(executable_path)}')
+    
     st.balloons()
-    st.info('Selenium is running, please wait...')
+#     st.info('Selenium is running, please wait...')
     result = run_selenium()
 #     st.write(result)
     st.info(f'Result -> {result}')
