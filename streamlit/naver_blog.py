@@ -98,13 +98,15 @@ if __name__ == "__main__":
     delete_selenium_log() 
     executable_path = "notset"  
     st.balloons()
+    result = run_selenium()
+    st.info('Selenium is running, please wait...')  
 
-    if st.button('Start Selenium run'):
-        st.info('Selenium is running, please wait...')        
-        result = run_selenium()
+#     if st.button('Start Selenium run'):
+#         st.info('Selenium is running, please wait...')        
+#         result = run_selenium()
 #         st.write(result)        
 #         st.info(f'Result -> {result}')
-        st.info('Successful finished. Selenium log file is shown below...')
+#         st.info('Successful finished. Selenium log file is shown below...')
 
 
 
