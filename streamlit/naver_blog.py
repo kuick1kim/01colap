@@ -55,11 +55,11 @@ def run_selenium():
         driver.get(url)
         time.sleep(0.5)
 
-        for i in range(2):
+        for i in range(11):
             driver.execute_script('window.scrollTo(0, document.body.scrollHeight);')
             time.sleep(1)
-            if i%3==0:
-                st.write(i,"  21번까지")
+            if i%2==0:
+                st.write(i,"  10번까지")
 
         st.header("여기서 부터 2분정도 걸려요")
 
