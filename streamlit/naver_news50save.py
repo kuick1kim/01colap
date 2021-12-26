@@ -96,26 +96,9 @@ def gather1():
 
 
 
+if __name__ == '__main__':
+    get_dataset(dataset_name)
 
-dataset_name = st.sidebar.selectbox(
-    'Select Dataset',
-    ('news', 'blog', 'ranking')
-)
-
-def get_dataset(name):
-    data = None
-    if name == 'news':
-        gather1()    
-    elif name == 'blog':
-        gather1()    
-    else:
-        gather1()
-
-
-
-
-
-# if __name__ == '__main__':
 #     gather1()
 
 
