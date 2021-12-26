@@ -39,11 +39,13 @@ def main():
     
     unlonsa = st.sidebar.text_input("검색하고 싶은 언론사를 넣어주세요",'조선')
     
-    df2 = df1[df1['언론사'].str.contains(unlunsa)].copy()
+    df2 = df1[df1['언론사'].str.contains(unlonsa)].copy()
+    
+    
+    
 
 #     sorted_unique_team = sorted(df1.언론사.unique())
-#     selected = st.sidebar.multiselect('Team', sorted_unique_team, sorted_unique_team)
-        
+#     selected = st.sidebar.multiselect('Team', sorted_unique_team, sorted_unique_team)        
 #     df2 = df1[df1.언론사.isin(selected)]
 
     st.write(df2) 
