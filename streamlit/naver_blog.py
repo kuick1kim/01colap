@@ -40,11 +40,14 @@ def get_chromedriver_path():
 
 
 def run_selenium():
-    name = str()
+    query = st.text_input('검색어를 넣어주세요. ex)검색어 ','')
+
+    
+#     name = str()
     with webdriver.Chrome(options=options, service_log_path='selenium.log') as driver:
         
         
-        url = 'https://search.naver.com/search.naver?where=influencer&sm=tab_jum&query=딸기'#.format(딸기)
+        url = 'https://search.naver.com/search.naver?where=influencer&sm=tab_jum&query={}'.format(query)
 
         
         df = pd.DataFrame(columns=['날짜','블로거','분야1','분야2', 
