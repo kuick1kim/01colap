@@ -63,8 +63,7 @@ def run_selenium():
 
 if __name__ == "__main__":
     delete_selenium_log()
-    st.set_page_config(page_title="Selenium Test", page_icon='✅',
-        initial_sidebar_state='collapsed')
+    
     st.title('🔨 Selenium Test for Streamlit Sharing')
     st.markdown("""
         This app is only a very simple test for **Selenium** running on **Streamlit Sharing** runtime. <br>
