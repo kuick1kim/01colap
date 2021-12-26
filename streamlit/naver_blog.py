@@ -63,6 +63,7 @@ def run_selenium():
         kkk=1
         st.write(leee)
         driver.quit()
+        df
         for i in range(len(lili)):
             
             if i%leee5 == 0:
@@ -89,6 +90,7 @@ def run_selenium():
                                                        '제목':title, '내용':story,'링크':link,'이미지':img}, ignore_index=True)
             except:
                 pass
+        df       
       
                
     return df
