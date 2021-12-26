@@ -20,17 +20,17 @@ options.add_argument("--disable-features=NetworkService")
 # options.add_argument("--window-size=1920x1080")
 options.add_argument("--disable-features=VizDisplayCompositor")
 
-
+#############지우기################
 def delete_selenium_log():
     if os.path.exists('selenium.log'):
         os.remove('selenium.log')
 
 
-def show_selenium_log():
-    if os.path.exists('selenium.log'):
-        with open('selenium.log') as f:
-            content = f.read()
-            st.code(content)
+# def show_selenium_log():
+#     if os.path.exists('selenium.log'):
+#         with open('selenium.log') as f:
+#             content = f.read()
+#             st.code(content)
 
 
 def get_chromedriver_path():
@@ -95,11 +95,7 @@ def run_selenium():
                                                    '제목':title, '내용':story,'링크':link,'이미지':img}, ignore_index=True)
             driver.quit()
 
-            df
-        
-        
-        
-        
+            df        
         
     return df
 
@@ -111,7 +107,7 @@ if __name__ == "__main__":
     executable_path = "notset"
     
     st.balloons()
-    if st.button('Start Selenium run'):        
+    if st.button('Start Selenium run'):
         st.info('Selenium is running, please wait...')
         
         result = run_selenium()
@@ -119,7 +115,7 @@ if __name__ == "__main__":
 #         st.info(f'Result -> {result}')
         
         st.info('Successful finished. Selenium log file is shown below...')
-        show_selenium_log()
+#         show_selenium_log()
 
 
 
