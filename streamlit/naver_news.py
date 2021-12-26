@@ -37,9 +37,11 @@ def main():
     ki = st.sidebar.slider( '기사', 0, num, (0, num))    
     df1 = df.loc[ki[0]:ki[1], :]
     
-    unlonsa = st.sidebar.text_input("검색하고 싶은 언론사를 넣어주세요",'조선')
+    unlonsa = st.sidebar.text_input("검색하고 싶은 언론사를 넣어주세요",'')    
+    df3 = df1[df1['언론사'].str.contains(unlonsa)].copy()
     
-    df2 = df1[df1['언론사'].str.contains(unlonsa)].copy()
+    kiki = st.sidebar.text_input("검색하고 싶은 기사단어를 넣어주세요",'')    
+    df2 = df3[df3['기사'].str.contains(kiki)].copy()
     
     
     
