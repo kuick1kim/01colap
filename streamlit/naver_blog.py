@@ -87,10 +87,11 @@ def run_selenium():
 
                 df=df.append({'날짜':date,'블로거':name,'분야1':cate1,'분야2':cate2, 
                                                        '제목':title, '내용':story,'링크':link,'이미지':img}, ignore_index=True)
+                df
             except:
                 pass
               
-    df      
+          
                
     return 
 
