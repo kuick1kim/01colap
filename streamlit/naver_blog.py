@@ -41,12 +41,11 @@ def run_selenium():
         
         url = 'https://search.naver.com/search.naver?where=influencer&sm=tab_jum&query={}'.format(query)
 
-        df = pd.DataFrame(columns=['날짜','블로거','분야1','분야2', 
-                                       '제목', '내용','링크','이미지'])
+        df = pd.DataFrame(columns=['날짜','블로거','분야1','분야2', '제목', '내용','링크','이미지'])
         driver.get(url)
         time.sleep(0.5)
 
-        for i in range(11):
+        for i in range(3):
             driver.execute_script('window.scrollTo(0, document.body.scrollHeight);')
             time.sleep(1)
             if i%2==0:
@@ -63,7 +62,7 @@ def run_selenium():
         kkk=1
         st.write(leee)
         driver.quit()
-        df
+       
         for i in range(len(lili)):
             
             if i%leee5 == 0:
@@ -90,10 +89,10 @@ def run_selenium():
                                                        '제목':title, '내용':story,'링크':link,'이미지':img}, ignore_index=True)
             except:
                 pass
-        df       
-      
+              
+    df      
                
-    return df
+    return 
 
 
 if __name__ == "__main__":
