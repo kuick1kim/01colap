@@ -53,7 +53,7 @@ def gather1():
 
             news_url = 'https://search.naver.com/search.naver?where=news&query={}&sm=tab_opt&sort=0&start={}'.format(query,num1)
             if num%10 ==0:
-                st.write(num)
+                st.write(num," : 50페이지 긁어오는중 입니다. 검색어 : ",query)
             req = requests.get(news_url, headers = headers)
             soup = BeautifulSoup(req.text, "html.parser")
 
@@ -82,7 +82,7 @@ def gather1():
                                 "네이버링크":potallink,"기사링크":link,"사진링크":img}, ignore_index=True)    
     except:
         st.header("검색어를 넣어주세요")   
-    df
+    
     towrite = io.BytesIO()
     downloaded_file = df.to_excel(towrite, encoding='utf-8', index=True, header=True)
     towrite.seek(0)  # reset pointer
@@ -90,6 +90,8 @@ def gather1():
     qu=query  # some strings
     linko= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="[검색어]{qu}.xlsx">내가 검색한 자료 다운받기</a>'
     st.markdown(linko, unsafe_allow_html=True)
+    
+    df
     
     for h, i,j,k,kk in zip(df["category"], df['날짜'],df['제목'],df['기사링크'],df['내용']):
             st.write(i," = = ",h)
