@@ -8,19 +8,29 @@ import numpy as np
 
 
 ########################여기는 추가넣는부분##############
-spectra = st.file_uploader(" ", type={"csv", "txt", "xlsx"})
-if spectra is not None:
+
+uploaded_file = st.file_uploader(" ", type={"csv", "txt", "xlsx"})
+if uploaded_file is not None:
+     # Can be used wherever a "file-like" object is accepted:
+     dataframe = pd.read_excel(uploaded_file)
+     st.write(dataframe)
+
+
+
+
+# spectra = st.file_uploader(" ", type={"csv", "txt", "xlsx"})
+# if spectra is not None:
     
-    df = pd.read_excel(spectra)
+#     df = pd.read_excel(spectra)
     
-    dataset_name='외부데이터' 
-else :
-    df = "데이터를 넣어주세요"
+#     dataset_name='외부데이터' 
+# else :
+#     df = "데이터를 넣어주세요"
 #########################성공###########################
 
 
-df
-# many = st.sidebar.slider('기간',  0, akiml, (0, akiml))
+# df
+# # many = st.sidebar.slider('기간',  0, akiml, (0, akiml))
 # df = df.iloc[many[0]:many[1],:]
 
 
