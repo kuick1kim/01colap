@@ -17,8 +17,10 @@ uploaded_file = st.file_uploader("Choose a XLSX file", type="xlsx")
 
 if uploaded_file:
     df = pd.read_excel(uploaded_file, engine='openpyxl')
-    st.dataframe(df)
-    
+#     st.dataframe(df)
+else:
+    df=''
+    st.write('파일을 넣어주세요')
 
 
 #########################성공###########################
@@ -31,7 +33,19 @@ df1 = df.iloc[many[0]:many[1],:]
 
 df1
 
+# cate = st.sidebar.text_input("검색하고 싶은 언론사를 넣어주세요",'')    
+# df3 = df1[df1["category"].str.contains(unlonsa)].copy()
 
+# kiki = st.sidebar.text_input("검색하고 싶은 기사단어를 넣어주세요",'')    
+# df2 = df3[df3['기사'].str.contains(kiki)].copy()
+
+
+
+# for h, i,j,k,kk in zip(df["category"], df['날짜'],df['제목'],df['기사링크'],df['내용']):
+#             st.write(i," = = ",h)
+#             st.write(j)
+#             st.write(k)
+#             st.write(kk)
 
 
 
