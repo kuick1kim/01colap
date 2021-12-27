@@ -17,25 +17,20 @@ uploaded_file = st.file_uploader("Choose a XLSX file", type="xlsx")
 
 if uploaded_file:
     df = pd.read_excel(uploaded_file, engine='openpyxl')
-
     st.dataframe(df)
-    st.table(df)
+    
 
 
-# spectra = st.file_uploader(" ", type={"csv", "txt", "xlsx"})
-# if spectra is not None:
-    
-#     df = pd.read_excel(spectra)
-    
-#     dataset_name='외부데이터' 
-# else :
-#     df = "데이터를 넣어주세요"
 #########################성공###########################
 
+llll = len(df)
 
-# df
-# # many = st.sidebar.slider('기간',  0, akiml, (0, akiml))
-# df = df.iloc[many[0]:many[1],:]
+
+many = st.slider('기간',  0, llll, (0, llll))
+df1 = df.iloc[many[0]:many[1],:]
+
+df1
+
 
 
 
