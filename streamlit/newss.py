@@ -4,14 +4,15 @@ import pandas as pd
 
 import numpy as np
 
-
+st.sidebar.markdown("""
+[자료 다운받기 사이트로 이동하기](https://share.streamlit.io/kuick1kim/01colap/main/streamlit/naver_news.py/)
+""")
 
 
 ########################여기는 추가넣는부분##############
 
-uploaded_file = st.file_uploader(" ", type={"csv", "txt", "xlsx"})
-if uploaded_file is not None:
-     # Can be used wherever a "file-like" object is accepted:
+uploaded_file = st.file_uploader("Choose a file")
+if uploaded_file is not None:     
      dataframe = pd.read_excel(uploaded_file)
      st.write(dataframe)
 
@@ -34,7 +35,5 @@ if uploaded_file is not None:
 # df = df.iloc[many[0]:many[1],:]
 
 
-st.sidebar.markdown("""
-[자료 다운받기 사이트로 이동하기](https://share.streamlit.io/kuick1kim/01colap/main/streamlit/naver_news.py/)
-""")
+
 
