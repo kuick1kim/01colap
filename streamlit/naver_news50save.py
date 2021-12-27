@@ -201,7 +201,7 @@ def run_selenium():
                 driver.execute_script('window.scrollTo(0, document.body.scrollHeight);')
                 time.sleep(1.5)
                 if i%2==0:
-                    st.write(i,"  10번까지", query)
+                    st.write(i,"  총 20번 스크롤링중 / 당신의 검색어는 : ", query)
 
             st.header("여기서 부터 2분정도 걸려요")
 
