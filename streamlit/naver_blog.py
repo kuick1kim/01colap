@@ -113,7 +113,26 @@ if __name__ == "__main__":
     st.info(f'Result -> {result}')
     result1 = pd.DataFrame(result)
     time.sleep(1)
-    st.write(result1)
+    
+    towrite = io.BytesIO()
+    downloaded_file = result.to_excel(towrite, encoding='utf-8', index=True, header=True)
+    towrite.seek(0)  # reset pointer
+    b64 = base64.b64encode(towrite.read()).decode()
+    qu=query  # some strings
+    linko= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="[검색어]{query}.xlsx">내가 검색한 자료 다운받기</a>'
+    st.markdown(linko, unsafe_allow_html=True)
+    
+    
+    towrite = io.BytesIO()
+    downloaded_file = result1.to_excel(towrite, encoding='utf-8', index=True, header=True)
+    towrite.seek(0)  # reset pointer
+    b64 = base64.b64encode(towrite.read()).decode()
+    qu=query  # some strings
+    linko= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="[검색어]{query}.xlsx">내가 검색한 자료 다운받기111</a>'
+    st.markdown(linko, unsafe_allow_html=True)
+    
+    
+    
     st.info('Successful finished. Selenium log file is shown below...')
     show_selenium_log()
 #     if st.button('Start Selenium run'):
