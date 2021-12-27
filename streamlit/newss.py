@@ -33,7 +33,7 @@ df1 = df.iloc[many[0]:many[1],:]
 
 
 
-cate = st.sidebar.text_input("검색하고 싶은 언론사를 넣어주세요",'')    
+cate = st.text_input("검색하고 싶은 언론사를 넣어주세요",'')    
 df3 = df1[df1["category"].str.contains(cate)].copy()
 
 df3
