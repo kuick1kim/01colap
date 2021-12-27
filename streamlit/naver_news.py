@@ -26,7 +26,9 @@ options.add_argument("--window-size=1920x1080")
 options.add_argument("--disable-features=VizDisplayCompositor")
 
 
-
+st.sidebar.markdown("""
+[뉴스 분석 사이트로 이동](https://share.streamlit.io/kuick1kim/01colap/main/streamlit/newss.py/)
+""")
 dataset_name = st.sidebar.selectbox(
     'Select Dataset',
     ('news', 'blog', 'ranking')
