@@ -11,12 +11,15 @@ st.sidebar.markdown("""
 
 ########################여기는 추가넣는부분##############
 
-uploaded_file = st.file_uploader("Choose a file")
-if uploaded_file is not None:     
-     dataframe = pd.read_excel(uploaded_file)
-     st.write(dataframe)
 
 
+uploaded_file = st.file_uploader("Choose a XLSX file", type="xlsx")
+
+if uploaded_file:
+    df = pd.read_excel(uploaded_file)
+
+    st.dataframe(df)
+    st.table(df)
 
 
 # spectra = st.file_uploader(" ", type={"csv", "txt", "xlsx"})
