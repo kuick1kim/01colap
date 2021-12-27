@@ -112,6 +112,7 @@ if __name__ == "__main__":
     
     st.info(f'Result -> {result}')
     result1 = pd.DataFrame(result)
+    time.sleep(1)
     st.write(result1)
     st.info('Successful finished. Selenium log file is shown below...')
     show_selenium_log()
