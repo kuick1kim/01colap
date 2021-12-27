@@ -48,11 +48,11 @@ def run_selenium():
 
             df = pd.DataFrame(columns=['날짜','블로거','분야1','분야2', '제목', '내용','링크','이미지'])
             driver.get(url)
-            time.sleep(0.5)
+            time.sleep(1)
 
             for i in range(3):
                 driver.execute_script('window.scrollTo(0, document.body.scrollHeight);')
-                time.sleep(1)
+                time.sleep(1.5)
                 if i%2==0:
                     st.write(i,"  10번까지", query)
 
@@ -111,7 +111,7 @@ if __name__ == "__main__":
     result = run_selenium()
     
     st.info(f'Result -> {result}')
-    st.write(result)
+    st.write(f'{result}')
     st.info('Successful finished. Selenium log file is shown below...')
     show_selenium_log()
 #     if st.button('Start Selenium run'):
