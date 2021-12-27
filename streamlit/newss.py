@@ -10,10 +10,9 @@ import numpy as np
 ########################여기는 추가넣는부분##############
 spectra = st.file_uploader(" ", type={"csv", "txt", "xlsx"})
 if spectra is not None:
-    try:
-        df = pd.read_excel(spectra)
-    except:
-        df = pd.read_csv(spectra)
+    
+    df = pd.read_excel(spectra)
+    
     dataset_name='외부데이터' 
 else :
     df = "데이터를 넣어주세요"
