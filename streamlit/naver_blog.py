@@ -137,7 +137,6 @@ if __name__ == "__main__":
     
     
     st.info('Successful finished. Selenium log file is shown below...')
-                                                                                                                                   ㅁㅂㅇㄷㄷㄷㄷㄷㄷㄷㄷㄷㄷㄷㄷㄷㄷㄷㄷㄷ
 #     if st.button('Start Selenium run'):
 #         st.info('Selenium is running, please wait...')
 #         result = run_selenium()
