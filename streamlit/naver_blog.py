@@ -53,7 +53,7 @@ def run_selenium():
             driver.get(url)
             time.sleep(1)
 
-            for i in range(3):
+            for i in range(21):
                 driver.execute_script('window.scrollTo(0, document.body.scrollHeight);')
                 time.sleep(1.5)
                 if i%2==0:
@@ -113,9 +113,9 @@ if __name__ == "__main__":
 #     st.info('Selenium is running, please wait...')
     result = run_selenium()
     
-    st.info(f'Result -> {result}')
-    result1 = pd.DataFrame(result)
-    time.sleep(1)
+#     st.info(f'Result -> {result}')
+#     result1 = pd.DataFrame(result)
+#     time.sleep(1)
     
     towrite = io.BytesIO()
     downloaded_file = result.to_excel(towrite, encoding='utf-8', index=True, header=True)
@@ -137,7 +137,7 @@ if __name__ == "__main__":
     
     
     st.info('Successful finished. Selenium log file is shown below...')
-    show_selenium_log()
+                                                                                                                                   ㅁㅂㅇㄷㄷㄷㄷㄷㄷㄷㄷㄷㄷㄷㄷㄷㄷㄷㄷㄷ
 #     if st.button('Start Selenium run'):
 #         st.info('Selenium is running, please wait...')
 #         result = run_selenium()
