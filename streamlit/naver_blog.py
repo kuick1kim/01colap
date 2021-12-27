@@ -100,8 +100,8 @@ def run_selenium():
                     pass
         
                 
-#     df        
-    return df
+    
+    return df,query
 
 
 if __name__ == "__main__":
@@ -110,37 +110,16 @@ if __name__ == "__main__":
     executable_path = "notset"
     
     st.balloons()
-#     st.info('Selenium is running, please wait...')
-    result = run_selenium()
-    
-#     st.info(f'Result -> {result}')
-#     result1 = pd.DataFrame(result)
-#     time.sleep(1)
+    result,query = run_selenium()
+
     
     towrite = io.BytesIO()
     downloaded_file = result.to_excel(towrite, encoding='utf-8', index=True, header=True)
     towrite.seek(0)  # reset pointer
     b64 = base64.b64encode(towrite.read()).decode()
     
-    linko= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="[검색어]2.xlsx">내가 검색한 자료 다운받기</a>'
+    linko= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="[블로그]{query}.xlsx">내가 검색한 자료 다운받기</a>'
     st.markdown(linko, unsafe_allow_html=True)
-    
-    
-    towrite = io.BytesIO()
-    downloaded_file = result1.to_excel(towrite, encoding='utf-8', index=True, header=True)
-    towrite.seek(0)  # reset pointer
-    b64 = base64.b64encode(towrite.read()).decode()
-    
-    linko= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="[검색어]1.xlsx">내가 검색한 자료 다운받기111</a>'
-    st.markdown(linko, unsafe_allow_html=True)
-    
-    
     
     st.info('Successful finished. Selenium log file is shown below...')
-#     if st.button('Start Selenium run'):
-#         st.info('Selenium is running, please wait...')
-#         result = run_selenium()
-#         st.write(result)
-#         st.info(f'Result -> {result}')
-#         st.info('Successful finished. Selenium log file is shown below...')
-#         show_selenium_log()
+
