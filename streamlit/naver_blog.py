@@ -111,8 +111,8 @@ if __name__ == "__main__":
     result = run_selenium()
     
     st.info(f'Result -> {result}')
-    result
-#     st.write(f'{result}')
+    result1 = pd.DataFrame(result)
+    st.write(result1)
     st.info('Successful finished. Selenium log file is shown below...')
     show_selenium_log()
 #     if st.button('Start Selenium run'):
