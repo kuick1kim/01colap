@@ -43,7 +43,7 @@ df4
 
 for h,i,j,k,kk,kkk in zip(df4["날짜"], df4['블로거'],df4['분야1'],df4['제목'],df4['링크'],df4['내용']):
             st.write(i," = = ",h," = = ",j)
-            st.write(k)
+            st.header(k)
             st.write(kk)
             st.write(kkk)
 
