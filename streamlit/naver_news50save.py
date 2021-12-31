@@ -31,16 +31,16 @@ st.sidebar.markdown("""
 """)
 dataset_name = st.sidebar.selectbox(
     'Select Dataset',
-    ('news', 'blog', 'ranking')
+    ('ranking','news', 'blog')
 )
 
 def get_dataset(name):
-    if name == 'news':
-        gather1()    
+    if name == 'ranking':          
+        ranking()
     elif name == 'blog':
         blog_main()   
     else:
-        ranking()
+        gather1()  
 
 
 def gather1():
