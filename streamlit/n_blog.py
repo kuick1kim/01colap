@@ -43,13 +43,13 @@ def ranking():
 def ranking2():
     st.header('언론사별 주요뉴스 ')
     DATA_URL = ('https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog3.xlsx')
-    df = pd.read_excel(DATA_URL)  
+    df = pd.read_excel(DATA_URL,engine='openpyxl')  
      
     
     ########################여기는 추가넣는부분##############
     spectra = st.file_uploader(" ", type={"csv", "txt", "xlsx"})
     if spectra is not None:
-        df = pd.read_excel(spectra)
+        df = pd.read_excel(spectra, engine='openpyxl' )
         dataset_name='외부데이터' 
     df 
     
