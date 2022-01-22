@@ -9,6 +9,8 @@ if spectra is not None:
     df = pd.read_csv(spectra)
     dataset_name='외부데이터' 
 #########################성공###########################
+df
+
 
 dataset_name = st.sidebar.selectbox(
     'Select Dataset',
