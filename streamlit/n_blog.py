@@ -325,14 +325,14 @@ def blog_main2():
             pass
 
     towrite1 = io.BytesIO()
-    downloaded_file = df.to_excel(towrite, encoding='utf-8', index=False, header=True)
+    downloaded_file = df.to_excel(towrite1, encoding='utf-8', index=False, header=True)
     towrite1.seek(0)  # reset pointer
     b64a = base64.b64encode(towrite1.read()).decode()    
     linko1= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64a}" download="[블로그]전체.xlsx">전체 자료 다운</a>'
     st.markdown(linko1, unsafe_allow_html=True)
 
     towrite2 = io.BytesIO()
-    downloaded_file = dfs.to_excel(towrite, encoding='utf-8', index=False, header=True)
+    downloaded_file = dfs.to_excel(towrite2, encoding='utf-8', index=False, header=True)
     towrite2.seek(0)  # reset pointer
     b64b = base64.b64encode(towrite2.read()).decode()    
     linko2= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64b}" download="[블로그]내용만.xlsx">내용 자료 다운</a>'
