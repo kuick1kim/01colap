@@ -34,17 +34,21 @@ st.write(list)
 df1 = df.iloc[list:list+1, :]
 
 
+
+dfs = pd.DataFrame(columns=['내용'])
+
 for i in df1['내용']:
     hh1=i.split('\t')
     a=1
-    
-    
     for nn in hh1:
         if nn is not None or nn != " " or nn != "" :
-            st.write(nn,"//",a)
+            nn1= nn+'//'+a
+            
             a=a+1
+            dfs=dfs.append({'내용':nn}, ignore_index=True)
 
-
+            
+dfs
 
 
 
