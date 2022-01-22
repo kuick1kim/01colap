@@ -28,10 +28,11 @@ def get_dataset(name):
 
 def load_data():
     data = pd.read_csv(DATA_URL)    
+    st.write(data) 
     return data
 
 # df = data
-st.write(data) 
+# st.write(data) 
 
         
         
