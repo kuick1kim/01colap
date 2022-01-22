@@ -12,7 +12,8 @@ dataset_name = st.sidebar.selectbox(
 def load_data(name):
     data = None
     if name == '블로그 검색1':
-        kms()        
+        DATA_URL='https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.xlsx'
+        data = pd.read_csv(DATA_URL)     
         
     elif name == '블로그 검색2':
         DATA_URL='https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.xlsx'
@@ -21,24 +22,24 @@ def load_data(name):
     else:
         DATA_URL= kms()        
         data = pd.read_csv(DATA_URL)     
-#     return data
+    return data
+
 
 
     
 def kms():
     st.header('검색된 뉴스서비스')
     query = st.text_input('검색어를 넣어주세요. ex)검색어 ','')
-    a = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv'  
-    df = pd.read_csv(a)  
-    st.write(df)
+#     a = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv'  
+#     df = pd.read_csv(a)  
+#     st.write(df)
     
 
        
 
 
 
-if __name__ == '__main__':
-    
+if __name__ == '__main__':    
     load_data(dataset_name)
 
 
@@ -50,6 +51,12 @@ if __name__ == '__main__':
 # #     if spectra is not None:
 # #         df = pd.read_csv(spectra)
 #     list = st.sidebar.slider( '선택하세요',0, len(df)-1, 5)
+
+
+
+
+
+
 #     st.write(list)
 #     df1 = df.iloc[list:list+1, :]
 
