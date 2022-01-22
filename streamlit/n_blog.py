@@ -32,7 +32,7 @@ df
 word = st.sidebar.text_input("검색하고 싶은 말씀을 넣어주세요",'맛집')
 st.sidebar.write(word)
 df1 = df[df["내용"].str.contains(word)].copy()        
-st.sidebar.write(len(df1))
+st.write(len(df1))
 df1
         
         
