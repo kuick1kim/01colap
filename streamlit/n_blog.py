@@ -240,10 +240,9 @@ def blog_main():
     
     st.balloons()
     result,query = run_selenium()
-
     
     towrite = io.BytesIO()
-    downloaded_file = result.to_excel(towrite, encoding='utf-8', index=True, header=True)
+    downloaded_file = result.to_excel(towrite, encoding='utf-8', index=False, header=True)
     towrite.seek(0)  # reset pointer
     b64 = base64.b64encode(towrite.read()).decode()
     
