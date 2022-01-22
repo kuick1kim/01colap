@@ -40,7 +40,7 @@ for i in df1['내용']:
     
     
     for nn in hh1:
-        if nn is not None:
+        if nn is not None or nn != " " or nn != "" :
             st.write(nn,"//",a)
             a=a+1
 
