@@ -48,32 +48,22 @@ def get_dataset(name):
 def ranking():
     st.header('언론사별 주요뉴스 ')
     DATA_URL = ('https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv')
-    @st.cache
-    def load_data():
-        data = pd.read_csv(DATA_URL)    
-        return data
-    df = load_data()
+    df = pd.read_csv(DATA_URL)  
+    
+    
+    ########################여기는 추가넣는부분##############
+    spectra = st.file_uploader(" ", type={"csv", "txt", "xlsx"})
+    if spectra is not None:
+        df = pd.read_csv(spectra)
+        dataset_name='외부데이터' 
+        
+    
+    
     df 
     
     
 
 ##################################################################################
-######################################################################################################
-
-def ranking2():
-    st.header('언론사별 주요뉴스 ')
-    DATA_URL = ('https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog3.csv')
-    @st.cache
-    def load_data():
-        data = pd.read_csv(DATA_URL)    
-        return data
-    df = load_data()
-    df 
-    
-    
-
-##################################################################################
-
 
 
 if __name__ == '__main__':
