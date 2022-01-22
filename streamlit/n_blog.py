@@ -27,6 +27,7 @@ def get_dataset(name):
 
 
 def load_data():
+    st.header('검색된 뉴스서비스')
     data = pd.read_csv('https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv')
     st.write(data) 
     return data
