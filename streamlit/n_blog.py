@@ -48,7 +48,7 @@ def get_dataset(name):
 
 ######################################################################################################
 def ranking():
-    st.header('언론사별 주요뉴스 ')
+    st.header('블로그 검색기 대 ')
     DATA_URL = ('https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv')
     df = pd.read_csv(DATA_URL)      
     
@@ -76,7 +76,7 @@ def ranking():
     
 ######################################################################################################
 def ranking3():
-    st.header('언론사별 주요뉴스 ')
+    st.header('블로그 검색기 소')
     DATA_URL1 = ('https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog3.csv')
     df1 = pd.read_csv(DATA_URL1)  
     
