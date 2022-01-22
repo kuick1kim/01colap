@@ -34,7 +34,10 @@ st.write(list)
 df1 = df.iloc[list:list+1, :]
 
 for i in df1['내용']:
-    st.write(i)
+    hh1=i.split('\t')
+    for nn in hh1:
+        if nn !='':
+            st.write(i)
 
 
 
