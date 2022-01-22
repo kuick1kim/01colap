@@ -50,8 +50,7 @@ def get_dataset(name):
 def ranking():
     st.header('언론사별 주요뉴스 ')
     DATA_URL = ('https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv')
-    df = pd.read_csv(DATA_URL)  
-    
+    df = pd.read_csv(DATA_URL)      
     
     ########################여기는 추가넣는부분##############
     spectra = st.file_uploader(" ", type={"csv", "txt", "xlsx"})
@@ -278,7 +277,7 @@ def blog_main2():
             ddf = pd.read_excel(spectra3)
         dataset_name='외부데이터' 
        
-    df = pd.DataFrame(columns=['작성자','시간','제목','링크','내용','이미지모음'])
+    dff3 = pd.DataFrame(columns=['작성자','시간','제목','링크','내용','이미지모음'])
     dfs = pd.DataFrame(columns=['내용'])
     
     # query= input('내용을 쓰시요')
@@ -318,14 +317,14 @@ def blog_main2():
                     dfs=dfs.append({'내용':storyb}, ignore_index=True)
                 storyb = storyb+'\t'+str(story)
                 
-            df=df.append({'작성자':name,'시간':date,'제목':title,'링크':ll,'내용':storyb,
+            dff3=dff3.append({'작성자':name,'시간':date,'제목':title,'링크':ll,'내용':storyb,
                   '이미지모음':imgb}, ignore_index=True)
                 
         except:
             pass
 
     towrite1 = io.BytesIO()
-    downloaded_file = df.to_excel(towrite1, encoding='utf-8', index=False, header=True)
+    downloaded_file = dff3.to_excel(towrite1, encoding='utf-8', index=False, header=True)
     towrite1.seek(0)  # reset pointer
     b64a = base64.b64encode(towrite1.read()).decode()    
     linko1= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64a}" download="[블로그]전체.xlsx">전체 자료 다운</a>'
