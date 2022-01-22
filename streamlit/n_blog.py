@@ -24,9 +24,10 @@ def load_data(name):
 def kms():
     a = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv'  
     df = pd.read_csv(a)  
-    spectra = st.file_uploader(" ", type={"csv", "txt", "xlsx"})
-    if spectra is not None:
-        df = pd.read_csv(spectra)
+    
+#     spectra = st.file_uploader(" ", type={"csv", "txt", "xlsx"})
+#     if spectra is not None:
+#         df = pd.read_csv(spectra)
     list = st.sidebar.slider( '선택하세요',0, len(df)-1, 5)
     st.write(list)
     df1 = df.iloc[list:list+1, :]
