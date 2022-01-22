@@ -270,13 +270,14 @@ def blog_main2():
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8"
     }
     
-    spectra3 = st.file_uploader(" ", type={"csv", "txt", "xlsx"})
+    spectra3 = st.file_uploader(" ", type={"csv", "xlsx"})
     if spectra3 is not None:
         try:
             ddf = pd.read_csv(spectra3)
         except:
             ddf = pd.read_excel(spectra3)
-        dataset_name='외부데이터' 
+                  
+        dataset_name='외부데이터3' 
     
     dff3 = pd.DataFrame(columns=['작성자','시간','제목','링크','내용','이미지모음'])
     dfs = pd.DataFrame(columns=['내용'])
