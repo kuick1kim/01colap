@@ -30,8 +30,8 @@ def load_data():
     data = pd.read_csv(DATA_URL)    
     return data
 
-df = data
-st.write(df) 
+# df = data
+st.write(data) 
 
         
         
