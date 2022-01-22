@@ -7,25 +7,34 @@ import pandas as pd
 
 df = pd.read_csv('https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv')
 
+@st.cache
+def load_data(name):
+    data = None
+    if name == 'BBQ':
+        DATA_URL =  'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/bbq.csv'
+    elif name == '처가집':
+        DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/cheogajip.csv'
+    elif name == '후라이드참잘하는집':
+        DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/friedgood.csv'
+    elif name == 'BHC':
+        DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/nene.csv'
+    elif name == '교촌':
+        DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/kyochon.csv'       
+    else:
+        DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/korental.csv'
+
+    data = pd.read_csv(DATA_URL)    
+    return data
+df = load_data(dataset_name)
+
+########################여기는 추가넣는부분##############
+spectra = st.file_uploader(" ", type={"csv", "txt", "xlsx"})
+if spectra is not None:
+    df = pd.read_csv(spectra)
+    dataset_name='외부데이터' 
+#########################성공###########################
+
 df
-
-# ########################여기는 추가넣는부분##############
-# spectra = st.file_uploader(" ", type={"csv", "txt", "xlsx"})
-# if spectra is not None:
-#     try:
-#         df = pd.read_excel(spectra)
-#     except:
-#         df = pd.read_csv(spectra)
-#     dataset_name='외부데이터' 
-# else :
-#     df = "데이터를 넣어주세요"
-# #########################성공###########################
-
-
-
-
-
-
 
 
 
