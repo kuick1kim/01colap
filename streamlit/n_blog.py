@@ -59,11 +59,14 @@ def ranking():
     list = st.sidebar.slider( '여러가지 검색해 보세요', 0, len(df)-1, 5)
 
     df1 = df.iloc[list:list+1, :]
-    for bb in df1["내용"]:
-        bb1=bb.split("\t")
-        for cc in bb1:
-            if bb != "" :
-                st.write(bb)
+    df1
+#     for bb in df1["내용"]:
+#         bb1=bb.split("\t")
+#         st.write(bb1)
+        
+#         for cc in bb1:
+#             if bb != "" :
+#                 st.write(bb)
 
     
 ######################################################################################################
