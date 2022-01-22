@@ -15,7 +15,7 @@ def load_data(name):
     elif name == '블로그 검색2':
         DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv'        
     else:
-        DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv'
+        DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/cheogajip.csv'
 
     data = pd.read_csv(DATA_URL)   
     return data
