@@ -23,6 +23,7 @@ def get_dataset(name):
     elif name == '블로그 검색2':
         data = load_data()
     else:
+        data = load_data()
     
     return data
 
