@@ -3,33 +3,6 @@ import pandas as pd
 
 
 
-
-
-import requests
-from bs4 import BeautifulSoup
-import pandas as pd
-import streamlit as st
-import re
-import base64
-import io
-
-
-import time
-
-import glob
-import os
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.support.wait import WebDriverWait
-
-
-
-
-
-
-
-
-
 dataset_name = st.sidebar.selectbox(
     'Select Dataset',
     ('블로그 검색1', '블로그 검색2')
@@ -51,18 +24,18 @@ def load_data(name):
 #     return data
 
 
-
-
-
-
-
     
 def kms():
     st.header('검색된 뉴스서비스')
+    a = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv'  
+    df = pd.read_csv(a)  
+    df
     
 
         
     return 
+
+
 
 if __name__ == '__main__':
     
