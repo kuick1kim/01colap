@@ -17,7 +17,7 @@ def load_data(name):
     elif name == '블로그 검색2':
         DATA_URL='https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.xlsx'
         data = pd.read_csv(DATA_URL)  
-        df
+        data
     else:
         DATA_URL= kms()        
         data = pd.read_csv(DATA_URL)     
