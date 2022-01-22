@@ -29,7 +29,7 @@ def kms():
     st.header('검색된 뉴스서비스')
     a = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv'  
     df = pd.read_csv(a)  
-    df
+    st.write(df)
     
 
         
