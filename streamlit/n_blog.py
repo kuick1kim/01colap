@@ -6,6 +6,7 @@ import re
 import base64
 import io
 
+from selenium.webdriver.common.action_chains import ActionChains
 
 import time
 
