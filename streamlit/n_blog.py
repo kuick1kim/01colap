@@ -27,7 +27,7 @@ def get_dataset(name):
 
 
 def load_data():
-    data = pd.read_csv(DATA_URL)    
+    data = pd.read_csv('https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv')
     st.write(data) 
     return data
 
