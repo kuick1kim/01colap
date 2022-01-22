@@ -123,7 +123,7 @@ def run_selenium():
             time.sleep(1)
 
 
-            df = pd.DataFrame(columns=['작성자', '제목', 'year',"month","day",
+            df5 = pd.DataFrame(columns=['작성자', '제목', 'year',"month","day",
                                        '내용','링크'])
 
             #######################10번누르기###################################
@@ -151,11 +151,11 @@ def run_selenium():
                     except:
                         year,month,day = "","",date1
 
-                    df=df.append({'작성자':name, '제목':title, 'year':year,"month":month,"day":day,
+                    df5=df5.append({'작성자':name, '제목':title, 'year':year,"month":month,"day":day,
                                        '내용':sub,'링크':link}, ignore_index=True)
 
             ######################더보기누르기###################################
-            st.write('10번 눌렀습니다. ')
+            st.write('10번 눌렀습니다./전체는 50페이지 ')
             kms = '/html/body/ui-view/div/main/div/div/section/div[3]/a'
             element1 = driver.find_element_by_xpath(kms)
             ActionChains(driver).move_to_element(element1).click(element1).perform()
@@ -187,12 +187,12 @@ def run_selenium():
                     except:
                         year,month,day = "","",date1
 
-                    df=df.append({'작성자':name, '제목':title, 'year':year,"month":month,"day":day,
+                    df5=df5.append({'작성자':name, '제목':title, 'year':year,"month":month,"day":day,
                                        '내용':sub,'링크':link}, ignore_index=True)
 
             #######################더보기 누르기와 30번 이후 5번###################################
-            for kk in range(5):
-                st.write('10번 눌렀습니다. ')
+            for kk in range(4):
+                st.write('10번 눌렀습니다./전체는 50페이지')
                 kms = '/html/body/ui-view/div/main/div/div/section/div[3]/a[2]'    
                 element1 = driver.find_element_by_xpath(kms)
                 ActionChains(driver).move_to_element(element1).click(element1).perform()
@@ -222,11 +222,11 @@ def run_selenium():
                         except:
                             year,month,day = "","",date1
 
-                        df=df.append({'작성자':name, '제목':title, 'year':year,"month":month,"day":day,
+                        df5=df5.append({'작성자':name, '제목':title, 'year':year,"month":month,"day":day,
                                            '내용':sub,'링크':link}, ignore_index=True)
             #######################10번누르기###################################            
             st.write('완료 하였습니다.')            
-    return df,query
+    return df5,query
 
 
 def blog_main():
@@ -235,11 +235,11 @@ def blog_main():
     executable_path = "notset"
     
     st.balloons()
-    result,query = run_selenium()
+    df5,query = run_selenium()
 
     
     towrite = io.BytesIO()
-    downloaded_file = result.to_excel(towrite, encoding='utf-8', index=True, header=True)
+    downloaded_file = df5.to_excel(towrite, encoding='utf-8', index=True, header=True)
     towrite.seek(0)  
     b64 = base64.b64encode(towrite.read()).decode()    
     linko= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="[블로그]{query}.xlsx">내가 검색한 자료 다운받기</a>'
