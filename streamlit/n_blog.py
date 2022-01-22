@@ -36,7 +36,8 @@ st.write(list)
 df1 = df.iloc[list:list+1, :]
 
 
-for i in df1['내용']:
+for i,j in zip(df1['내용'],df1['링크']):
+    st.write(j)
     hh1=i.split('\t')
     a=1
     for nn in hh1:
