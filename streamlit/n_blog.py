@@ -11,7 +11,6 @@ if spectra is not None:
 #########################성공###########################
 
 
-
 dataset_name = st.sidebar.selectbox(
     'Select Dataset',
     ('블로그 검색1','블로그 검색2')
@@ -19,13 +18,12 @@ dataset_name = st.sidebar.selectbox(
 
 def get_dataset(name):
     if name == '블로그 검색1':          
-        data = load_data()
+        load_data()
     elif name == '블로그 검색2':
-        data = load_data()
+        load_data()
     else:
-        data = load_data()
+        load_data()    
     
-    return data
 
 
 def load_data():
