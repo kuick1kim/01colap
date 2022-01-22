@@ -30,8 +30,9 @@ df = load_data(dataset_name)
 df
 
 
-list = st.sidebar.slider( '배달',0, len(df), 0)
+list = st.sidebar.slider( '선택하세요',0, len(df), 5)
 st.write(list)
+df1 = df.iloc[list:list+1, :]
 
 
 
