@@ -28,19 +28,22 @@ df = load_data(dataset_name)
 
 
 
-list = st.sidebar.slider( '선택하세요',0, len(df)-1, 5)
-st.write(list)
-df1 = df.iloc[list:list+1, :]
+
+def b1():
+    list = st.sidebar.slider( '선택하세요',0, len(df)-1, 5)
+    st.write(list)
+    df1 = df.iloc[list:list+1, :]
 
 
-for i in df1['내용']:
-    hh1=i.split('\t')
-    a=1
-    for nn in hh1:
-        if nn is not None or nn != " " or nn != "" :
-            nn1= nn+'//'+str(a)        
-            st.write(nn1)
-            a=a+1
+    for i in df1['내용']:
+        hh1=i.split('\t')
+        a=1
+        for nn in hh1:
+            if nn is not None or nn != " " or nn != "" :
+                
+                st.write(nn)
+                a=a+1
+    return         
 
     
 
