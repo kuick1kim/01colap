@@ -1,4 +1,4 @@
-streamlit==0.61.0
+streamlit==0.51
 pandas==0.25.3
 numpy==1.18.1
 cryptocmd==0.6.0
