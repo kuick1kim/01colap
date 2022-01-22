@@ -42,7 +42,7 @@ for i in df1['내용']:
     a=1
     for nn in hh1:
         if nn is not None or nn != " " or nn != "" :
-            nn1= nn+'//'+a
+            nn1= nn+'//'+str(a)
             
             a=a+1
             dfs=dfs.append({'내용':nn1}, ignore_index=True)
