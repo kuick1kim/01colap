@@ -24,8 +24,8 @@ def load_data(name):
     
 def kms():
     DATA_URL =  'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv'
-    data = pd.read_csv(DATA_URL)   
-    return data
+       
+    return DATA_URL
 
 df = load_data(dataset_name)
 
