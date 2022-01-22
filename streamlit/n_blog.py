@@ -239,14 +239,14 @@ def blog_main():
     executable_path = "notset"
     
     st.balloons()
-    df5,query = run_selenium()
+    result,query = run_selenium()
 
     
     towrite = io.BytesIO()
-    downloaded_file = df5.to_excel(towrite, encoding='utf-8', header=True)
-    # downloaded_file = df5.to_excel(towrite, encoding='utf-8', index=True, header=True)
-    towrite.seek(0)  
-    b64 = base64.b64encode(towrite.read()).decode()    
+    downloaded_file = result.to_excel(towrite, encoding='utf-8', index=True, header=True)
+    towrite.seek(0)  # reset pointer
+    b64 = base64.b64encode(towrite.read()).decode()
+    
     linko= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="[블로그]{query}.xlsx">내가 검색한 자료 다운받기</a>'
     st.markdown(linko, unsafe_allow_html=True)
     
