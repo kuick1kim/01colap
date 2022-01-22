@@ -159,7 +159,7 @@ def run_selenium():
                                        '내용':sub,'링크':link}, ignore_index=True)
 
             ######################더보기누르기###################################
-            st.write('10번 눌렀습니다./전체는', (list+1)*10,'번입니다.')
+            st.write('10번 눌렀습니다./전체는', (list1+1)*10,'번입니다.')
             kms = '/html/body/ui-view/div/main/div/div/section/div[3]/a'
             element1 = driver.find_element_by_xpath(kms)
             ActionChains(driver).move_to_element(element1).click(element1).perform()
@@ -196,7 +196,7 @@ def run_selenium():
 
             #######################더보기 누르기와 30번 이후 5번###################################
             for kk in range(list1):
-                st.write('10번 눌렀습니다./전체는', (list+1)*10,'번입니다.')
+                st.write('10번 눌렀습니다./전체는', (list1+1)*10,'번입니다.')
                 kms = '/html/body/ui-view/div/main/div/div/section/div[3]/a[2]'    
                 element1 = driver.find_element_by_xpath(kms)
                 ActionChains(driver).move_to_element(element1).click(element1).perform()
