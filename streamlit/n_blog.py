@@ -27,6 +27,7 @@ def load_data(name):
     
 def kms():
     st.header('검색된 뉴스서비스')
+    query = st.text_input('검색어를 넣어주세요. ex)검색어 ','')
     a = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv'  
     df = pd.read_csv(a)  
     st.write(df)
