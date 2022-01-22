@@ -26,6 +26,10 @@ def kms():
 
 df = load_data(dataset_name)
 
+
+word = st.sidebar.text_input("검색하고 싶은 단어를 넣으세요",'')
+
+
 list = st.sidebar.slider( '선택하세요',0, len(df)-1, 5)
 st.write(list)
 df1 = df.iloc[list:list+1, :]
@@ -42,7 +46,6 @@ for i in df1['내용']:
             dfs=dfs.append({'내용':nn1}, ignore_index=True)
 
     
-word = st.sidebar.text_input("검색하고 싶은 단어를 넣으세요",'')
 dfs2 = dfs[dfs["내용"].str.contains(word)].copy()
 
 for i in dfs2['내용']:
