@@ -1,14 +1,14 @@
 import streamlit as st
 import pandas as pd
 
-DATA_URL = pd.read_csv('https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv')
+# DATA_URL = pd.read_csv('https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv')
 
-########################여기는 추가넣는부분##############
-spectra = st.file_uploader(" ", type={"csv", "txt", "xlsx"})
-if spectra is not None:
-    DATA_URL = pd.read_csv(spectra)
-    dataset_name='외부데이터' 
-#########################성공###########################
+# ########################여기는 추가넣는부분##############
+# spectra = st.file_uploader(" ", type={"csv", "txt", "xlsx"})
+# if spectra is not None:
+#     DATA_URL = pd.read_csv(spectra)
+#     dataset_name='외부데이터' 
+# #########################성공###########################
 
 
 dataset_name = st.sidebar.selectbox(
@@ -27,10 +27,17 @@ def get_dataset(name):
 
 
 def load_data():
-    st.header('검색된 뉴스서비스')
-    data = pd.read_csv('https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv')
-    st.write(data) 
-    return data
+    DATA_URL = pd.read_csv('https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv')
+
+    ########################여기는 추가넣는부분##############
+    spectra = st.file_uploader(" ", type={"csv", "txt", "xlsx"})
+    if spectra is not None:
+        DATA_URL = pd.read_csv(spectra)
+        dataset_name='외부데이터' 
+    #########################성공###########################
+    df
+    
+    return
 
 # df = data
 # st.write(data) 
