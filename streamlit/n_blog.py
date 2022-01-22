@@ -115,8 +115,7 @@ def get_chromedriver_path():
 def run_selenium():
     name = str()
     with webdriver.Chrome(options=options, service_log_path='selenium.log') as driver:
-            query = st.text_input('검색어를 넣어주세요. ex)검색어 ','')
-
+            query = st.text_input('검색어를 넣어주세요. ex)검색어 ','맛집')
             url="https://section.blog.naver.com/Search/Post.naver?pageNo=1&rangeType=ALL&orderBy=sim&keyword={}".format(query)
             driver.get(url)
 
@@ -128,8 +127,8 @@ def run_selenium():
 
             #######################10번누르기###################################
             for i in range(2,11,1):
-                time.sleep(0.5)
-                link='/html/body/ui-view/div/main/div/div/section/div[3]/span[{}]/a'.format(i)    
+                time.sleep(0.8)
+                link='/html/body/ui-view/div/main/div/div/section/div[3]/span[{}]/a'.format(i)                           
                 element1 = driver.find_element_by_xpath(link)
                 ActionChains(driver).move_to_element(element1).click(element1).perform()
                 time.sleep(0.5)
