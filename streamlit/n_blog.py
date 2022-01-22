@@ -19,14 +19,15 @@ def get_dataset(name):
     if name == '블로그 검색1':          
         blog1()
     elif name == '블로그 검색2':
-        blog_main()   
+        blog1() 
     else:
-        gather1()  
+        blog1()
 
 
 
 def blog1():
     st.write(df)
+   
         
     return 
 
