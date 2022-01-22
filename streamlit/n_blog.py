@@ -53,7 +53,7 @@ for i in df1['내용']:
     
 word = st.text_input("검색하고 싶은 단어를 넣으세요",'')
 dfs2 = dfs[dfs["내용"].str.contains(word)].copy()
-
+dfs2
 for i in dfs2:
     st.write(i)
 
