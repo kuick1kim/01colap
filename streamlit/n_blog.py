@@ -29,12 +29,14 @@ def kms():
 df = load_data(dataset_name)
 df
 
-word = st.sidebar.text_input("검색하고 싶은 말씀을 넣어주세요",'강남')
-st.write(word)
-# df1 = df[df["내용"].str.contains(word)].copy()        
-# st.write(len(df1))
-# df1
-        
+
+list = st.sidebar.slider( '배달',0, len(df), 0)
+st.write(list)
+
+
+
+
+
         
         
         
