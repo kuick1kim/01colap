@@ -22,7 +22,7 @@ def load_data(name):
     else:
         DATA_URL= kms()        
         data = pd.read_csv(DATA_URL)     
-    return data
+#     return data
 
 
 
