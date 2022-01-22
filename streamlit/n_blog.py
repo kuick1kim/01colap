@@ -11,17 +11,17 @@ dataset_name = st.sidebar.selectbox(
 def load_data(name):
     data = None
     if name == 'BBQ':
-        DATA_URL =  'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/bbq.csv'
+        DATA_URL =  'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv'
     elif name == '처가집':
-        DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/cheogajip.csv'
+        DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv'
     elif name == '후라이드참잘하는집':
-        DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/friedgood.csv'
+        DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv'
     elif name == 'BHC':
-        DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/nene.csv'
+        DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv'
     elif name == '교촌':
-        DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/kyochon.csv'       
+        DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv'      
     else:
-        DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/korental.csv'
+        DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv'
 
     data = pd.read_csv(DATA_URL)    
     return data
