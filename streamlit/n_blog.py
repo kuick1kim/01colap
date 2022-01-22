@@ -23,7 +23,7 @@ def get_dataset(name):
     elif name == '블로그 검색2':
         load_data()
     else:
-        blog1()
+        
 
           
 @st.cache
