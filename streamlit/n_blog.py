@@ -127,8 +127,8 @@ def run_selenium():
     name = str()
     with webdriver.Chrome(options=options, service_log_path='selenium.log') as driver:
             query = st.text_input('검색어를 넣어주세요. ex)검색어 ','맛집')
-            list1 = st.sidebar.slider( '몇개까지 검색할까요? 10개 단위로만 가능', 20, 100, 20)
-            list1 = (int(list1)%10)-1
+            list1 = st.sidebar.slider( '몇개까지 검색할까요? 10개 단위로만 가능', 21, 100, 20)
+            list2 = (int(list1)%10)
             url="https://section.blog.naver.com/Search/Post.naver?pageNo=1&rangeType=ALL&orderBy=sim&keyword={}".format(query)
             driver.get(url)
 
@@ -167,7 +167,7 @@ def run_selenium():
                                        '내용':sub,'링크':link}, ignore_index=True)
 
             ######################더보기누르기###################################
-            st.write('10번 눌렀습니다./전체는', (list1+1)*10,'번입니다.')
+            st.write('10번 눌렀습니다./전체는', list2*10,'번입니다.')
             kms = '/html/body/ui-view/div/main/div/div/section/div[3]/a'
             element1 = driver.find_element_by_xpath(kms)
             ActionChains(driver).move_to_element(element1).click(element1).perform()
@@ -203,8 +203,8 @@ def run_selenium():
                                        '내용':sub,'링크':link}, ignore_index=True)
 
             #######################더보기 누르기와 30번 이후 5번###################################
-            for kk in range(list1):
-                st.write('10번 눌렀습니다./전체는', (list1+1)*10,'번입니다.')
+            for kk in range(list2-1):
+                st.write('10번 눌렀습니다./전체는', list2*10,'번입니다.')
                 kms = '/html/body/ui-view/div/main/div/div/section/div[3]/a[2]'    
                 element1 = driver.find_element_by_xpath(kms)
                 ActionChains(driver).move_to_element(element1).click(element1).perform()
