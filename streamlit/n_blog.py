@@ -66,7 +66,7 @@ def ranking():
         
         
         for cc in bb1:
-            if bb != "" :
+            if cc != "" :
                 st.write(bb)
 
     
