@@ -127,7 +127,7 @@ def run_selenium():
     name = str()
     with webdriver.Chrome(options=options, service_log_path='selenium.log') as driver:
             query = st.text_input('검색어를 넣어주세요. ex)검색어 ','맛집')
-            list1 = st.sidebar.slider( '몇개까지 검색할까요? 10개 단위로만 가능', 21, 100, 21)
+            list1 = st.sidebar.slider( '몇개까지 검색할까요? 10개 단위로만 가능', 20, 100, 20)
             list2 = int(list1%10)
             url="https://section.blog.naver.com/Search/Post.naver?pageNo=1&rangeType=ALL&orderBy=sim&keyword={}".format(query)
             driver.get(url)
