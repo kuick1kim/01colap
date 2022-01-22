@@ -17,7 +17,7 @@ dataset_name = st.sidebar.selectbox(
 
 def get_dataset(name):
     if name == '블로그 검색1':          
-        blog1()
+        df=blog1(df)
     elif name == '블로그 검색2':
         blog1() 
     else:
@@ -26,9 +26,7 @@ def get_dataset(name):
 
 
 def blog1():
-    st.write(df)
-   
-        
+            
     return 
 
         
