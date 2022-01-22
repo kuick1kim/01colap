@@ -263,7 +263,7 @@ def blog_main():
 ######################################################################################################
 def blog_main2():
     oo=1
-    st.header('언론사별 주요뉴스 ')
+    st.header('블로그 다운받은것을 여기다 넣으세요 기본으로 검색합니다. ')
     session = requests.Session()
     headers = {
         "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit 537.36 (KHTML, like Gecko) Chrome",
@@ -276,66 +276,66 @@ def blog_main2():
         except:
             ddf = pd.read_excel(spectra3)
         dataset_name='외부데이터' 
-       
-    dff3 = pd.DataFrame(columns=['작성자','시간','제목','링크','내용','이미지모음'])
-    dfs = pd.DataFrame(columns=['내용'])
-    
-    # query= input('내용을 쓰시요')
-    for ll in ddf['링크']:
-        if oo%10==0:
-            st.write(oo,"/전체는 ",len(ddf),'입니다')
-        oo=oo+1
-        a=ll.split('?')[0]
-        a=a.split("/")
-        b,c=a[-2],a[-1]
+    if ddf != '':
+        dff3 = pd.DataFrame(columns=['작성자','시간','제목','링크','내용','이미지모음'])
+        dfs = pd.DataFrame(columns=['내용'])
 
-        url= 'https://blog.naver.com/PostView.naver?blogId={}&logNo={}&redirect=Dlog&widgetTypeCall=true&directAccess=false'.format(b,c)
+        # query= input('내용을 쓰시요')
+        for ll in ddf['링크']:
+            if oo%10==0:
+                st.write(oo,"/전체는 ",len(ddf),'입니다')
+            oo=oo+1
+            a=ll.split('?')[0]
+            a=a.split("/")
+            b,c=a[-2],a[-1]
 
-        html = session.get(url, headers=headers).content
-        soup = BeautifulSoup(html, "html.parser")
-        try:
+            url= 'https://blog.naver.com/PostView.naver?blogId={}&logNo={}&redirect=Dlog&widgetTypeCall=true&directAccess=false'.format(b,c)
 
-            table = soup.find('table',id='printPost1')
+            html = session.get(url, headers=headers).content
+            soup = BeautifulSoup(html, "html.parser")
+            try:
 
-            title1 = table.find('div','pcol1').text
-            title= title1.replace('\n','') 
+                table = soup.find('table',id='printPost1')
 
-            date = table.find('span','se_publishDate pcol2').text
-            name= table.find('span','nick').text
+                title1 = table.find('div','pcol1').text
+                title= title1.replace('\n','') 
 
-            imgimg = table.find_all('img','se-image-resource')
-            imgb=''
-            for a in range(len(imgimg)):
-                img = table.find_all('img','se-image-resource')[a].get('data-lazy-src')    
-                imgb=imgb+"@@@@@"+str(img)    
+                date = table.find('span','se_publishDate pcol2').text
+                name= table.find('span','nick').text
 
-            storya= table.find_all('p',"se-text-paragraph")                            
-            storyb=""
-            for b in range(len(storya)):
-                story = table.find_all('p',"se-text-paragraph") [b].text
-                if story != "" :
-                    dfs=dfs.append({'내용':storyb}, ignore_index=True)
-                storyb = storyb+'\t'+str(story)
-                
-            dff3=dff3.append({'작성자':name,'시간':date,'제목':title,'링크':ll,'내용':storyb,
-                  '이미지모음':imgb}, ignore_index=True)
-                
-        except:
-            pass
+                imgimg = table.find_all('img','se-image-resource')
+                imgb=''
+                for a in range(len(imgimg)):
+                    img = table.find_all('img','se-image-resource')[a].get('data-lazy-src')    
+                    imgb=imgb+"@@@@@"+str(img)    
 
-    towrite1 = io.BytesIO()
-    downloaded_file = dff3.to_excel(towrite1, encoding='utf-8', index=False, header=True)
-    towrite1.seek(0)  # reset pointer
-    b64a = base64.b64encode(towrite1.read()).decode()    
-    linko1= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64a}" download="[블로그]전체.xlsx">전체 자료 다운</a>'
-    st.markdown(linko1, unsafe_allow_html=True)
+                storya= table.find_all('p',"se-text-paragraph")                            
+                storyb=""
+                for b in range(len(storya)):
+                    story = table.find_all('p',"se-text-paragraph") [b].text
+                    if story != "" :
+                        dfs=dfs.append({'내용':storyb}, ignore_index=True)
+                    storyb = storyb+'\t'+str(story)
 
-    towrite2 = io.BytesIO()
-    downloaded_file = dfs.to_excel(towrite2, encoding='utf-8', index=False, header=True)
-    towrite2.seek(0)  # reset pointer
-    b64b = base64.b64encode(towrite2.read()).decode()    
-    linko2= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64b}" download="[블로그]내용만.xlsx">내용 자료 다운</a>'
-    st.markdown(linko2, unsafe_allow_html=True)
+                dff3=dff3.append({'작성자':name,'시간':date,'제목':title,'링크':ll,'내용':storyb,
+                      '이미지모음':imgb}, ignore_index=True)
+
+            except:
+                pass
+
+        towrite1 = io.BytesIO()
+        downloaded_file = dff3.to_excel(towrite1, encoding='utf-8', index=False, header=True)
+        towrite1.seek(0)  # reset pointer
+        b64a = base64.b64encode(towrite1.read()).decode()    
+        linko1= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64a}" download="[블로그]전체.xlsx">전체 자료 다운</a>'
+        st.markdown(linko1, unsafe_allow_html=True)
+
+        towrite2 = io.BytesIO()
+        downloaded_file = dfs.to_excel(towrite2, encoding='utf-8', index=False, header=True)
+        towrite2.seek(0)  # reset pointer
+        b64b = base64.b64encode(towrite2.read()).decode()    
+        linko2= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64b}" download="[블로그]내용만.xlsx">내용 자료 다운</a>'
+        st.markdown(linko2, unsafe_allow_html=True)
     
 
 
