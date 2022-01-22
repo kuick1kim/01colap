@@ -5,19 +5,21 @@ import streamlit as st
 import pandas as pd
 
 
+df = pd.read_csv('https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv')
 
+df
 
-########################여기는 추가넣는부분##############
-spectra = st.file_uploader(" ", type={"csv", "txt", "xlsx"})
-if spectra is not None:
-    try:
-        df = pd.read_excel(spectra)
-    except:
-        df = pd.read_csv(spectra)
-    dataset_name='외부데이터' 
-else :
-    df = "데이터를 넣어주세요"
-#########################성공###########################
+# ########################여기는 추가넣는부분##############
+# spectra = st.file_uploader(" ", type={"csv", "txt", "xlsx"})
+# if spectra is not None:
+#     try:
+#         df = pd.read_excel(spectra)
+#     except:
+#         df = pd.read_csv(spectra)
+#     dataset_name='외부데이터' 
+# else :
+#     df = "데이터를 넣어주세요"
+# #########################성공###########################
 
 
 
