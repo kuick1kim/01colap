@@ -14,7 +14,7 @@ if spectra is not None:
 
 dataset_name = st.sidebar.selectbox(
     'Select Dataset',
-    ('블로그 검색','블로그 검색2')
+    ('블로그 검색1','블로그 검색2')
 )
 
 def get_dataset(name):
