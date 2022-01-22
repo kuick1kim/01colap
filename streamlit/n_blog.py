@@ -10,13 +10,13 @@ import io
 
 dataset_name = st.sidebar.selectbox(
     'Select Dataset',
-    ('ranking','news', 'blog')
+    ('큰검색','세부검색', '추가')
 )
 
 def get_dataset(name):
-    if name == 'ranking':          
+    if name == '큰검색':          
         ranking()
-    elif name == 'blog':
+    elif name == '세부검색':
         ranking3() 
     else:
         ranking3()
@@ -59,7 +59,7 @@ def ranking3():
         df1 = pd.read_csv(spectra)
         dataset_name='외부데이터' 
     
-    word = st.sidebar.text_input("검색하고 싶은 말씀을 넣어주세요",'')
+    word = st.sidebar.text_input("검색하고 싶은 내용검색/ 아무것도 안넣으면, 엄청돌아감",'마시고')
     df2 = df1[df1["내용"].str.contains(word)].copy()
     
     df2= df2.sample(frac=1)
