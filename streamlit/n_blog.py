@@ -32,8 +32,7 @@ def kms():
     st.write(df)
     
 
-        
-    return 
+       
 
 
 
