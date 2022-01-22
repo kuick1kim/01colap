@@ -19,15 +19,13 @@ dataset_name = st.sidebar.selectbox(
 
 def get_dataset(name):
     if name == '블로그 검색1':          
-        df = load_data()
+        load_data()
     elif name == '블로그 검색2':
-        df = load_data()
+        load_data()
     else:
         blog1()
 
-
-DATA_URL = ('https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/up.csv')
-             
+          
 @st.cache
 def load_data():
     data = pd.read_csv(DATA_URL)    
