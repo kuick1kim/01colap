@@ -60,7 +60,7 @@ def ranking():
         except:
             df = pd.read_excel(spectra)
         dataset_name='외부데이터' 
-#     df 
+
     list = st.sidebar.slider( '여러가지 검색해 보세요', 0, len(df)-1, 5)
 
     df1 = df.iloc[list:list+1, :]
