@@ -54,6 +54,8 @@ def ranking3():
     word = st.sidebar.text_input("검색하고 싶은 말씀을 넣어주세요",'')
     df2 = df1[df1["내용"].str.contains(word)].copy()
     df2
+    for k in df2['내용']:
+        st.write(k)
     
     
 
