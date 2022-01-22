@@ -1,15 +1,15 @@
 import streamlit as st
 import pandas as pd
 
-df = pd.read_csv('https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv')
+DATA_URL = pd.read_csv('https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv')
 
 ########################여기는 추가넣는부분##############
 spectra = st.file_uploader(" ", type={"csv", "txt", "xlsx"})
 if spectra is not None:
-    df = pd.read_csv(spectra)
+    DATA_URL = pd.read_csv(spectra)
     dataset_name='외부데이터' 
 #########################성공###########################
-df
+
 
 
 dataset_name = st.sidebar.selectbox(
@@ -19,17 +19,22 @@ dataset_name = st.sidebar.selectbox(
 
 def get_dataset(name):
     if name == '블로그 검색1':          
-        df=blog1(df)
+        df = load_data()
     elif name == '블로그 검색2':
-        blog1() 
+        df = load_data()
     else:
         blog1()
 
 
+DATA_URL = ('https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/up.csv')
+             
+@st.cache
+def load_data():
+    data = pd.read_csv(DATA_URL)    
+    return data
 
-def blog1():
-            
-    return 
+
+st.write(df) 
 
         
         
