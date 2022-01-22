@@ -4,28 +4,31 @@ import pandas as pd
 
 dataset_name = st.sidebar.selectbox(
     'Select Dataset',
-    ('BBQ', '처가집','후라이드참잘하는집', 'BHC','교촌', '코리엔탈치킨')
+    ('블로그 검색1', '블로그 검색2')
 )
 
 @st.cache
 def load_data(name):
     data = None
-    if name == 'BBQ':
-        DATA_URL =  'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv'
-    elif name == '처가집':
-        DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv'
-    elif name == '후라이드참잘하는집':
-        DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv'
-    elif name == 'BHC':
-        DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv'
-    elif name == '교촌':
-        DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv'      
+    if name == '블로그 검색1':
+        kms()        
+    elif name == '블로그 검색2':
+        DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv'        
     else:
         DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv'
 
-    data = pd.read_csv(DATA_URL)    
+    data = pd.read_csv(DATA_URL)   
     return data
+    
+    
+    
+def kms():
+    DATA_URL =  'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv'
+    data = pd.read_csv(DATA_URL)   
+    return data
+
 df = load_data(dataset_name)
+
 
 df
         
