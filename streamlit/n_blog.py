@@ -14,16 +14,18 @@ def load_data(name):
         DATA_URL= kms()        
         data = pd.read_csv(DATA_URL)   
     elif name == '블로그 검색2':
-        DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv' 
-        data1 = pd.read_csv(DATA_URL)   
-        data = b1(data1)
+        DATA_URL= kms()        
+        data = pd.read_csv(DATA_URL)  
     else:
-        DATA_URL = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/cheogajip.csv'
-        data = pd.read_csv(DATA_URL)      
+        DATA_URL= kms()        
+        data = pd.read_csv(DATA_URL)     
     return data
     
 def kms():
-    a =  'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv'    
+    a = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv'    
+    spectra = st.file_uploader(" ", type={"csv", "txt", "xlsx"})
+    if spectra is not None:
+        a = spectra        
     return a
 
 df = load_data(dataset_name)
