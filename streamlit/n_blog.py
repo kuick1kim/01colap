@@ -35,6 +35,9 @@ df1 = df.iloc[list:list+1, :]
 
 
 
+
+
+
 dfs = pd.DataFrame(columns=['내용'])
 
 for i in df1['내용']:
@@ -47,9 +50,12 @@ for i in df1['내용']:
             a=a+1
             dfs=dfs.append({'내용':nn1}, ignore_index=True)
 
-            
-dfs
+    
+word = st.text_input("검색하고 싶은 단어를 넣으세요",'')
+dfs2 = dfs[dfs["내용"].str.contains(word)].copy()
 
+for i in dfs2:
+    st.write(i)
 
 
         
