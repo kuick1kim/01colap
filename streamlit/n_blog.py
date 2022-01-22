@@ -15,23 +15,38 @@ if spectra is not None:
     dataset_name='외부데이터' 
 #########################성공###########################
 
-df
 
 
 
 
+dataset_name = st.sidebar.selectbox(
+    'Select Dataset',
+    ('블로그 검색','블로그 검색2')
+)
+
+def get_dataset(name):
+    if name == '블로그 검색':          
+        blog1()
+    elif name == '블로그 검색2':
+        blog_main()   
+    else:
+        gather1()  
 
 
 
-# DATA_URL = ('https://raw.githubusercontent.com/kuick1kim/01colap/main/bible.csv')
-# @st.cache
-# def load_data():
-#     data = pd.read_csv(DATA_URL)    
-#     return data
-# df = load_data()
+def blog1():
+    df
+        
+    return 
 
-
-
+        
+        
+        
+        
+        
+        
+        
+        
 
 
 
