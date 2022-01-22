@@ -50,7 +50,11 @@ def ranking3():
     if spectra is not None:
         df1 = pd.read_csv(spectra)
         dataset_name='외부데이터' 
-    df1
+    
+    word = st.sidebar.text_input("검색하고 싶은 말씀을 넣어주세요",'')
+    df2 = df1[df1["말씀"].str.contains(word)].copy()
+    df2
+    
     
 
 ##################################################################################
