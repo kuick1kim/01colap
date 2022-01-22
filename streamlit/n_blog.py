@@ -41,8 +41,8 @@ def ranking():
 ######################################################################################################
 def ranking2():
     st.header('언론사별 주요뉴스 ')
-    DATA_URL = ('https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog3.csv')
-    df = pd.read_csv(DATA_URL)  
+    DATA_URL1 = ('https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog3.csv')
+    df = pd.read_csv(DATA_URL1)  
     
     
     ########################여기는 추가넣는부분##############
