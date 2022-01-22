@@ -20,23 +20,36 @@ def get_dataset(name):
     if name == '블로그 검색1':          
         load_data()
     elif name == '블로그 검색2':
-        load_data()
+        load_data1()
     else:
-        load_data()    
+        load_data1()    
     
 
 
 def load_data():
-    DATA_URL = pd.read_csv('https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv')
+    st.header('검색된 뉴스서비스')
+#     DATA_URL = pd.read_csv('https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv')
 
-    ########################여기는 추가넣는부분##############
-    spectra = st.file_uploader(" ", type={"csv", "txt", "xlsx"})
-    if spectra is not None:
-        DATA_URL = pd.read_csv(spectra)
-        dataset_name='외부데이터' 
-    #########################성공###########################
-    df
-    
+#     ########################여기는 추가넣는부분##############
+#     spectra = st.file_uploader(" ", type={"csv", "txt", "xlsx"})
+#     if spectra is not None:
+#         DATA_URL = pd.read_csv(spectra)
+#         dataset_name='외부데이터' 
+#     #########################성공###########################
+#     df    
+    return
+
+def load_data1():
+    st.header('검색된 뉴스서비스1')
+#     DATA_URL = pd.read_csv('https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv')
+
+#     ########################여기는 추가넣는부분##############
+#     spectra = st.file_uploader(" ", type={"csv", "txt", "xlsx"})
+#     if spectra is not None:
+#         DATA_URL = pd.read_csv(spectra)
+#         dataset_name='외부데이터' 
+#     #########################성공###########################
+#     df    
     return
 
 # df = data
