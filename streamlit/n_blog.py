@@ -17,9 +17,9 @@ def get_dataset(name):
     if name == 'ranking':          
         ranking()
     elif name == 'blog':
-        ranking2() 
+        ranking3() 
     else:
-        ranking2()
+        ranking3()
 
 
 ######################################################################################################
@@ -39,18 +39,18 @@ def ranking():
     
     
 ######################################################################################################
-def ranking2():
+def ranking3():
     st.header('언론사별 주요뉴스 ')
     DATA_URL1 = ('https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog3.csv')
-    df = pd.read_csv(DATA_URL1)  
+    df1 = pd.read_csv(DATA_URL1)  
     
     
     ########################여기는 추가넣는부분##############
     spectra = st.file_uploader(" ", type={"csv", "txt", "xlsx"})
     if spectra is not None:
-        df = pd.read_csv(spectra)
+        df1 = pd.read_csv(spectra)
         dataset_name='외부데이터' 
-    df 
+    df1
     
 
 ##################################################################################
