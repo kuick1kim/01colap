@@ -120,7 +120,7 @@ def kms():
 
 if __name__ == '__main__':
     
-    get_dataset(dataset_name)
+    load_data(dataset_name)
 
 
 
