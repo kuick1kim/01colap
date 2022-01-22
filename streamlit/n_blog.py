@@ -12,8 +12,9 @@ dataset_name = st.sidebar.selectbox(
 def load_data(name):
     data = None
     if name == '블로그 검색1':
-        DATA_URL='https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.xlsx'
-        data = pd.read_csv(DATA_URL)     
+        kms()
+#         DATA_URL='https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.xlsx'
+#         data = pd.read_csv(DATA_URL)     
         
     elif name == '블로그 검색2':
         DATA_URL='https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.xlsx'
