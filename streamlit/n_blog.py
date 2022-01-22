@@ -29,7 +29,7 @@ def kms():
 df = load_data(dataset_name)
 
 
-list = st.sidebar.slider( '선택하세요',0, len(df), 5)
+list = st.sidebar.slider( '선택하세요',0, len(df)-1, 5)
 st.write(list)
 df1 = df.iloc[list:list+1, :]
 
