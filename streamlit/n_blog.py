@@ -45,7 +45,7 @@ for i in df1['내용']:
             nn1= nn+'//'+a
             
             a=a+1
-            dfs=dfs.append({'내용':nn}, ignore_index=True)
+            dfs=dfs.append({'내용':nn1}, ignore_index=True)
 
             
 dfs
