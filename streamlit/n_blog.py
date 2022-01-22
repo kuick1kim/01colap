@@ -22,13 +22,15 @@ def load_data(name):
     return data
     
 def kms():
-    a = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv'    
-    spectra = st.file_uploader(" ", type={"csv", "txt", "xlsx"})
-    if spectra is not None:
-        a = spectra        
+    a = 'https://raw.githubusercontent.com/kuick1kim/01colap/main/csv/blog2.csv'           
     return a
 
 df = load_data(dataset_name)
+
+spectra = st.file_uploader(" ", type={"csv", "txt", "xlsx"})
+if spectra is not None:
+    df = pd.read_csv(spectra)
+#     dataset_name='외부데이터' 
 
 
 
